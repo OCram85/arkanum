@@ -1,0 +1,19 @@
+[alias]
+
+# simplified logs
+log1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+log2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+
+# Aliases for a Phabricator inspired workflow
+# 1. Create new feature branch
+feature =  "!f(){ b=$1; git checkout master; git pull; git checkout -b "$b" master; };f"
+
+# 2. Working with code
+wip = !"git add -A; git commit -m '[WIP]'"
+squish = !"git add -A; git commit --no-edit --amend"
+
+# 3. Push to origin
+pod = !"git push origin dev"
+
+# 4. Push to custom remote branch
+poc = "!f(){ b=$1; git push origin "$b";};f"

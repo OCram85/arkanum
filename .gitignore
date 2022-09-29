@@ -1,0 +1,14 @@
+# Basic ignore patterns
+*.log
+*.secret
+
+# data  dir related prod files
+data/*.csv
+
+# Ignore temp build artifacts
+/bin/*
+!bin/.gitkeep
+
+# Ignore Pester test result files
+coverage.xml
+testResults.xml
