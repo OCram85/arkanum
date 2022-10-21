@@ -1,0 +1,90 @@
+[aws]
+symbol = "  "
+
+[buf]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[container]
+symbol = " "
+format = "[$symbol]($style)"
+
+[dart]
+symbol = " "
+
+[directory]
+read_only = " "
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+# [git_branch]
+# symbol = " "
+
+[golang]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[package]
+symbol = " "
+
+[rust]
+symbol = " "
+
+# Custom Prompt
+[git_branch]
+format = " [$symbol$branch]($style) "
+symbol = "🍣 "
+style = "bold yellow"
+
+[git_commit]
+commit_hash_length = 8
+style = "bold white"
+
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
+
+[git_status]
+conflicted = "⚔️ "
+ahead = "🏎️💨 ×${count}"
+behind = "🐢 ×${count}"
+diverged = "🔱 🏎️ 💨 ×${ahead_count} 🐢 ×${behind_count}"
+untracked = "🛤️ ×${count}|"
+stashed = "📦 "
+modified = "📝 ×${count}|"
+staged = "🗃️ ×${count}|"
+renamed = "📛 ×${count}|"
+deleted = "🗑️ ×${count}|"
+style = "bright-white"
+format = "$all_status$ahead_behind"

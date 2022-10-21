@@ -1,0 +1,8 @@
+.gitea
+.vscode
+assets
+.editorconfig
+.gitatributes
+.gitignore
+.gitlocal
+README.md
