@@ -2,28 +2,19 @@ FROM linuxserver/code-server:4.7.1
 
 RUN \
   echo "**** install starshipt prompt ****" && \
-  curl -sS https://starship.rs/install.sh | sh && \
+  curl -sS https://starship.rs/install.sh | sh -s -- -f && \
   echo "eval \"\$(starship init bash)\"" >> /etc/bash.bashrc
 
-ENV STARSHIP_CONFIG=/etc/starship.tom
+ENV STARSHIP_CONFIG=/etc/starship.toml
 
-COPY staship.toml /etc/starship.toml
-
-RUN \
-  "**** setup git ****" && \
-  git config --system credential.helper store
+COPY starship.toml /etc/starship.toml
 
 RUN \
-  echo "**** install dev runtimes ****" && \
-  curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - && \
-  apt-get update && \
-  apt-get install -y \
-    nodejs \
-    golang-go &&\
-  echo "**** clean up ****" && \
-  apt-get clean && \
-  rm -rf \
-    /config/* \
-    /tmp/* \
-    /var/lib/apt/lists/* \
-    /var/tmp/*
+  echo "**** setup git ****" && \
+  git config --system credential.helper store && \
+  echo 'source /usr/share/bash-completion/completions/git' >> /etc/bash.bashrc
+
+ADD install-devruntime /usr/bin/
+RUN \
+  chmod +x /usr/bin/install-devruntime && \
+  echo "echo \"Use 'install-devruntime' to install missing runtimes like dotnet or NodeJs.\"" >> /etc/bash.bashrc

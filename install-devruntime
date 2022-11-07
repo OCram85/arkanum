@@ -1,0 +1,133 @@
+#!/bin/bash
+
+set -e
+
+function showHelp() {
+  cat <<HELP
+  install-devruntime is used to install optional runtimes for developing in a
+  code-server container environment.
+
+  Syntax: install-devruntime RUNTIME ...
+  RUNTIME         [dotnet|golang|nodejs|powershell]
+    dotnet        Installs latest LTS dotnet core sdk + runtime.
+    golang        Installs golang 1.19.3.
+    nodejs        Installs latest NodeJs LTS version.
+    powershell    Installs latest PowerShell LTS version.
+  -h              Prints this help messagee.
+  Example 1: install-devruntime dotnet
+  Example 2: install devruntime golang nodejs
+HELP
+}
+
+function say() {
+  if [[ -n "$2" ]]; then
+    echo -e "\e[32mInstall-DevRuntime\e[0m \e[34m[$2]\e[0m: $1"
+  else
+    echo -e "\e[32mInstall-DevRuntime\e[0m: $1"
+  fi
+}
+
+function sayE() {
+  if [[ -n "$2" ]]; then
+    echo -e "\e[31mInstall-DevRuntime\e[0m \e[34m[$2]\e[0m: $1" 1>&2
+  else
+    echo -e "\e[31mInstall-DevRuntime\e[0m: $1" 1>&2
+  fi
+}
+
+function instDotNet() {
+  say "Downloading latest install script..." "dotnet"
+  curl -fsSL https://dot.net/v1/dotnet-install.sh -o /tmp/dotnet-install.sh
+  chmod +x /tmp/dotnet-install.sh
+
+  say "Installing latest .NET Core LTS release..." "dotnet"
+  /tmp/dotnet-install.sh --channel LTS
+  echo 'export PATH=$PATH:/config/.dotnet' | sudo tee -a /etc/bash.bashrc > /dev/null
+
+  say "dotnet done. " "dotnet"
+}
+
+function instGoLang() {
+  if [[ -z "$1" ]]; then
+    GOVERSION="1.19.3"
+  else
+    GOVERSION="$1"
+  fi
+
+  say "Downloading golang ($GOVERSION)..." "GoLang"
+  curl -fsSL "https://go.dev/dl/go$GOVERSION.linux-amd64.tar.gz" -o /tmp/golang.tar.gz
+  say "Installing golang ($GOVERSION)...." "GoLang"
+  sudo rm -rf /usr/local/go
+  sudo tar -C /usr/local -xzf /tmp/golang.tar.gz
+  echo 'export PATH=$PATH:/usr/local/go/bin' | sudo tee -a /etc/bash.bashrc > /dev/null
+  say "Cleaning up..." "GoLang"
+  rm -f /tmp/golang.tar.gz
+  say "done." "GoLang"
+  say "Please reload bash profile to finalize." "GoLang"
+}
+
+function instNodeJs() {
+  say "Adding nodesource package source (NodeJS LTS)..." "NodeJs"
+  curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+  say "Updating package lists and installing NodeJS LTS..." "NodeJs"
+  sudo apt-get install --no-install-recommends -y \
+    nodejs
+
+  say "Cleaning up..." "NodeJs"
+  sudo apt-get clean
+  sudo rm -rf \
+    /tmp/* \
+    /var/lib/apt/lists/* \
+    /var/tmp/*
+
+  say "done." "NodeJs"
+}
+
+function instPwsh() {
+  say "Installing PowerShell requirements..." "PowerShell"
+  sudo apt-get install --no-install-recommends -y \
+    apt-transport-https \
+    software-properties-common
+
+  say "Adding powershell package sources..." "PowerShell"
+  # Download the Microsoft repository GPG keys
+  curl -fsSL "https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/packages-microsoft-prod.deb" -o /tmp/packages-microsoft-prod.deb
+  # Register the Microsoft repository GPG keys
+  sudo dpkg -i /tmp/packages-microsoft-prod.deb
+  # Update the list of packages after we added packages.microsoft.com
+  sudo apt-get update
+
+  say "Installing PowerShell..." "PowerShell"
+  # Install PowerShell
+  sudo apt-get install --no-install-recommends -y powershell
+
+  echo "done." "PowerShell"
+}
+
+function main() {
+  if [[ "$#" == "0" ]]; then
+    showHelp
+    exit 0
+  fi
+
+  for i in $@; do
+    if [[ "$1" == "-h" ]]; then
+      showHelp
+      exit 0
+    elif [[ "$i" == "dotnet" ]]; then
+      instDotNet
+    elif [[ "$i" == "golang" ]]; then
+      instGoLang
+    elif [[ "$i" == "nodejs" ]]; then
+      instNodeJs
+    elif [[ "$i" == "powershell" ]]; then
+      instPwsh
+    else
+      sayE "Unknown parameter value given!($i)."
+      showHelp
+      exit 1
+    fi
+  done
+}
+
+main $@

@@ -1,0 +1,21 @@
+depends_on:
+  - test
+
+pipeline:
+  buildMasterGitea:
+    image: plugins/docker
+    settings:
+      registry: gitea.ocram85.com
+      repo: gitea.ocram85.com/codeserver/container
+      dockerfile: Dockerfile
+      auto_tag: true
+      #build_args:
+      #  - NODE_BASE=lts-buster-slim
+      #  - NGINX_BASE=1.23.1-alpine
+      username:
+        from_secret: gitea_user
+      password:
+        from_secret: gitea_passwd
+    when:
+      event: push
+      branch: master

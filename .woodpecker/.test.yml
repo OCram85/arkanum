@@ -1,0 +1,9 @@
+pipeline:
+  testDockerfile:
+    image: plugins/docker
+    settings:
+      dry_run: true
+      registry: gitea.ocram85.com
+      repo: gitea.ocram85.com/codeserver/container
+      dockerfile: Dockerfile
+      tags: next

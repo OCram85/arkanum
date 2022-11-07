@@ -1,0 +1,19 @@
+depends_on:
+  - test
+
+pipeline:
+  buildNextGitea:
+    image: woodpeckerci/plugin-docker-buildx
+    settings:
+      #dry_run: true
+      registry: gitea.ocram85.com
+      repo: gitea.ocram85.com/codeserver/container
+      platforms: linux/amd64
+      dockerfile: Dockerfile
+      tags: next
+      username:
+        from_secret: gitea_user
+      password:
+        from_secret: gitea_passwd
+    when:
+      event: pull_request
