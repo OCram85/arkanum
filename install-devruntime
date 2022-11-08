@@ -44,6 +44,11 @@ function sayE() {
 }
 
 function instDotNet() {
+  say "Installing dotnet requirements..." "dotnet"
+  sudo apt-get update > /dev/null
+  sudo apt-get install --no-install-recommends -y \
+    libicu70
+
   say "Downloading latest install script..." "dotnet"
   curl -fsSL https://dot.net/v1/dotnet-install.sh -o /tmp/dotnet-install.sh
   chmod +x /tmp/dotnet-install.sh
@@ -52,6 +57,12 @@ function instDotNet() {
   /tmp/dotnet-install.sh --channel LTS
   echo 'export PATH=$PATH:/config/.dotnet' | sudo tee -a /etc/bash.bashrc > /dev/null
 
+  say "Cleaning up..." "dotnet"
+  sudo apt-get clean
+  sudo rm -rf \
+    /tmp/* \
+    /var/lib/apt/lists/* \
+    /var/tmp/*
   say "dotnet done. " "dotnet"
 }
 
