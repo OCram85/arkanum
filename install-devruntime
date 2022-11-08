@@ -15,6 +15,8 @@ function showHelp() {
     powershell    Installs latest PowerShell LTS version.
   -h              Prints this help messagee.
   disablemotd     Disables hint in new bash terminal
+  setcode         Sets VS Code user setting with basic (Fira Code)
+
   Example 1: install-devruntime dotnet
   Example 2: install devruntime golang nodejs
 HELP
@@ -123,6 +125,23 @@ function instPwsh() {
   echo "done." "PowerShell"
 }
 
+function setCodeSettings() {
+  CODEFILE="$HOME/data/User/settings.json"
+  say "Setting VScode base settings.($CODEFILE)"
+  cat <<EOF | tee "$CODEFILE"
+{
+  "workbench.colorTheme": "One Dark Pro Darker",
+  "window.menuBarVisibility": "classic",
+  "editor.fontFamily": "'FiraCode Nerd Font', 'FiraCode NF', Consolas, 'Courier New', monospace",
+  "terminal.integrated.fontFamily": "'FiraCode Nerd Font Mono', 'FiraCode NFM', Consolas, monospace",
+  "editor.fontLigatures": true,
+  "workbench.iconTheme": "vscode-icons",
+  "extensions.autoUpdate": false,
+  "git.confirmSync": false
+}
+EOF
+}
+
 function main() {
   if [[ "$#" == "0" ]]; then
     showHelp
@@ -143,6 +162,9 @@ function main() {
       instPwsh
     elif [[ "$i" == "disablemotd" ]]; then
       disableMotd
+      exit 0
+    elif [[ "$i" == "setcode" ]]; then
+      setCodeSettings
       exit 0
     else
       sayE "Unknown parameter value given!($i)."
