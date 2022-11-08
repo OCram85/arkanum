@@ -1,0 +1,37 @@
+[core]
+    editor = code-server --wait
+    autocrlf = False
+
+[credential]
+    helper = store
+
+[i18n]
+    filesEncoding = utf-8
+
+[push]
+    default = simple
+
+[alias]
+    # simplified logging views
+    lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+    lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+
+    # fetch all remote changes
+    cfetch = fetch --prune --tags
+
+    ## Phabricator inspired workflow
+
+    # Create new feature branch
+    feature =  "!f(){ b=$1; git checkout master; git pull; git checkout -b "$b" master; };f"
+
+    # adds a new wip commit
+    wip = !"git add -A; git commit -m '[WIP]'"
+
+    # used to squish changes in the latest commit. Should be used after a wip commit
+    squish = !"git add -A; git commit --no-edit --amend"
+
+    # Push to origin / dev branch
+    pod = !"git push origin dev"
+
+    # Push to custom remote branch
+    poc = "!f(){ b=$1; git push origin "$b";};f"

@@ -9,9 +9,11 @@ ENV STARSHIP_CONFIG=/etc/starship.toml
 
 COPY starship.toml /etc/starship.toml
 
+ADD gitconfig-system /etc/gitconfig
 RUN \
   echo "**** setup git ****" && \
-  git config --system credential.helper store && \
+  # using prepared systemwide config file instead.
+  #git config --system credential.helper store && \
   echo 'source /usr/share/bash-completion/completions/git' >> /etc/bash.bashrc
 
 ADD install-devruntime /usr/bin/
