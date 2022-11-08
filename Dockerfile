@@ -1,4 +1,4 @@
-FROM linuxserver/code-server:4.7.1
+FROM quay.io/linuxserver.io/code-server:4.8.3
 
 RUN \
   echo "**** install starshipt prompt ****" && \
