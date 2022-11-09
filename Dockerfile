@@ -1,7 +1,7 @@
 FROM quay.io/linuxserver.io/code-server:4.8.3
 
 RUN \
-  echo "**** install starshipt prompt ****" && \
+  echo "**** install starship prompt ****" && \
   curl -sS https://starship.rs/install.sh | sh -s -- -f && \
   echo "eval \"\$(starship init bash)\"" >> /etc/bash.bashrc
 
