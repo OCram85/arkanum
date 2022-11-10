@@ -24,3 +24,8 @@ RUN \
   echo 'source /etc/bash_completion.d/install-devruntime-completion' >> /etc/bash.bashrc && \
   touch "$HOME/enable_motd" && \
   echo "if [[ -e \"$HOME/enable_motd\" ]]; then echo -e \"Use \\e[32m'install-devruntime'\\e[0m to install missing runtimes like dotnet or NodeJs.\"; fi" >> /etc/bash.bashrc
+
+WORKDIR /app/code-server/lib/vscode/out/vs/workbench
+ADD FiraCode/fonts/* ./fonts/
+ADD FiraCode/fonts.css ./
+RUN cat fonts.css >> workbench.web.main.css

@@ -13,9 +13,9 @@ function showHelp() {
     golang        Installs golang 1.19.3.
     nodejs        Installs latest NodeJs LTS version.
     powershell    Installs latest PowerShell LTS version.
+  disablemotd     Disables hint in new bash terminal.
+  codesetting    Sets VS Code user setting with basic (Fira Code).
   -h              Prints this help messagee.
-  disablemotd     Disables hint in new bash terminal
-  setcode         Sets VS Code user setting with basic (Fira Code)
 
   Example 1: install-devruntime dotnet
   Example 2: install devruntime golang nodejs
@@ -132,8 +132,8 @@ function setCodeSettings() {
 {
   "workbench.colorTheme": "One Dark Pro Darker",
   "window.menuBarVisibility": "classic",
-  "editor.fontFamily": "'FiraCode Nerd Font', 'FiraCode NF', Consolas, 'Courier New', monospace",
-  "terminal.integrated.fontFamily": "'FiraCode Nerd Font Mono', 'FiraCode NFM', Consolas, monospace",
+  "editor.fontFamily": "'FiraCode', 'FiraCode Nerd Font', 'FiraCode NF', Consolas, 'Courier New', monospace",
+  "terminal.integrated.fontFamily": "'FiraCode Mono', 'FiraCode Nerd Font Mono', 'FiraCode NFM', Consolas, monospace",
   "editor.fontLigatures": true,
   "workbench.iconTheme": "vscode-icons",
   "extensions.autoUpdate": false,
@@ -163,7 +163,7 @@ function main() {
     elif [[ "$i" == "disablemotd" ]]; then
       disableMotd
       exit 0
-    elif [[ "$i" == "setcode" ]]; then
+    elif [[ "$i" == "codesetting" ]]; then
       setCodeSettings
       exit 0
     else

@@ -1,5 +1,4 @@
 # images
-
 *.jpg  binary
 *.jpeg binary
 *.bmp  binary
@@ -12,9 +11,13 @@
 *.exe  binary
 *.dll  binary
 
+# fonts
+*.ttf binary
+
 # PowerShell specific
 *.ps1  working-tree-encoding=UTF-8
 *.psm1 working-tree-encoding=UTF-8
 *.psd1 working-tree-encoding=UTF-8
 
+# misc
 *.md working-tree-encoding=UTF-8
