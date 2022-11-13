@@ -2,5 +2,11 @@
   "dependencyDashboard": true,
   "docker": {
     "enabled": true
+  },
+  "woodpecker": {
+    "enabled": true,
+    "fileMatch": [
+      "^.woodpecker/*.yml$"
+    ]
   }
 }
