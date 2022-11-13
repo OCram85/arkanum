@@ -6,7 +6,7 @@
 
 > :bulb: Select your test plan for the code changes.
 
-- [ ] Tested via Drone.io pipeline
+- [x] CI pipeline tests
 - [ ] Custom test
 - [ ] No test plan
 
