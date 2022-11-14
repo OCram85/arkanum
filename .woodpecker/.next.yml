@@ -2,12 +2,12 @@ depends_on:
   - test
 
 pipeline:
-  buildNextGitea:
+  buildTestImage:
     image: woodpeckerci/plugin-docker-buildx
     settings:
       #dry_run: true
       registry: gitea.ocram85.com
-      repo: gitea.ocram85.com/codeserver/container
+      repo: gitea.ocram85.com/codeserver/arkanum
       platforms: linux/amd64
       dockerfile: Dockerfile
       tags: next

@@ -2,11 +2,11 @@ depends_on:
   - test
 
 pipeline:
-  buildMasterGitea:
+  buildImage:
     image: plugins/docker
     settings:
       registry: gitea.ocram85.com
-      repo: gitea.ocram85.com/codeserver/container
+      repo: gitea.ocram85.com/codeserver/arkanum
       dockerfile: Dockerfile
       auto_tag: true
       #build_args:
@@ -17,5 +17,7 @@ pipeline:
       password:
         from_secret: gitea_passwd
     when:
-      event: push
+      event:
+        - push
+        - tag
       branch: master

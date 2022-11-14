@@ -4,6 +4,6 @@ pipeline:
     settings:
       dry_run: true
       registry: gitea.ocram85.com
-      repo: gitea.ocram85.com/codeserver/container
+      repo: gitea.ocram85.com/codeserver/arkanum
       dockerfile: Dockerfile
       tags: next
