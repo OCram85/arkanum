@@ -4,25 +4,25 @@
 </p>
 
 <p align="center">
-  <a href="https://gitea.ocram85.com/CodeServer/Container/">
+  <a href="https://gitea.ocram85.com/CodeServer/arkanum/">
     <img
-      src="/CodeServer/Container/raw/branch/master/assets/social-logo.png"
+      src="/CodeServer/arkanum/raw/branch/master/assets/social-logo.png"
       alt="Container"
     >
   </a>
 </p>
 
 <h1 align="center">
-  Code-Server as Container 📦
+  🧙 Arkanum 🪄
 </h1>
 
 <p align="center">
- This project optimizes the Code-Server container image from linuxserver.io.
+Code-Server container optimized for daily usage ❤
 </p>
 
 <p align="center">
-  <a href="https://ci.ocram85.com/CodeServer/Container">
-    <img src="https://ci.ocram85.com/api/badges/CodeServer/Container/status.svg" alt="Master Branch Build Status">
+  <a href="https://ci.ocram85.com/CodeServer/arkanumg">
+    <img src="https://ci.ocram85.com/api/badges/CodeServer/arkanum/status.svg" alt="Master Branch Build Status">
   </a>
 </p>
 
