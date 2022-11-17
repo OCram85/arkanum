@@ -1,3 +1,0 @@
-#!/bin/bash
-
-complete -W "codesetting disablemotd dotnet golang nodejs powershell -h" install-devruntime

@@ -3,45 +3,46 @@
 set -e
 
 function showHelp() {
-  cat <<HELP
-  install-devruntime is used to install optional runtimes for developing in a
+  cat << HELP
+  🧙 arkanum ✨🌌☄️💥 is used to install optional runtimes for developing in a
   code-server container environment.
 
-  Syntax: install-devruntime RUNTIME ...
+  Syntax: arkanum RUNTIME ...
   RUNTIME         [dotnet|golang|nodejs|powershell]
-    dotnet        Installs latest LTS dotnet core sdk + runtime.
-    golang        Installs golang 1.19.3.
-    nodejs        Installs latest NodeJs LTS version.
-    powershell    Installs latest PowerShell LTS version.
-  disablemotd     Disables hint in new bash terminal.
-  codesetting    Sets VS Code user setting with basic (Fira Code).
-  -h              Prints this help messagee.
+    dotnet               Installs latest LTS dotnet core sdk + runtime.
+    golang               Installs golang 1.19.3.
+    nodejs               Installs latest NodeJs LTS version.
+    powershell           Installs latest PowerShell LTS version.
+  --disable-motd         Disables hint in new bash terminal.
+  --reset-codesetting    Sets VS Code user setting with basic (Fira Code).
+  -h                     Prints this help message.
 
-  Example 1: install-devruntime dotnet
-  Example 2: install devruntime golang nodejs
+  Example 1: arkanum dotnet
+  Example 2: arkanum golang nodejs
+  Example 3: arkanum --disable-motd
 HELP
 }
 
 function disableMotd() {
   if [[ -e "$HOME/enable_motd" ]]; then
-    say "Disabling 'install-devruntime' motd..." "disableMotd"
+    say "Disabling 'arkanum' motd..." "disableMotd"
     rm -f "$HOME/enable_motd"
   fi
 }
 
 function say() {
   if [[ -n "$2" ]]; then
-    echo -e "\e[32mInstall-DevRuntime\e[0m \e[34m[$2]\e[0m: $1"
+    echo -e "🧙 \e[32markanum\e[0m \e[34m[⚒️ $2]\e[0m: $1"
   else
-    echo -e "\e[32mInstall-DevRuntime\e[0m: $1"
+    echo -e "🧙 \e[32markanum\e[0m: $1"
   fi
 }
 
 function sayE() {
   if [[ -n "$2" ]]; then
-    echo -e "\e[31mInstall-DevRuntime\e[0m \e[34m[$2]\e[0m: $1" 1>&2
+    echo -e "🧙 \e[31markanum\e[0m \e[34m[⚒️ $2]\e[0m: $1" 1>&2
   else
-    echo -e "\e[31mInstall-DevRuntime\e[0m: $1" 1>&2
+    echo -e "🧙 \e[31markanum\e[0m: $1" 1>&2
   fi
 }
 
@@ -130,14 +131,16 @@ function setCodeSettings() {
   say "Setting VScode base settings.($CODEFILE)"
   cat <<EOF | tee "$CODEFILE"
 {
+  "window.menuBarVisibility": "compact",
   "workbench.colorTheme": "One Dark Pro Darker",
-  "window.menuBarVisibility": "classic",
+  "workbench.iconTheme": "vscode-icons",
   "editor.fontFamily": "'FiraCode', 'FiraCode Nerd Font', 'FiraCode NF', Consolas, 'Courier New', monospace",
   "terminal.integrated.fontFamily": "'FiraCode Mono', 'FiraCode Nerd Font Mono', 'FiraCode NFM', Consolas, monospace",
   "editor.fontLigatures": true,
-  "workbench.iconTheme": "vscode-icons",
+  "editor.formatOnSave": true,
   "extensions.autoUpdate": false,
-  "git.confirmSync": false
+  "git.confirmSync": false,
+  "telemetry.telemetryLevel": "off"
 }
 EOF
 }
@@ -160,10 +163,10 @@ function main() {
       instNodeJs
     elif [[ "$i" == "powershell" ]]; then
       instPwsh
-    elif [[ "$i" == "disablemotd" ]]; then
+    elif [[ "$i" == "--disable-motd" ]]; then
       disableMotd
       exit 0
-    elif [[ "$i" == "codesetting" ]]; then
+    elif [[ "$i" == "--reset-codesetting" ]]; then
       setCodeSettings
       exit 0
     else

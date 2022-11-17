@@ -13,7 +13,7 @@
 </p>
 
 <h1 align="center">
-  🧙 Arkanum 🪄
+  🧙 Arkanum ✨🌌☄️💥
 </h1>
 
 <p align="center">
@@ -44,27 +44,28 @@ Adds default system config with:
 
 > 💡 See [gitconfig-system](./gitconfig-system) for details.
 
-### 🧙 Added `install-devruntime` helper script
+### 🧙 Added `arkanum` helper script
 
-Added `install-devruntime` to help installing common runtime in container.
+Added `arkanum` to help installing common runtime in container.
 This helps reducing the image size.
 
 ```
-install-devruntime is used to install optional runtimes for developing in a
-code-server container environment.
+🧙 arkanum ✨🌌☄️💥 is used to install optional runtimes for developing in a
+  code-server container environment.
 
-Syntax: install-devruntime RUNTIME ...
-RUNTIME         [dotnet|golang|nodejs|powershell]
-  dotnet        Installs latest LTS dotnet core sdk + runtime.
-  golang        Installs golang 1.19.3.
-  nodejs        Installs latest NodeJs LTS version.
-  powershell    Installs latest PowerShell LTS version.
--h              Prints this help messagee.
-disablemotd     Disables hint in new bash terminal
-setcode         Sets VS Code user setting with basic (Fira Code)
+  Syntax: arkanum RUNTIME ...
+  RUNTIME         [dotnet|golang|nodejs|powershell]
+    dotnet        Installs latest LTS dotnet core sdk + runtime.
+    golang        Installs golang 1.19.3.
+    nodejs        Installs latest NodeJs LTS version.
+    powershell    Installs latest PowerShell LTS version.
+  --disable-motd     Disables hint in new bash terminal.
+  --reset-codesetting    Sets VS Code user setting with basic (Fira Code).
+  -h              Prints this help message.
 
-Example 1: install-devruntime dotnet
-Example 2: install devruntime golang nodejs
+  Example 1: arkanum dotnet
+  Example 2: arkanum golang nodejs
+  Example 3: arkanum --disable-motd
 ```
 
 ## 💳 Credits
