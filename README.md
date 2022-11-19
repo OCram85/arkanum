@@ -13,7 +13,7 @@
 </p>
 
 <h1 align="center">
-  🧙 Arkanum ✨🌌☄️💥
+  🧙 Arkanum ✨ 🌌 ☄️ 💥
 </h1>
 
 <p align="center">
@@ -56,6 +56,7 @@ This helps reducing the image size.
   Syntax: arkanum RUNTIME ...
   RUNTIME         [dotnet|golang|nodejs|powershell]
     dotnet        Installs latest LTS dotnet core sdk + runtime.
+    gitea         Installs gitea tools like the changelog generator.
     golang        Installs golang 1.19.3.
     nodejs        Installs latest NodeJs LTS version.
     powershell    Installs latest PowerShell LTS version.

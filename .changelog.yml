@@ -1,0 +1,38 @@
+# The full repository name
+repo: CodeServer/arkanum
+
+# Service type (gitea or github)
+service: gitea
+
+# Base URL for Gitea instance if using gitea service type (optional)
+# Default: https://gitea.com
+base-url: https://gitea.ocram85.com
+
+# Changelog groups and which labeled PRs to add to each group
+groups:
+  - name: 🐛 BUGFIXES
+    labels:
+      - bug
+  - name: ✨ FEATURES
+    labels:
+      - feature
+  - name: 🛠️ ENHANCEMENTS
+    labels:
+      - enhancement
+  - name: 📦 BUILD
+    labels:
+      - pipeline
+  - name: 🤖 DEPENDENCIES
+    labels:
+      - renovate
+  - name: 📚 DOCS
+    labels:
+      - docs
+  - name: ⚙️ META
+    labels:
+      - meta
+  - name: 🔖 MISC
+    default: true
+
+# regex indicating which labels to skip for the changelog
+skip-labels: skip-changelog|backport\/.+

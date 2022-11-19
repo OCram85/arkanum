@@ -1,5 +1,6 @@
 arkanum
+dotnet
 Fira
+gitea
 LTS
 tbd
-dotnet

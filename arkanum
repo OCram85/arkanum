@@ -10,6 +10,7 @@ function showHelp() {
   Syntax: arkanum RUNTIME ...
   RUNTIME         [dotnet|golang|nodejs|powershell]
     dotnet               Installs latest LTS dotnet core sdk + runtime.
+    gitea                Installs gitea tools like the changelog generator.
     golang               Installs golang 1.19.3.
     nodejs               Installs latest NodeJs LTS version.
     powershell           Installs latest PowerShell LTS version.
@@ -123,7 +124,15 @@ function instPwsh() {
   # Install PowerShell
   sudo apt-get install --no-install-recommends -y powershell
 
-  echo "done." "PowerShell"
+  say "done." "PowerShell"
+}
+
+function instGiteaTools() {
+  say "Installing Gitea tools..." "Gitea"
+  sudo curl -sSl https://dl.gitea.io/changelog-tool/main/changelog-main-linux-amd64 -o /usr/bin/changelog
+  sudo chmod +x /usr/bin/changelog
+  say "'changelog' command installed." "Gitea"
+  say "done." "Gitea"
 }
 
 function setCodeSettings() {
@@ -163,6 +172,8 @@ function main() {
       instNodeJs
     elif [[ "$i" == "powershell" ]]; then
       instPwsh
+    elif [[ "$i" == "gitea" ]]; then
+      instGiteaTools
     elif [[ "$i" == "--disable-motd" ]]; then
       disableMotd
       exit 0
