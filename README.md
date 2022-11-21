@@ -17,7 +17,7 @@
 </h1>
 
 <p align="center">
-Code-Server container optimized for daily usage ❤
+Code-Server container optimized for daily use. ❤
 </p>
 
 <p align="center">
@@ -71,7 +71,29 @@ This helps reducing the image size.
 
 ## 💳 Credits
 
-- Photo by <a href="https://unsplash.com/@frankiefoto?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">frank mckenna</a> on <a href="https://unsplash.com/s/photos/container?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+Akranum is based on the following projects and wouldn't be possible without:
 
-- A huge thanks to tuanpham for sharing his [code-server font patch](https://github.com/tuanpham-dev/code-server-font-patch).
+- [microsoft/vscode](https://github.com/microsoft/vscode) - Visual Studio Code, OSS
+- [coder/code-server](https://github.com/coder/code-server) - VSCode on a remote server, accessible through the browser. `[MIT]`
+- [linuxserver/docker-code-server](https://github.com/linuxserver/docker-code-server) - docker image based for *coder/code-server*
+- A huge thanks to tuanpham for sharing his [code-server font patch](https://github.com/tuanpham-dev/code-server-font-patch). `[GPL-3.0]`
 
+## ⚖️ License (AGPLv3)
+
+![AGPL](https://www.gnu.org/graphics/agplv3-155x51.png)
+
+Arkanum - Code-Server container optimized for daily use.
+Copyright (C) 2022  "OCram85 <me@ocram85.com>"
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
