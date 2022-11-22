@@ -1,6 +1,6 @@
 pipeline:
   testDockerfile:
-    image: plugins/docker
+    image: woodpeckerci/plugin-docker-buildx
     settings:
       dry_run: true
       registry: gitea.ocram85.com
