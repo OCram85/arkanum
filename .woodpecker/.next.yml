@@ -17,3 +17,13 @@ pipeline:
         from_secret: gitea_passwd
     when:
       event: pull_request
+
+  triggerPortainer:
+    image: ocram85/portainer-serviceupdate
+    settings:
+      #VERBOSE: true
+      URI: "https://portainer.ocram85.com"
+      TOKEN:
+        from_secret: NEXT_TOKEN
+    when:
+      event: pull_request

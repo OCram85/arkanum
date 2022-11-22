@@ -15,6 +15,7 @@ function showHelp() {
     nodejs               Installs latest NodeJs LTS version.
     powershell           Installs latest PowerShell LTS version.
   --disable-motd         Disables hint in new bash terminal.
+  --install-extensions   Installs predefined recommended extensions.
   --reset-codesetting    Sets VS Code user setting with basic (Fira Code).
   -h                     Prints this help message.
 
@@ -135,32 +136,36 @@ function instGiteaTools() {
   say "done." "Gitea"
 }
 
-function setCodeSettings() {
-  CODEFILE="$HOME/data/User/settings.json"
-  say "Downloading required extensions...." "VSCode"
+function instCodeExtension() {
+  say "Downloading required extensions...." "Extension"
   # Gitlens
-  say "Downloading 'gitlens'..." "VSCode"
+  say "Downloading 'gitlens'..." "Extension"
   curl -fsSL https://open-vsx.org/api/eamodio/gitlens/13.1.1/file/eamodio.gitlens-13.1.1.vsix -o /tmp/eamodio.gitlens-13.1.1.vsix
-  say "Installing 'gitlens'..." "VSCode"
+  say "Installing 'gitlens'..." "Extension"
   install-extension /tmp/eamodio.gitlens-13.1.1.vsix
-  say "Cleaning up 'gitlens' install files" "VSCode"
+  say "Cleaning up 'gitlens' install files" "Extension"
   rm -f /tmp/eamodio.gitlens-13.1.1.vsix
 
   # OneDarkPro
-  say "Downloading 'One Dark Pro' theme..." "VSCode"
+  say "Downloading 'One Dark Pro' theme..." "V"
   curl -fsSL https://open-vsx.org/api/zhuangtongfa/material-theme/3.15.6/file/zhuangtongfa.material-theme-3.15.6.vsix -o /tmp/zhuangtongfa.material-theme-3.15.6.vsix
-  say "Installing 'One Dark Pro' theme..." "VSCode"
+  say "Installing 'One Dark Pro' theme..." "Extension"
   install-extension /tmp/zhuangtongfa.material-theme-3.15.6.vsix
-  say "Cleaning up 'One Dark Pro' install files" "VSCode"
+  say "Cleaning up 'One Dark Pro' install files" "Extension"
   rm -f /tmp/zhuangtongfa.material-theme-3.15.6.vsix
 
   # vscode-icons
-  say "Downloading 'vscode-icons' theme..." "VSCode"
+  say "Downloading 'vscode-icons' theme..." "Extension"
   curl -fsSL https://open-vsx.org/api/vscode-icons-team/vscode-icons/12.0.1/file/vscode-icons-team.vscode-icons-12.0.1.vsix -o /tmp/vscode-icons-team.vscode-icons-12.0.1.vsix
-  say "Installing 'vscode-icons' theme..." "VSCode"
+  say "Installing 'vscode-icons' theme..." "Extension"
   install-extension /tmp/vscode-icons-team.vscode-icons-12.0.1.vsix
-  say "Cleaning up 'vscode-icons' install files" "VSCode"
+  say "Cleaning up 'vscode-icons' install files" "Extension"
   rm -f /tmp/vscode-icons-team.vscode-icons-12.0.1.vsix
+
+  say "done." "Extension"
+}
+function setCodeSettings() {
+  CODEFILE="$HOME/data/User/settings.json"
 
   # VSCode user settings file
   say "Setting VScode base settings.($CODEFILE)" "VSCode"
@@ -203,6 +208,9 @@ function main() {
       instGiteaTools
     elif [[ "$i" == "--disable-motd" ]]; then
       disableMotd
+      exit 0
+    elif [[ "$i" == "--install-extensions" ]]; then
+      instCodeExtension
       exit 0
     elif [[ "$i" == "--reset-codesetting" ]]; then
       setCodeSettings

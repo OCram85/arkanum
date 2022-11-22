@@ -62,6 +62,7 @@ This helps reducing the image size.
     nodejs        Installs latest NodeJs LTS version.
     powershell    Installs latest PowerShell LTS version.
   --disable-motd         Disables hint in new bash terminal.
+  --install-extensions   Installs predefined recommended extensions.
   --reset-codesetting    Sets VS Code user setting with basic (Fira Code).
   -h                     Prints this help message.
 
