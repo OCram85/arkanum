@@ -129,7 +129,7 @@ function instPwsh() {
 
 function instGiteaTools() {
   say "Installing Gitea tools..." "Gitea"
-  sudo curl -sSl https://dl.gitea.io/changelog-tool/main/changelog-main-linux-amd64 -o /usr/bin/changelog
+  sudo curl -fsSL https://dl.gitea.io/changelog-tool/main/changelog-main-linux-amd64 -o /usr/bin/changelog
   sudo chmod +x /usr/bin/changelog
   say "'changelog' command installed." "Gitea"
   say "done." "Gitea"
@@ -137,7 +137,33 @@ function instGiteaTools() {
 
 function setCodeSettings() {
   CODEFILE="$HOME/data/User/settings.json"
-  say "Setting VScode base settings.($CODEFILE)"
+  say "Downloading required extensions...." "VSCode"
+  # Gitlens
+  say "Downloading 'gitlens'..." "VSCode"
+  curl -fsSL https://open-vsx.org/api/eamodio/gitlens/13.1.1/file/eamodio.gitlens-13.1.1.vsix -o /tmp/eamodio.gitlens-13.1.1.vsix
+  say "Installing 'gitlens'..." "VSCode"
+  install-extension /tmp/eamodio.gitlens-13.1.1.vsix
+  say "Cleaning up 'gitlens' install files" "VSCode"
+  rm -f /tmp/eamodio.gitlens-13.1.1.vsix
+
+  # OneDarkPro
+  say "Downloading 'One Dark Pro' theme..." "VSCode"
+  curl -fsSL https://open-vsx.org/api/zhuangtongfa/material-theme/3.15.6/file/zhuangtongfa.material-theme-3.15.6.vsix -o /tmp/zhuangtongfa.material-theme-3.15.6.vsix
+  say "Installing 'One Dark Pro' theme..." "VSCode"
+  install-extension /tmp/zhuangtongfa.material-theme-3.15.6.vsix
+  say "Cleaning up 'One Dark Pro' install files" "VSCode"
+  rm -f /tmp/zhuangtongfa.material-theme-3.15.6.vsix
+
+  # vscode-icons
+  say "Downloading 'vscode-icons' theme..." "VSCode"
+  curl -fsSL https://open-vsx.org/api/vscode-icons-team/vscode-icons/12.0.1/file/vscode-icons-team.vscode-icons-12.0.1.vsix -o /tmp/vscode-icons-team.vscode-icons-12.0.1.vsix
+  say "Installing 'vscode-icons' theme..." "VSCode"
+  install-extension /tmp/vscode-icons-team.vscode-icons-12.0.1.vsix
+  say "Cleaning up 'vscode-icons' install files" "VSCode"
+  rm -f /tmp/vscode-icons-team.vscode-icons-12.0.1.vsix
+
+  # VSCode user settings file
+  say "Setting VScode base settings.($CODEFILE)" "VSCode"
   cat <<EOF | tee "$CODEFILE"
 {
   "window.menuBarVisibility": "compact",
@@ -152,6 +178,7 @@ function setCodeSettings() {
   "telemetry.telemetryLevel": "off"
 }
 EOF
+  say "done." "VSCode"
 }
 
 function main() {

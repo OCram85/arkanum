@@ -32,16 +32,17 @@ The container is based on the latest `linuxserver/code-server` image.
 
 ### 🚀 Starship prompt
 
-The [Starship](starship.rs) prompt is added an enabled as default. Default config uses Emojis and FiraCode icons.
+The [Starship](starship.rs) prompt is added and enabled as default. Default config uses Emojis and FiraCode icons.
 
 ### 🔱 git config
 
-Adds default system config with:
+Adds default git system config file with:
 
+- code-server as default editor.
+- disabled `aurocrlf`.
 - enabled plain credential store for remote.
-- enabled bash completion for git command.
-- added git log helper `lg1` + `lg2`
-
+- added git log helper `lg1` + `lg2`.
+- enabled bash completion for git command in integrated bash terminal.
 > 💡 See [gitconfig-system](./gitconfig-system) for details.
 
 ### 🧙 Added `arkanum` helper script
@@ -60,28 +61,56 @@ This helps reducing the image size.
     golang        Installs golang 1.19.3.
     nodejs        Installs latest NodeJs LTS version.
     powershell    Installs latest PowerShell LTS version.
-  --disable-motd     Disables hint in new bash terminal.
+  --disable-motd         Disables hint in new bash terminal.
   --reset-codesetting    Sets VS Code user setting with basic (Fira Code).
-  -h              Prints this help message.
+  -h                     Prints this help message.
 
   Example 1: arkanum dotnet
   Example 2: arkanum golang nodejs
   Example 3: arkanum --disable-motd
 ```
+### 📝 Fira Code (NerdFont patched)
+
+Added FiraCode as default font in editor and integrated terminal. The font files are embedded and can be used without local installation.
+
+### VSCode default settings
+
+If your start the container or log in the first time, a default config file is deployed.
+
+This user setting defines the following stuff:
+
+- Use compact menu bar to avoid users with multiple menu bars.
+- Use *One Dark Pro Darker* theme
+- Use *vscode-icons* icon set
+- Set 'FiraCode' as default font in editor.
+  - Tries to use alternate font names for FiraCode if its locally available.
+- Sets 'FiraCode' mono variant in terminal to enable icons used by starshop prompt.
+- Enables font ligatures
+- Enables *auto save* and *format on save*.
+- Disables auto update for extension.
+- Disables VScode telemetry
+- Disable confirm message for sync branches.
+
+Additionally we install these extensions on container startup:
+
+- [One Dark Pro](https://open-vsx.org/extension/zhuangtongfa/material-theme) theme
+- [vscode-icons](https://open-vsx.org/extension/vscode-icons-team/vscode-icons) icon set
+- [Gitlens](https://open-vsx.org/extension/eamodio/gitlens)
 
 ## 💳 Credits
 
 Akranum is based on the following projects and wouldn't be possible without:
 
-- [microsoft/vscode](https://github.com/microsoft/vscode) - Visual Studio Code, OSS
+- [microsoft/vscode](https://github.com/microsoft/vscode) - Visual Studio Code, OSS. `[MIT]`
 - [coder/code-server](https://github.com/coder/code-server) - VSCode on a remote server, accessible through the browser. `[MIT]`
-- [linuxserver/docker-code-server](https://github.com/linuxserver/docker-code-server) - docker image based for *coder/code-server*
-- A huge thanks to tuanpham for sharing his [code-server font patch](https://github.com/tuanpham-dev/code-server-font-patch). `[GPL-3.0]`
+- [linuxserver/docker-code-server](https://github.com/linuxserver/docker-code-server) - docker image based for *coder/code-server*. `[GPL-3.0]`
+- A huge thanks to tuanpham for sharing his [code-server font patch](https://github.com/tuanpham-dev/code-server-font-patch).
 
 ## ⚖️ License (AGPLv3)
 
 ![AGPL](https://www.gnu.org/graphics/agplv3-155x51.png)
 
+```
 Arkanum - Code-Server container optimized for daily use.
 Copyright (C) 2022  "OCram85 <me@ocram85.com>"
 
@@ -97,3 +126,4 @@ GNU Affero General Public License for more details.
 
 You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
+```
