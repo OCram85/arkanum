@@ -1,3 +1,10 @@
+## [v0.1.0](https://gitea.ocram85.com/CodeServer/arkanum/releases/tag/v0.1.0) - 2022-11-25
+
+* 📦 BUILD
+  * sync pipeline build args (#28)
+* 📚 DOCS
+  * adds Readme content to prepare Github mirror (#26)
+
 ## [v0.0.1](https://gitea.ocram85.com/CodeServer/arkanum/releases/tag/v0.0.1) - 2022-11-22
 
 * 🐛 BUGFIXES
