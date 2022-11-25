@@ -7,3 +7,6 @@ pipeline:
       repo: gitea.ocram85.com/codeserver/arkanum
       dockerfile: Dockerfile
       tags: next
+      build_args:
+        - VERSION=${CI_COMMIT_TAG:-PR ${CI_COMMIT_PULL_REQUEST}}
+        - TAG=${CI_COMMIT_TAG}
