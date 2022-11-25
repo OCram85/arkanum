@@ -3,13 +3,15 @@ FROM quay.io/linuxserver.io/code-server:4.8.3
 #LABEL build_version=""
 LABEL maintainer="OCram85"
 ARG VERSION
-LABEL build_version="$VERSION"
+LABEL build_version="${VERSION}"
 LABEL org.opencontainers.image.authors="OCram85"
 LABEL org.opencontainers.image.vendor="OCram85"
 
 LABEL org.opencontainers.image.title="Arkanum"
 LABEL org.opencontainers.image.description="Code-Server container optimized for daily use."
 LABEL org.opencontainers.image.licenses="AGPL-3.0"
+ARG TAG
+LABEL org.opencontainers.image.version="${TAG}"
 
 LABEL org.opencontainers.image.url="https://gitea.ocram85.com/CodeServer/arkanum"
 LABEL org.opencontainers.image.source="https://gitea.ocram85.com/CodeServer/arkanum.git"

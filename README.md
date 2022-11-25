@@ -6,7 +6,7 @@
 <p align="center">
   <a href="https://gitea.ocram85.com/CodeServer/arkanum/">
     <img
-      src="/CodeServer/arkanum/raw/branch/master/assets/social-logo.png"
+      src="assets/social-logo.png"
       alt="Container"
     >
   </a>
@@ -17,37 +17,153 @@
 </h1>
 
 <p align="center">
-Code-Server container optimized for daily use. ❤
+... is a Code-Server container optimized for daily use.
 </p>
 
 <p align="center">
-  <a href="https://ci.ocram85.com/CodeServer/arkanumg">
+  <a href="https://ci.ocram85.com/CodeServer/arkanum">
     <img src="https://ci.ocram85.com/api/badges/CodeServer/arkanum/status.svg" alt="Master Branch Build Status">
   </a>
 </p>
 
-## :book: General
+## 🤖 Quickstart
 
-The container is based on the latest `linuxserver/code-server` image.
+### 1. ⚡ Get the image 📦
+
+You can download the image from the gitea embedded container registry: `gitea.ocram85.com/codeserver/arkanum` with these tags:
+
+- `latest` - Is based on the lasted master branch commit.
+- `next` - Is a test build based on the pull request
+- `1`, `0.1`, `0.1.0` - tag based version. See [packages page](https://gitea.ocram85.com/CodeServer/-/packages/container/arkanum/latest) for available tags.
+
+### 2.a Run as Docker Swarm Stack
+
+This example shows how to run arkanum as an additional swarm stack.
+
+Therefore you need
+
+- an already running docker swarm cluster,
+- a running traefik instance handling the http and https routes,
+- configured to expose services in the a ingress overlay network called `traefik-public`.
+
+> ❗ **Warning:** Make sure to secure the access to arkanum with proper **authentication method** and use
+> a trusted + **secure https connection**.
+
+```yaml
+version: "3.8"
+services:
+  arkanum:
+    image: gitea.ocram85.com/codeserver/arkanum:0.0.1
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Berlin
+      - PASSWORD=foo #optional
+      #- HASHED_PASSWORD= #optional
+      - SUDO_PASSWORD=foobar #optional
+      #- SUDO_PASSWORD_HASH= #optional
+      #- PROXY_DOMAIN=code-server.my.domain #optional
+      - DEFAULT_WORKSPACE=/config/workspace
+    deploy:
+      replicas: 1
+      labels:
+       - "traefik.enable=true"
+       - "traefik.docker.network=traefik-public"
+       - "traefik.http.routers.arkanum.rule=Host(`vscode.mydomain.com`)"
+       - "traefik.http.routers.arkanum.tls.certresolver=myresolver"
+       - "traefik.http.services.arkanum-srv.loadbalancer.server.port=8443"
+    volumes:
+      # store workspace and use config in volume.
+      - codedata:/config
+    # no need to expose the port. traefik acts as reverse proxy and handles the https access.
+    #ports:
+    #  - 8443:8443
+    restart: unless-stopped
+    networks:
+      - arkanum-sphere
+      - traefik-public
+
+volumes:
+  codedata:
+
+networks:
+  arkanum-sphere:
+  traefik-public:
+    external: true
+```
+
+> 💡 NOTE: For advanced config with additional environment variables see [linuxserver/docker-code-server](https://github.com/linuxserver/docker-code-server) help.
+### 2.b Use Docker-Compose
+
+This is a basic example for a `docker-compose` file from the [linuxserver/docker-code-server](https://github.com/linuxserver/docker-code-server) project.
+
+See their [docs](https://github.com/linuxserver/docker-code-server#parameters) about a detailed help for advanced config parameters.
+
+```yaml
+---
+version: "3.8"
+services:
+  arkanum:
+    image: gitea.ocram85.com/codeserver/arkanum:0.0.1
+    container_name: code-server
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+      - PASSWORD=password #optional
+      - HASHED_PASSWORD= #optional
+      - SUDO_PASSWORD=password #optional
+      - SUDO_PASSWORD_HASH= #optional
+      - PROXY_DOMAIN=code-server.my.domain #optional
+      - DEFAULT_WORKSPACE=/config/workspace #optional
+    volumes:
+      - /path/to/appdata/config:/config
+    ports:
+      - 8443:8443
+    restart: unless-stopped
+```
+
+### 3. 🦶 First Steps
+
+After summon Arkanum your first steps should be to set your username and email in the git config:
+
+```bash
+git config --global user.name "username"
+git config --global user.email "email address"
+```
+
+And that's it. Now you're ready use arkanum as your daily remote code editor. 😄
+
+## 📖 Content
+
+<p align="center">
+  <a href="https://gitea.ocram85.com/CodeServer/arkanum/">
+    <img
+      src="assets/screen1.png"
+      alt="Screenshot1"
+    >
+  </a>
+</p>
 
 ### 🚀 Starship prompt
 
-The [Starship](starship.rs) prompt is added and enabled as default. Default config uses Emojis and FiraCode icons.
+We added the [Starship](starship.rs) prompt is as default in the integrated terminal. The default config uses Emojis and FiraCode icons.
 
 ### 🔱 git config
 
-Adds default git system config file with:
+Added default git system config file with:
 
 - code-server as default editor.
 - disabled `aurocrlf`.
 - enabled plain credential store for remote.
 - added git log helper `lg1` + `lg2`.
 - enabled bash completion for git command in integrated bash terminal.
+
 > 💡 See [gitconfig-system](./gitconfig-system) for details.
 
-### 🧙 Added `arkanum` helper script
+### 🧙 `arkanum` helper
 
-Added `arkanum` to help installing common runtime in container.
+Added `arkanum` to help installing common runtimes in container.
 This helps reducing the image size.
 
 ```
@@ -74,7 +190,7 @@ This helps reducing the image size.
 
 Added FiraCode as default font in editor and integrated terminal. The font files are embedded and can be used without local installation.
 
-### VSCode default settings
+### 🦸 VSCode default settings
 
 If your start the container or log in the first time, a default config file is deployed.
 
@@ -83,13 +199,13 @@ This user setting defines the following stuff:
 - Use compact menu bar to avoid users with multiple menu bars.
 - Use *One Dark Pro Darker* theme
 - Use *vscode-icons* icon set
-- Set 'FiraCode' as default font in editor.
+- Set FiraCode as default font in editor.
   - Tries to use alternate font names for FiraCode if its locally available.
-- Sets 'FiraCode' mono variant in terminal to enable icons used by starshop prompt.
+- Sets FiraCode mono variant in terminal to enable icons used by starship prompt.
 - Enables font ligatures
 - Enables *auto save* and *format on save*.
 - Disables auto update for extension.
-- Disables VScode telemetry
+- Disables VSCode telemetry
 - Disable confirm message for sync branches.
 
 Additionally we install these extensions on container startup:
@@ -98,9 +214,46 @@ Additionally we install these extensions on container startup:
 - [vscode-icons](https://open-vsx.org/extension/vscode-icons-team/vscode-icons) icon set
 - [Gitlens](https://open-vsx.org/extension/eamodio/gitlens)
 
-## 💳 Credits
+## 💣 Known Issues
 
-Akranum is based on the following projects and wouldn't be possible without:
+### 🐛 Default extensions installation timing error
+
+If the automatic installation of the default extension fails, you can always retry he installation with the
+following command:
+
+```bash
+# restart the installation
+arkanum --install-extensions
+# Optional: reset the vscode user setting
+arkanum --reset-codesetting
+# Reload with command F1 + Developer: Reload Window
+```
+## 😡 We're Using GitHub Under Protest
+
+This project is currently **mirrored** to GitHub. This is not ideal; GitHub is a
+proprietary, trade-secret system that is not Free and Open Source Software
+(FOSS). We are deeply concerned about using a proprietary system like GitHub
+to develop our FOSS project. We have an
+[open Gitea repository ](https://gitea.ocram85.com/CodeServer/arkanum/issues) where the
+project contributors are actively discussing how we can move away from GitHub
+in the long term. We urge you to read about the
+[Give up GitHub](https://GiveUpGitHub.org) campaign from
+[the Software Freedom Conservancy](https://sfconservancy.org) to understand
+some of the reasons why GitHub is not a good place to host FOSS projects.
+
+If you are a contributor who personally has already quit using GitHub, please
+[check this resource](https://gitea.ocram85.com/CodeServer/arkanum) for how to send us contributions without
+using GitHub directly.
+
+Any use of this project's code by GitHub Copilot, past or present, is done
+without our permission.  We do not consent to GitHub's use of this project's
+code in Copilot.
+
+![Logo of the GiveUpGitHub campaign](https://sfconservancy.org/img/GiveUpGitHub.png)
+
+## 🙏 Credits
+
+Akranum is based on the following projects and wouldn't be possible without them:
 
 - [microsoft/vscode](https://github.com/microsoft/vscode) - Visual Studio Code, OSS. `[MIT]`
 - [coder/code-server](https://github.com/coder/code-server) - VSCode on a remote server, accessible through the browser. `[MIT]`
@@ -113,7 +266,7 @@ Akranum is based on the following projects and wouldn't be possible without:
 
 ```
 Arkanum - Code-Server container optimized for daily use.
-Copyright (C) 2022  "OCram85 <me@ocram85.com>"
+Copyright (C) 2022 "OCram85 <me@ocram85.com>"
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as published by
