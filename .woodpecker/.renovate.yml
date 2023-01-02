@@ -1,6 +1,6 @@
 pipeline:
   DockerBaseImage:
-    image: renovate/renovate:34.62-slim
+    image: renovate/renovate:34.77-slim
     commands:
       - "renovate"
     secrets:
