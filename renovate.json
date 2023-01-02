@@ -5,6 +5,8 @@
   },
   "woodpecker": {
     "enabled": true,
-    "fileMatch": ["^.woodpecker\/.*.yml$"]
+    "fileMatch": [
+      "^.woodpecker\/.*.yml$"
+    ]
   }
 }
