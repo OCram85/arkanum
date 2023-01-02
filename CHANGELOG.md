@@ -35,3 +35,13 @@
   * Add woodpecker manager in renovate-bot (#14)
   * fixes logo file path (#8)
   * Adds basic container setup with pipeline (#1)
+  
+## [v0.1.1](https://gitea.ocram85.com/CodeServer/arkanum/releases/tag/v0.1.1) - 2023-01-02
+
+* 📦 BUILD
+  * fix woodpecker fileMatch regex (#30)
+* 🤖 DEPENDENCIES
+  * Update renovate/renovate Docker tag to v34.77 (#35)
+  * fix renovate config keys (#34)
+  * Update renovate/renovate Docker tag to v34.62 (#33)
+  * Update renovate/renovate Docker tag to v34.57 (#32)
