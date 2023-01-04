@@ -147,7 +147,7 @@ function instCodeExtension() {
   rm -f /tmp/eamodio.gitlens-13.1.1.vsix
 
   # OneDarkPro
-  say "Downloading 'One Dark Pro' theme..." "V"
+  say "Downloading 'One Dark Pro' theme..." "Extension"
   curl -fsSL https://open-vsx.org/api/zhuangtongfa/material-theme/3.15.6/file/zhuangtongfa.material-theme-3.15.6.vsix -o /tmp/zhuangtongfa.material-theme-3.15.6.vsix
   say "Installing 'One Dark Pro' theme..." "Extension"
   install-extension /tmp/zhuangtongfa.material-theme-3.15.6.vsix
