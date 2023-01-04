@@ -50,8 +50,8 @@ function sayE() {
 
 function instDotNet() {
   say "Installing dotnet requirements..." "dotnet"
-  sudo apt-get update > /dev/null
-  sudo apt-get install --no-install-recommends -y \
+  sudo -E apt-get update > /dev/null
+  sudo -E apt-get install --no-install-recommends -y \
     libicu70
 
   say "Downloading latest install script..." "dotnet"
@@ -63,7 +63,7 @@ function instDotNet() {
   echo 'export PATH=$PATH:/config/.dotnet' | sudo tee -a /etc/bash.bashrc > /dev/null
 
   say "Cleaning up..." "dotnet"
-  sudo apt-get clean
+  sudo -E apt-get clean
   sudo rm -rf \
     /tmp/* \
     /var/lib/apt/lists/* \
@@ -94,11 +94,11 @@ function instNodeJs() {
   say "Adding nodesource package source (NodeJS LTS)..." "NodeJs"
   curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
   say "Updating package lists and installing NodeJS LTS..." "NodeJs"
-  sudo apt-get install --no-install-recommends -y \
+  sudo -E apt-get install --no-install-recommends -y \
     nodejs
 
   say "Cleaning up..." "NodeJs"
-  sudo apt-get clean
+  sudo -E apt-get clean
   sudo rm -rf \
     /tmp/* \
     /var/lib/apt/lists/* \
@@ -109,7 +109,7 @@ function instNodeJs() {
 
 function instPwsh() {
   say "Installing PowerShell requirements..." "PowerShell"
-  sudo apt-get install --no-install-recommends -y \
+  sudo -E apt-get install --no-install-recommends -y \
     apt-transport-https \
     software-properties-common
 
@@ -119,18 +119,18 @@ function instPwsh() {
   # Register the Microsoft repository GPG keys
   sudo dpkg -i /tmp/packages-microsoft-prod.deb
   # Update the list of packages after we added packages.microsoft.com
-  sudo apt-get update
+  sudo -E apt-get update
 
   say "Installing PowerShell..." "PowerShell"
   # Install PowerShell
-  sudo apt-get install --no-install-recommends -y powershell
+  sudo -E apt-get install --no-install-recommends -y powershell
 
   say "done." "PowerShell"
 }
 
 function instGiteaTools() {
   say "Installing Gitea tools..." "Gitea"
-  sudo curl -fsSL https://dl.gitea.io/changelog-tool/main/changelog-main-linux-amd64 -o /usr/bin/changelog
+  sudo -E curl -fsSL https://dl.gitea.io/changelog-tool/main/changelog-main-linux-amd64 -o /usr/bin/changelog
   sudo chmod +x /usr/bin/changelog
   say "'changelog' command installed." "Gitea"
   say "done." "Gitea"
