@@ -34,7 +34,9 @@ You can download the image from the gitea embedded container registry: `gitea.oc
 
 - `latest` - Is based on the lasted master branch commit.
 - `next` - Is a test build based on the pull request
-- `1`, `0.1`, `0.1.0` - tag based version. See [packages page](https://gitea.ocram85.com/CodeServer/-/packages/container/arkanum/latest) for available tags.
+- `1`, `0.1`, `0.1.0` - tag based version.
+
+> **💡 NOTE: See the [packages page](https://gitea.ocram85.com/CodeServer/-/packages/container/arkanum/latest) for latest version and all other available tags.**
 
 ### 2.a Run as Docker Swarm Stack
 
@@ -53,7 +55,7 @@ Therefore you need
 version: "3.8"
 services:
   arkanum:
-    image: gitea.ocram85.com/codeserver/arkanum:0.0.1
+    image: gitea.ocram85.com/codeserver/arkanum:0.2.0
     environment:
       - PUID=1000
       - PGID=1000
@@ -104,7 +106,7 @@ See their [docs](https://github.com/linuxserver/docker-code-server#parameters) a
 version: "3.8"
 services:
   arkanum:
-    image: gitea.ocram85.com/codeserver/arkanum:0.0.1
+    image: gitea.ocram85.com/codeserver/arkanum:0.2.0
     container_name: code-server
     environment:
       - PUID=1000

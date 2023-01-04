@@ -35,7 +35,7 @@
   * Add woodpecker manager in renovate-bot (#14)
   * fixes logo file path (#8)
   * Adds basic container setup with pipeline (#1)
-  
+
 ## [v0.1.1](https://gitea.ocram85.com/CodeServer/arkanum/releases/tag/v0.1.1) - 2023-01-02
 
 * 📦 BUILD
@@ -45,3 +45,13 @@
   * fix renovate config keys (#34)
   * Update renovate/renovate Docker tag to v34.62 (#33)
   * Update renovate/renovate Docker tag to v34.57 (#32)
+  
+## [v0.2.0](https://gitea.ocram85.com/CodeServer/arkanum/releases/tag/v0.2.0) - 2023-01-04
+
+* 🐛 BUGFIXES
+  * fix typo (#39)
+* 🛠️ ENHANCEMENTS
+  * Add proxy support (#38)
+* 🤖 DEPENDENCIES
+  * Update renovate/renovate Docker tag to v34.82 (#37)
+  * Update quay.io/linuxserver.io/code-server Docker tag to v4.9.1 (#31)
