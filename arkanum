@@ -55,7 +55,7 @@ function instDotNet() {
     libicu70
 
   say "Downloading latest install script..." "dotnet"
-  curl -fsSL https://dot.net/v1/dotnet-install.sh -o /tmp/dotnet-install.sh
+  curl -#fSL https://dot.net/v1/dotnet-install.sh -o /tmp/dotnet-install.sh
   chmod +x /tmp/dotnet-install.sh
 
   say "Installing latest .NET Core LTS release..." "dotnet"
@@ -79,7 +79,7 @@ function instGoLang() {
   fi
 
   say "Downloading golang ($GOVERSION)..." "GoLang"
-  curl -fsSL "https://go.dev/dl/go$GOVERSION.linux-amd64.tar.gz" -o /tmp/golang.tar.gz
+  curl -#fSL "https://go.dev/dl/go$GOVERSION.linux-amd64.tar.gz" -o /tmp/golang.tar.gz
   say "Installing golang ($GOVERSION)...." "GoLang"
   sudo rm -rf /usr/local/go
   sudo tar -C /usr/local -xzf /tmp/golang.tar.gz
@@ -92,7 +92,7 @@ function instGoLang() {
 
 function instNodeJs() {
   say "Adding nodesource package source (NodeJS LTS)..." "NodeJs"
-  curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+  curl -#fSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
   say "Updating package lists and installing NodeJS LTS..." "NodeJs"
   sudo -E apt-get install --no-install-recommends -y \
     nodejs
@@ -115,7 +115,7 @@ function instPwsh() {
 
   say "Adding powershell package sources..." "PowerShell"
   # Download the Microsoft repository GPG keys
-  curl -fsSL "https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/packages-microsoft-prod.deb" -o /tmp/packages-microsoft-prod.deb
+  curl -#fSL "https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/packages-microsoft-prod.deb" -o /tmp/packages-microsoft-prod.deb
   # Register the Microsoft repository GPG keys
   sudo dpkg -i /tmp/packages-microsoft-prod.deb
   # Update the list of packages after we added packages.microsoft.com
@@ -129,10 +129,20 @@ function instPwsh() {
 }
 
 function instGiteaTools() {
+  TEA_VERSION="0.9.0"
+  CHANGELOG_VERSION="main"
   say "Installing Gitea tools..." "Gitea"
-  sudo -E curl -fsSL https://dl.gitea.io/changelog-tool/main/changelog-main-linux-amd64 -o /usr/bin/changelog
+
+  say "Downloading 'changelog' ($CHANGELOG_VERSION)..." "Gitea"
+  sudo -E curl -#fSL "https://dl.gitea.io/changelog-tool/$CHANGELOG_VERSION/changelog-$CHANGELOG_VERSION-linux-amd64" -o /usr/bin/changelog
   sudo chmod +x /usr/bin/changelog
   say "'changelog' command installed." "Gitea"
+
+  say "Downloading 'tea' ($TEA_VERSION)..." "Gitea"
+  sudo -E curl -#fSL https://dl.gitea.io/tea/$TEA_VERSION/tea-$TEA_VERSION-linux-amd64 -o /usr/bin/tea
+  sudo chmod +x /usr/bin/tea
+  say "'tea' command installed." "Gitea"
+
   say "done." "Gitea"
 }
 
@@ -140,7 +150,7 @@ function instCodeExtension() {
   say "Downloading required extensions...." "Extension"
   # Gitlens
   say "Downloading 'gitlens'..." "Extension"
-  curl -fsSL https://open-vsx.org/api/eamodio/gitlens/13.1.1/file/eamodio.gitlens-13.1.1.vsix -o /tmp/eamodio.gitlens-13.1.1.vsix
+  curl -#fSL https://open-vsx.org/api/eamodio/gitlens/13.1.1/file/eamodio.gitlens-13.1.1.vsix -o /tmp/eamodio.gitlens-13.1.1.vsix
   say "Installing 'gitlens'..." "Extension"
   install-extension /tmp/eamodio.gitlens-13.1.1.vsix
   say "Cleaning up 'gitlens' install files" "Extension"
@@ -148,7 +158,7 @@ function instCodeExtension() {
 
   # OneDarkPro
   say "Downloading 'One Dark Pro' theme..." "Extension"
-  curl -fsSL https://open-vsx.org/api/zhuangtongfa/material-theme/3.15.6/file/zhuangtongfa.material-theme-3.15.6.vsix -o /tmp/zhuangtongfa.material-theme-3.15.6.vsix
+  curl -#fSL https://open-vsx.org/api/zhuangtongfa/material-theme/3.15.6/file/zhuangtongfa.material-theme-3.15.6.vsix -o /tmp/zhuangtongfa.material-theme-3.15.6.vsix
   say "Installing 'One Dark Pro' theme..." "Extension"
   install-extension /tmp/zhuangtongfa.material-theme-3.15.6.vsix
   say "Cleaning up 'One Dark Pro' install files" "Extension"
@@ -156,7 +166,7 @@ function instCodeExtension() {
 
   # vscode-icons
   say "Downloading 'vscode-icons' theme..." "Extension"
-  curl -fsSL https://open-vsx.org/api/vscode-icons-team/vscode-icons/12.0.1/file/vscode-icons-team.vscode-icons-12.0.1.vsix -o /tmp/vscode-icons-team.vscode-icons-12.0.1.vsix
+  curl -#fSL https://open-vsx.org/api/vscode-icons-team/vscode-icons/12.0.1/file/vscode-icons-team.vscode-icons-12.0.1.vsix -o /tmp/vscode-icons-team.vscode-icons-12.0.1.vsix
   say "Installing 'vscode-icons' theme..." "Extension"
   install-extension /tmp/vscode-icons-team.vscode-icons-12.0.1.vsix
   say "Cleaning up 'vscode-icons' install files" "Extension"
