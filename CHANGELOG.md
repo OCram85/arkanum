@@ -45,7 +45,7 @@
   * fix renovate config keys (#34)
   * Update renovate/renovate Docker tag to v34.62 (#33)
   * Update renovate/renovate Docker tag to v34.57 (#32)
-  
+
 ## [v0.2.0](https://gitea.ocram85.com/CodeServer/arkanum/releases/tag/v0.2.0) - 2023-01-04
 
 * 🐛 BUGFIXES
@@ -55,3 +55,13 @@
 * 🤖 DEPENDENCIES
   * Update renovate/renovate Docker tag to v34.82 (#37)
   * Update quay.io/linuxserver.io/code-server Docker tag to v4.9.1 (#31)
+
+## [v0.3.0](https://gitea.ocram85.com/CodeServer/arkanum/releases/tag/v0.3.0) - 2023-03-30
+
+* 🛠️ ENHANCEMENTS
+  * Add tea cli in gitea block (#41)
+* 📦 BUILD
+  * Remove repo defined renovate (#44)
+* 🤖 DEPENDENCIES
+  * Update quay.io/linuxserver.io/code-server Docker tag to v4.11.0 (#45)
+  * Update quay.io/linuxserver.io/code-server Docker tag to v4.10.0 (#43)
