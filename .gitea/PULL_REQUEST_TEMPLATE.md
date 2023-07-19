@@ -6,9 +6,11 @@
 
 > :bulb: Select your test plan for the code changes.
 
-- [x] CI pipeline tests
-- [ ] Custom test
-- [ ] No test plan
+| Choice | Test Method       |
+| :----: | :-----------      |
+|   ✅   | CI pipeline tests |
+|        | Custom test       |
+|        | No test plan      |
 
 ##### Details / Justification
 
