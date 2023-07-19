@@ -177,7 +177,8 @@ This helps reducing the image size.
     dotnet        Installs latest LTS dotnet core sdk + runtime.
     gitea         Installs gitea tools like the changelog generator.
     golang        Installs golang 1.19.3.
-    nodejs        Installs latest NodeJs LTS version.
+    nodejs        Installs latest NodeJs LTS version using Volta.
+    volta         Installs Volta as NodeJs version manager.
     powershell    Installs latest PowerShell LTS version.
   --disable-motd         Disables hint in new bash terminal.
   --install-extensions   Installs predefined recommended extensions.

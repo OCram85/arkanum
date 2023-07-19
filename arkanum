@@ -12,7 +12,8 @@ function showHelp() {
     dotnet               Installs latest LTS dotnet core sdk + runtime.
     gitea                Installs gitea tools like the changelog generator.
     golang               Installs golang 1.19.3.
-    nodejs               Installs latest NodeJs LTS version.
+    nodejs               Installs latest NodeJs LTS version using Volta.
+    volta                Installs Volta as NodeJS version manager.
     powershell           Installs latest PowerShell LTS version.
   --disable-motd         Disables hint in new bash terminal.
   --install-extensions   Installs predefined recommended extensions.
@@ -45,6 +46,14 @@ function sayE() {
     echo -e "🧙 \e[31markanum\e[0m \e[34m[⚒️ $2]\e[0m: $1" 1>&2
   else
     echo -e "🧙 \e[31markanum\e[0m: $1" 1>&2
+  fi
+}
+
+function sayW() {
+  if [[ -n "$2" ]]; then
+    echo -e "🧙 \e[33markanum\e[0m \e[34m[⚒️ $2]\e[0m: $1" 1>&2
+  else
+    echo -e "🧙 \e[33markanum\e[0m: $1" 1>&2
   fi
 }
 
@@ -105,6 +114,18 @@ function instNodeJs() {
     /var/tmp/*
 
   say "done." "NodeJs"
+}
+
+function instNodeJS2() {
+  say "Installing NodeJS LTS via Volta..." "NodeJS"
+  volta install node@lts
+  say "done." "NodeJS"
+}
+
+function instVolta() {
+  say "Installing Volta as NodeJS version manager..." "Volta"
+  curl -#fSl https://get.volta.sh | bash
+  say "done." "Volta"
 }
 
 function instPwsh() {
@@ -211,7 +232,15 @@ function main() {
     elif [[ "$i" == "golang" ]]; then
       instGoLang
     elif [[ "$i" == "nodejs" ]]; then
-      instNodeJs
+      if [[ "$2" == "--legacy" ]]; then
+        sayW "Installing NodeJS with legacy function" "Arkanum"
+        instNodeJs
+      else
+        instVolta
+        instNodeJS2
+      fi
+    elif [[ "$i" == "volta" ]]; then
+      instVolta
     elif [[ "$i" == "powershell" ]]; then
       instPwsh
     elif [[ "$i" == "gitea" ]]; then
