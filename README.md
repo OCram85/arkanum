@@ -173,7 +173,8 @@ This helps reducing the image size.
   code-server container environment.
 
   Syntax: arkanum RUNTIME ...
-  RUNTIME         [dotnet|golang|nodejs|powershell]
+  RUNTIME         [docker-cli|dotnet|gitea|golang|nodejs|volta|powershell]
+    docker-cli    Installs the latest docker-ce cli.
     dotnet        Installs latest LTS dotnet core sdk + runtime.
     gitea         Installs gitea tools like the changelog generator.
     golang        Installs golang 1.19.3.

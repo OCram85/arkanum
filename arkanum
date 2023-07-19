@@ -8,7 +8,8 @@ function showHelp() {
   code-server container environment.
 
   Syntax: arkanum RUNTIME ...
-  RUNTIME         [dotnet|golang|nodejs|powershell]
+  RUNTIME         [docker-cli|dotnet|gitea|golang|nodejs|volta|powershell]
+    docker-cli           Installs the latest docker-cli.
     dotnet               Installs latest LTS dotnet core sdk + runtime.
     gitea                Installs gitea tools like the changelog generator.
     golang               Installs golang 1.19.3.
@@ -55,6 +56,26 @@ function sayW() {
   else
     echo -e "🧙 \e[33markanum\e[0m: $1" 1>&2
   fi
+}
+
+function instDockerCLI() {
+  say "Installing docker-cli..." "docker-cli"
+  say "Getting requires packages..." "docker-cli"
+  sudo -E apt-get update > /dev/null
+  sudo -E apt-get install ca-certificates curl gnupg
+  say "Setting up docker repository..." "docker-cli"
+  sudo -E install -m 0755 -d /etc/apt/keyrings
+  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo -E gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+  sudo -E chmod a+r /etc/apt/keyrings/docker.gpg
+  echo \
+  "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  say "Installing docker-ce-cli package" "docker-cli"
+  sudo -E apt-get update > /dev/null
+  sudo -E apt-get install --no-install-recommends -y \
+    docker-ce-cli
+  say "docker-cli done." "docker-cli"
 }
 
 function instDotNet() {
@@ -227,6 +248,8 @@ function main() {
     if [[ "$1" == "-h" ]]; then
       showHelp
       exit 0
+    elif [[ "$i" == "docker-cli" ]]; then
+      instDockerCLI
     elif [[ "$i" == "dotnet" ]]; then
       instDotNet
     elif [[ "$i" == "golang" ]]; then
