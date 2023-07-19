@@ -59,6 +59,9 @@ symbol = " "
 [package]
 symbol = " "
 
+[python]
+disabled = true
+
 [rust]
 symbol = " "
 
