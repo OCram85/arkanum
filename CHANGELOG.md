@@ -70,3 +70,14 @@
 
 * 🤖 DEPENDENCIES
   * Update quay.io/linuxserver.io/code-server Docker tag to v4.14.1 (#47)
+ 
+## [v0.4.0](https://gitea.ocram85.com/CodeServer/arkanum/releases/tag/v0.4.0) - 2023-07-19
+
+* 🐛 BUGFIXES
+  * Fix shellcheck issues (#55)
+  * Disable starship python module (#52)
+* ✨ FEATURES
+  * Add docker-cli (#54)
+  * Adds Volta as default version manager for NodeJs (#53)
+* 🛠️ ENHANCEMENTS
+  * Bump go version (#49)

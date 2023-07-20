@@ -55,7 +55,7 @@ Therefore you need
 version: "3.8"
 services:
   arkanum:
-    image: gitea.ocram85.com/codeserver/arkanum:0.2.0
+    image: gitea.ocram85.com/codeserver/arkanum:0.4.0
     environment:
       - PUID=1000
       - PGID=1000
@@ -77,10 +77,11 @@ services:
     volumes:
       # store workspace and use config in volume.
       - codedata:/config
+      # mount docker socket to manage host docker
+      - /var/run/docker.sock:/var/run/docker.sock
     # no need to expose the port. traefik acts as reverse proxy and handles the https access.
     #ports:
     #  - 8443:8443
-    restart: unless-stopped
     networks:
       - arkanum-sphere
       - traefik-public
@@ -106,7 +107,7 @@ See their [docs](https://github.com/linuxserver/docker-code-server#parameters) a
 version: "3.8"
 services:
   arkanum:
-    image: gitea.ocram85.com/codeserver/arkanum:0.2.0
+    image: gitea.ocram85.com/codeserver/arkanum:0.4.0
     container_name: code-server
     environment:
       - PUID=1000

@@ -195,7 +195,7 @@ function instCodeExtension() {
   say "Downloading required extensions...." "Extension"
   # Gitlens
   say "Downloading 'gitlens'..." "Extension"
-  curl -#fSL https://open-vsx.org/api/eamodio/gitlens/13.1.1/file/eamodio.gitlens-13.1.1.vsix -o /tmp/eamodio.gitlens-13.1.1.vsix
+  curl -#fSL https://open-vsx.org/api/eamodio/gitlens/14.0.1/file/eamodio.gitlens-14.0.1.vsix -o /tmp/eamodio.gitlens-13.1.1.vsix
   say "Installing 'gitlens'..." "Extension"
   install-extension /tmp/eamodio.gitlens-13.1.1.vsix
   say "Cleaning up 'gitlens' install files" "Extension"
@@ -203,7 +203,7 @@ function instCodeExtension() {
 
   # OneDarkPro
   say "Downloading 'One Dark Pro' theme..." "Extension"
-  curl -#fSL https://open-vsx.org/api/zhuangtongfa/material-theme/3.15.6/file/zhuangtongfa.material-theme-3.15.6.vsix -o /tmp/zhuangtongfa.material-theme-3.15.6.vsix
+  curl -#fSL https://open-vsx.org/api/zhuangtongfa/material-theme/3.15.18/file/zhuangtongfa.material-theme-3.15.18.vsix -o /tmp/zhuangtongfa.material-theme-3.15.6.vsix
   say "Installing 'One Dark Pro' theme..." "Extension"
   install-extension /tmp/zhuangtongfa.material-theme-3.15.6.vsix
   say "Cleaning up 'One Dark Pro' install files" "Extension"
@@ -211,7 +211,7 @@ function instCodeExtension() {
 
   # vscode-icons
   say "Downloading 'vscode-icons' theme..." "Extension"
-  curl -#fSL https://open-vsx.org/api/vscode-icons-team/vscode-icons/12.0.1/file/vscode-icons-team.vscode-icons-12.0.1.vsix -o /tmp/vscode-icons-team.vscode-icons-12.0.1.vsix
+  curl -#fSL https://open-vsx.org/api/vscode-icons-team/vscode-icons/12.4.0/file/vscode-icons-team.vscode-icons-12.4.0.vsix -o /tmp/vscode-icons-team.vscode-icons-12.0.1.vsix
   say "Installing 'vscode-icons' theme..." "Extension"
   install-extension /tmp/vscode-icons-team.vscode-icons-12.0.1.vsix
   say "Cleaning up 'vscode-icons' install files" "Extension"
