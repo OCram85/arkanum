@@ -149,6 +149,8 @@ function instNodeJS2() {
 function instVolta() {
   say "Installing Volta as NodeJS version manager..." "Volta"
   curl -#fSl https://get.volta.sh | bash
+  # shellcheck disable=SC1090
+  source ~/.profile
   say "done." "Volta"
 }
 
