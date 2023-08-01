@@ -156,6 +156,7 @@ function instVolta() {
 
 function instPwsh() {
   say "Installing PowerShell requirements..." "PowerShell"
+  sudo -E apt-get update > /dev/null
   sudo -E apt-get install --no-install-recommends -y \
     apt-transport-https \
     software-properties-common
