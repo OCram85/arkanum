@@ -170,26 +170,39 @@ Added `arkanum` to help installing common runtimes in container.
 This helps reducing the image size.
 
 ```
-🧙 arkanum ✨🌌☄️💥 is used to install optional runtimes for developing in a
+🧙 arkanum ✨🌌☄️💥 is used to install optional tools for developing in a
   code-server container environment.
 
-  Syntax: arkanum RUNTIME ...
-  RUNTIME         [docker-cli|dotnet|gitea|golang|nodejs|volta|powershell]
-    docker-cli    Installs the latest docker-ce cli.
-    dotnet        Installs latest LTS dotnet core sdk + runtime.
-    gitea         Installs gitea tools like the changelog generator.
-    golang        Installs golang 1.19.3.
-    nodejs        Installs latest NodeJs LTS version using Volta.
-    volta         Installs Volta as NodeJs version manager.
-    powershell    Installs latest PowerShell LTS version.
-  --disable-motd         Disables hint in new bash terminal.
-  --install-extensions   Installs predefined recommended extensions.
-  --reset-codesetting    Sets VS Code user setting with basic (Fira Code).
-  -h                     Prints this help message.
+  Syntax: arkanum <flags> COMMAND OPTION ARGUMENT
+  COMMAND
+    config                 The config command is used to modify arkanum itself.
+    git                    The git command is a wrapper for git helpers.
+    install                The install command is used to add different tools
+    help                   Shows this help text.
 
-  Example 1: arkanum dotnet
-  Example 2: arkanum golang nodejs
-  Example 3: arkanum --disable-motd
+  OPTION
+    config:
+      disable-motd         Disables hint in new bash terminal.
+      install extensions   Installs predefined recommended extensions.
+      reset-codesettings   Sets VS Code user setting with basic (Fira Code).
+
+    git:
+      setup                Takes two arguments to setup the git client:
+                             1) Username
+                             2) Email address
+
+    install:
+      docker-cli           Installs the latest docker-cli.
+      dotnet               Installs latest LTS dotnet core sdk + runtime.
+      gitea                Installs gitea tools like the changelog generator.
+      golang               Installs golang 1.19.3.
+      nodejs               Installs latest NodeJs LTS version using Volta.
+      volta                Installs Volta as NodeJS version manager.
+      powershell           Installs latest PowerShell LTS version.
+
+  Example 1: arkanum git setup "my-name" "my-email"
+  Example 2: arkanum install golang
+  Example 3: arkanum config disable-motd
 ```
 ### 📝 Fira Code (NerdFont patched)
 

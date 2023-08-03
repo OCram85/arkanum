@@ -40,7 +40,7 @@ RUN \
   chmod +x /etc/bash_completion.d/arkanum-completion && \
   echo 'source /etc/bash_completion.d/arkanum-completion' >> /etc/bash.bashrc && \
   touch "$HOME/enable_motd" && \
-  echo "if [[ ! -e \"$HOME/data/User/settings.json\" ]]; then arkanum --install-extensions && arkanum --reset-codesetting && \
+  echo "if [[ ! -e \"$HOME/data/User/settings.json\" ]]; then arkanum config install-extensions && arkanum config reset-codesettings && \
     echo -e \"🧙 \\e[32markanum\\e[0m: Please reload Arkanum to finalize the setup...\" && read foo; fi" >> /etc/bash.bashrc && \
   echo "if [[ -e \"$HOME/enable_motd\" ]]; then echo -e \"Use 🧙 \\e[32m'arkanum'\\e[0m to install missing runtimes like dotnet or NodeJs.\"; fi" >> /etc/bash.bashrc
 

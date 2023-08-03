@@ -4,26 +4,39 @@ set -e
 
 function showHelp() {
   cat << HELP
-  🧙 arkanum ✨🌌☄️💥 is used to install optional runtimes for developing in a
+  🧙 arkanum ✨🌌☄️💥 is used to install optional tools for developing in a
   code-server container environment.
 
-  Syntax: arkanum RUNTIME ...
-  RUNTIME         [docker-cli|dotnet|gitea|golang|nodejs|volta|powershell]
-    docker-cli           Installs the latest docker-cli.
-    dotnet               Installs latest LTS dotnet core sdk + runtime.
-    gitea                Installs gitea tools like the changelog generator.
-    golang               Installs golang 1.19.3.
-    nodejs               Installs latest NodeJs LTS version using Volta.
-    volta                Installs Volta as NodeJS version manager.
-    powershell           Installs latest PowerShell LTS version.
-  --disable-motd         Disables hint in new bash terminal.
-  --install-extensions   Installs predefined recommended extensions.
-  --reset-codesetting    Sets VS Code user setting with basic (Fira Code).
-  -h                     Prints this help message.
+  Syntax: arkanum <flags> COMMAND OPTION ARGUMENT
+  COMMAND
+    config                 The config command is used to modify arkanum itself.
+    git                    The git command is a wrapper for git helpers.
+    install                The install command is used to add different tools
+    help                   Shows this help text.
 
-  Example 1: arkanum dotnet
-  Example 2: arkanum golang nodejs
-  Example 3: arkanum --disable-motd
+  OPTION
+    config:
+      disable-motd         Disables hint in new bash terminal.
+      install extensions   Installs predefined recommended extensions.
+      reset-codesettings   Sets VS Code user setting with basic (Fira Code).
+
+    git:
+      setup                Takes two arguments to setup the git client:
+                             1) Username
+                             2) Email address
+
+    install:
+      docker-cli           Installs the latest docker-cli.
+      dotnet               Installs latest LTS dotnet core sdk + runtime.
+      gitea                Installs gitea tools like the changelog generator.
+      golang               Installs golang 1.19.3.
+      nodejs               Installs latest NodeJs LTS version using Volta.
+      volta                Installs Volta as NodeJS version manager.
+      powershell           Installs latest PowerShell LTS version.
+
+  Example 1: arkanum git setup "my-name" "my-email"
+  Example 2: arkanum install golang
+  Example 3: arkanum config disable-motd
 HELP
 }
 
@@ -31,6 +44,8 @@ function disableMotd() {
   if [[ -e "$HOME/enable_motd" ]]; then
     say "Disabling 'arkanum' motd..." "disableMotd"
     rm -f "$HOME/enable_motd"
+  else
+    sayW "Arkanum Motd already disabled" "disableMotd"
   fi
 }
 
@@ -244,51 +259,79 @@ EOF
   say "done." "VSCode"
 }
 
+function setGitConfig() {
+  if [[ "$#" != "2" ]]; then
+    sayE "Invalid arguments given. Please provide '<user>' and 'email'!" "Git"
+    exit 1
+  fi
+  say "Setting global git config..." "Git"
+  git config --global user.name "$1"
+  git config --global user.email "$2"
+  say "Returning global config:" "Git"
+  git config --list --global
+}
+
 function main() {
   if [[ "$#" == "0" ]]; then
     showHelp
     exit 0
   fi
 
-  for i in "$@"; do
-    if [[ "$1" == "-h" ]]; then
-      showHelp
-      exit 0
-    elif [[ "$i" == "docker-cli" ]]; then
-      instDockerCLI
-    elif [[ "$i" == "dotnet" ]]; then
-      instDotNet
-    elif [[ "$i" == "golang" ]]; then
-      instGoLang "$2"
-    elif [[ "$i" == "nodejs" ]]; then
-      if [[ "$2" == "--legacy" ]]; then
-        sayW "Installing NodeJS with legacy function" "Arkanum"
-        instNodeJs
-      else
-        instVolta
-        instNodeJS2
-      fi
-    elif [[ "$i" == "volta" ]]; then
-      instVolta
-    elif [[ "$i" == "powershell" ]]; then
-      instPwsh
-    elif [[ "$i" == "gitea" ]]; then
-      instGiteaTools
-    elif [[ "$i" == "--disable-motd" ]]; then
+  # Command filter
+  if [[ "$1" =~ ^help|-h|--h$ ]]; then
+    showHelp
+    exit 0
+  fi
+
+  # CONFIG command
+  if [[ "$1" == "config" ]]; then
+    # disable-motd option
+    if [[ "$2" == "disable-motd" ]]; then
       disableMotd
       exit 0
-    elif [[ "$i" == "--install-extensions" ]]; then
+    # install-extensions option
+    elif [[ "$2" == "install-extensions" ]]; then
       instCodeExtension
       exit 0
-    elif [[ "$i" == "--reset-codesetting" ]]; then
+    # reset-codesetting option
+    elif [[ "$2" == "reset-codesettings" ]]; then
       setCodeSettings
       exit 0
     else
-      sayE "Unknown parameter value given!($i)."
+      sayE "Unknown option ($2) given for command 'config'!"
+    fi
+  # GIT command
+  elif [[ "$1" == "git" ]]; then
+    # setup option
+    if [[ "$2" == "setup" ]]; then
+      setGitConfig "$3" "$4"
+    else
+      sayE "Unknown option ($2) given for command 'git'!"
+    fi
+  # INSTALL command
+  elif [[ "$1" == "install" ]]; then
+    # docker-cli option
+    if [[ "$2" == "docker-cli" ]]; then
+      instDockerCLI
+    elif [[ "$2" == "dotnet" ]]; then
+      instDotNet
+    elif [[ "$2" == "golang" ]]; then
+      instGoLang "$3"
+    elif [[ "$2" == "nodejs" ]]; then
+      instVolta
+      instNodeJs
+    elif [[ "$2" == "volta" ]]; then
+      instVolta
+    elif [[ "$2" == "powershell" ]]; then
+      instPwsh
+    elif [[ "$2" == "gitea" ]]; then
+      instGiteaTools
+    fi
+  else
+      sayE "Unknown parameter value given!($1)."
       showHelp
       exit 1
-    fi
-  done
+  fi
 }
 
 main "$@"

@@ -1,3 +1,39 @@
-#!/bin/bash
+#!/bin/env bash
 
-complete -W "--disable-motd --install-extensions --reset-codesetting docker-cli dotnet gitea golang nodejs volta powershell -h" arkanum
+#complete -W "--disable-motd --install-extensions --reset-codesetting docker-cli dotnet gitea golang nodejs volta powershell -h" arkanum
+
+function _command_completions() {
+  local cur prev
+  cur=${COMP_WORDS[COMP_CWORD]}
+  prev=${COMP_WORDS[COMP_CWORD-1]}
+
+  case ${COMP_CWORD} in
+  1)
+    # shellcheck disable=2207,SC2086
+    COMPREPLY=($(compgen -W "config git install help" -- ${cur}))
+    ;;
+  2)
+    case ${prev} in
+      config)
+        # shellcheck disable=2207,SC2086
+        COMPREPLY=($(compgen -W "disable-motd install-extensions reset-codesettings" -- ${cur}))
+        ;;
+      git)
+        # shellcheck disable=2207,SC2086
+        COMPREPLY=($(compgen -W "setup" -- ${cur}))
+        ;;
+      install)
+        # shellcheck disable=2207,SC2086
+        COMPREPLY=($(compgen -W "docker-cli dotnet golang nodejs volta powershell gitea" -- ${cur}))
+        ;;
+      help)
+      ;;
+    esac
+    ;;
+  *)
+    COMPREPLY=()
+    ;;
+  esac
+}
+
+complete -F _command_completions arkanum
