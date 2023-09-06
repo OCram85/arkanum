@@ -23,7 +23,7 @@ pipeline:
   buildTag:
     image: woodpeckerci/plugin-docker-buildx
     settings:
-      repo: gitea.ocram85.com/codeserver/arkanum,ocram85/arkanum
+      repo: gitea.ocram85.com/codeserver/arkanum, ocram85/arkanum
       dockerfile: Dockerfile
       auto_tag: true
       logins:
