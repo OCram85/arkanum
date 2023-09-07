@@ -1,4 +1,4 @@
-pipeline:
+steps:
   testDockerfile:
     image: woodpeckerci/plugin-docker-buildx
     settings:

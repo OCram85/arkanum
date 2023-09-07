@@ -1,20 +1,33 @@
 depends_on:
   - test
 
-pipeline:
-  buildTestImage:
-    image: woodpeckerci/plugin-docker-buildx
-    settings:
-      #dry_run: true
-      registry: gitea.ocram85.com
-      repo: gitea.ocram85.com/codeserver/arkanum
-      platforms: linux/amd64
-      dockerfile: Dockerfile
-      tags: next
+variables:
+  # deployment targets
+  - &publish_repos_server 'ocram85/arkanum,gitea.ocram85.com/codeserver/arkanum'
+  # logins for deployment targets
+  - publish_logins: &publish_logins
+    # Default DockerHub login
+    - registry: https://index.docker.io/v1/
+      username:
+        from_secret: docker_user
+      password:
+        from_secret: docker_passwd
+    # Additional Quay.IO login
+    - registry: https://gitea.ocram85.com
       username:
         from_secret: gitea_user
       password:
         from_secret: gitea_passwd
+steps:
+  buildTestImage:
+    image: woodpeckerci/plugin-docker-buildx
+    settings:
+      #dry_run: true
+      repo: *publish_repos_server
+      dockerfile: Dockerfile
+      platforms: linux/amd64
+      tag: next
+      logins: *publish_logins
       build_args:
         - VERSION=${CI_COMMIT_TAG:-PR ${CI_COMMIT_PULL_REQUEST}}
         - TAG=${CI_COMMIT_TAG}
