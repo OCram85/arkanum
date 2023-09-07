@@ -3,7 +3,7 @@ depends_on:
 
 variables:
   # deployment targets
-  - &publish_repos_server 'ocram85/arkanum,gitea.ocram85.com/codeserver/arkanum'
+  - &publish_repos 'ocram85/arkanum,gitea.ocram85.com/codeserver/arkanum'
   # logins for deployment targets
   - publish_logins: &publish_logins
     # Default DockerHub login
@@ -23,7 +23,7 @@ steps:
     image: woodpeckerci/plugin-docker-buildx
     settings:
       #dry_run: true
-      repo: *publish_repos_server
+      repo: *publish_repos
       dockerfile: Dockerfile
       platforms: linux/amd64
       tag: next
