@@ -6,7 +6,7 @@ when:
 
 variables:
   # deployment targets
-  - &publish_repos 'ocram85/arkanum,gitea.ocram85.com/codeserver/arkanum',ghcr.io/ocram85/arkanum
+  - &publish_repos 'ocram85/arkanum,gitea.ocram85.com/codeserver/arkanum,ghcr.io/ocram85/arkanum'
   # logins for deployment targets
   - publish_logins: &publish_logins
     # Default DockerHub login
