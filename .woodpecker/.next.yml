@@ -22,7 +22,7 @@ variables:
       password:
         from_secret: gitea_passwd
     # GitHub Container Registry
-    - registry: https://ghc.io
+    - registry: https://ghcr.io
       username:
         from_secret: github_user
       password:
