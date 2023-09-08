@@ -20,7 +20,7 @@ variables:
         from_secret: gitea_passwd
 steps:
   buildTestImage:
-    image: woodpeckerci/plugin-docker-buildx
+    image: woodpeckerci/plugin-docker-buildx:2
     settings:
       #dry_run: true
       repo: *publish_repos
