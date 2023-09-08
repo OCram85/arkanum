@@ -1,9 +1,12 @@
 depends_on:
   - test
 
+when:
+  event: pull_request
+
 variables:
   # deployment targets
-  - &publish_repos 'ocram85/arkanum,gitea.ocram85.com/codeserver/arkanum'
+  - &publish_repos 'ocram85/arkanum,gitea.ocram85.com/codeserver/arkanum',ghcr.io/ocram85/arkanum
   # logins for deployment targets
   - publish_logins: &publish_logins
     # Default DockerHub login
@@ -18,6 +21,13 @@ variables:
         from_secret: gitea_user
       password:
         from_secret: gitea_passwd
+    # GitHub Container Registry
+    - registry: https://ghc.io
+      username:
+        from_secret: github_user
+      password:
+        from_secret: github_passwd
+
 steps:
   buildTestImage:
     image: woodpeckerci/plugin-docker-buildx:2
@@ -31,8 +41,6 @@ steps:
       build_args:
         - VERSION=${CI_COMMIT_TAG:-PR ${CI_COMMIT_PULL_REQUEST}}
         - TAG=${CI_COMMIT_TAG}
-    when:
-      event: pull_request
 
   triggerPortainer:
     image: ocram85/portainer-serviceupdate
@@ -41,5 +49,3 @@ steps:
       URI: "https://portainer.ocram85.com"
       TOKEN:
         from_secret: NEXT_TOKEN
-    when:
-      event: pull_request
