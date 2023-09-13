@@ -34,9 +34,18 @@ You can download the image from the gitea embedded container registry: `gitea.oc
 
 - `latest` - Is based on the lasted master branch commit.
 - `next` - Is a test build based on the pull request
-- `1`, `0.1`, `0.1.0` - tag based version.
+- `1`, `0.1`, `0.1.0`, `1.0.0` - tag based version.
 
 > **💡 NOTE: See the [packages page](https://gitea.ocram85.com/CodeServer/-/packages/container/arkanum/latest) for latest version and all other available tags.**
+
+The container images are also published to these registries:
+
+- [Docker Hub](https://hub.docker.com/r/ocram85/arkanum)
+  - Pull Endpoint: `ocram85/arkanum`
+- [GitHub Container Registry](https://github.com/OCram85/arkanum/pkgs/container/arkanum)
+  - Pull Endpoint: `ghcr.io/ocram85/arkanum`
+- [Codeberg Packages](https://codeberg.org/codeserver/-/packages/container/arkanum/next)
+- Pull Endpoint: `codeberg.org/codeserver/arkanum`
 
 ### 2.a Run as Docker Swarm Stack
 
@@ -246,9 +255,9 @@ following command:
 
 ```bash
 # restart the installation
-arkanum --install-extensions
+arkanum config install-extensions
 # Optional: reset the vscode user setting
-arkanum --reset-codesetting
+arkanum config reset-codesettings
 # Reload with command F1 + Developer: Reload Window
 ```
 ## 😡 We're Using GitHub Under Protest
