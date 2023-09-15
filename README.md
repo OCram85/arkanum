@@ -1,12 +1,7 @@
-<p align="right">
-  <img src="http://forthebadge.com/images/badges/built-with-love.svg">
-  <img src="http://forthebadge.com/images/badges/for-you.svg">
-</p>
-
 <p align="center">
   <a href="https://gitea.ocram85.com/CodeServer/arkanum/">
     <img
-      src="assets/social-logo.png"
+      src="https://gitea.ocram85.com/CodeServer/arkanum/raw/branch/master/assets/social-logo.png"
       alt="Container"
     >
   </a>
@@ -64,7 +59,7 @@ Therefore you need
 version: "3.8"
 services:
   arkanum:
-    image: gitea.ocram85.com/codeserver/arkanum:0.4.0
+    image: gitea.ocram85.com/codeserver/arkanum:1.0.0
     environment:
       - PUID=1000
       - PGID=1000
@@ -116,7 +111,7 @@ See their [docs](https://github.com/linuxserver/docker-code-server#parameters) a
 version: "3.8"
 services:
   arkanum:
-    image: gitea.ocram85.com/codeserver/arkanum:0.4.0
+    image: gitea.ocram85.com/codeserver/arkanum:1.0.0
     container_name: code-server
     environment:
       - PUID=1000
@@ -140,8 +135,7 @@ services:
 After summon Arkanum your first steps should be to set your username and email in the git config:
 
 ```bash
-git config --global user.name "username"
-git config --global user.email "email address"
+arkanum git setup "my-name" "my-email"
 ```
 
 And that's it. Now you're ready use arkanum as your daily remote code editor. ğŸ˜„
@@ -151,7 +145,7 @@ And that's it. Now you're ready use arkanum as your daily remote code editor. ğŸ
 <p align="center">
   <a href="https://gitea.ocram85.com/CodeServer/arkanum/">
     <img
-      src="assets/screen1.png"
+      src="https://gitea.ocram85.com/CodeServer/arkanum/raw/branch/master/assets/screen1.png"
       alt="Screenshot1"
     >
   </a>

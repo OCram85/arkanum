@@ -70,7 +70,7 @@
 
 * 🤖 DEPENDENCIES
   * Update quay.io/linuxserver.io/code-server Docker tag to v4.14.1 (#47)
- 
+
 ## [v0.4.0](https://gitea.ocram85.com/CodeServer/arkanum/releases/tag/v0.4.0) - 2023-07-19
 
 * 🐛 BUGFIXES
@@ -81,3 +81,18 @@
   * Adds Volta as default version manager for NodeJs (#53)
 * 🛠️ ENHANCEMENTS
   * Bump go version (#49)
+
+## [v1.0.0](https://gitea.ocram85.com/CodeServer/arkanum/releases/tag/v1.0.0) - 2023-09-15
+
+* 🐛 BUGFIXES
+  * Fix git config arguments (#68)
+  * Fix NodeJs install bug (#67)
+  * Fix pwsh install when called as first command (#60)
+  * Fix missing volta command (#58)
+* 🛠️ ENHANCEMENTS
+  * Extends arkanum command and option structure (#62)
+* 📦 BUILD
+  * Add addiontal container image deployment targets (#63)
+* 🤖 DEPENDENCIES
+  * Update quay.io/linuxserver.io/code-server Docker tag to v4.16.1 (#59)
+  * Update quay.io/linuxserver.io/code-server Docker tag to v4.15.0 (#57)
