@@ -139,23 +139,6 @@ function instGoLang() {
 }
 
 function instNodeJs() {
-  say "Adding nodesource package source (NodeJS LTS)..." "NodeJs"
-  curl -#fSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
-  say "Updating package lists and installing NodeJS LTS..." "NodeJs"
-  sudo -E apt-get install --no-install-recommends -y \
-    nodejs
-
-  say "Cleaning up..." "NodeJs"
-  sudo -E apt-get clean
-  sudo rm -rf \
-    /tmp/* \
-    /var/lib/apt/lists/* \
-    /var/tmp/*
-
-  say "done." "NodeJs"
-}
-
-function instNodeJS2() {
   say "Installing NodeJS LTS via Volta..." "NodeJS"
   volta install node@lts
   say "done." "NodeJS"
