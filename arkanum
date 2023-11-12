@@ -196,27 +196,27 @@ function instCodeExtension() {
   say "Downloading required extensions...." "Extension"
   # Gitlens
   say "Downloading 'gitlens'..." "Extension"
-  curl -#fSL https://open-vsx.org/api/eamodio/gitlens/14.0.1/file/eamodio.gitlens-14.0.1.vsix -o /tmp/eamodio.gitlens-13.1.1.vsix
+  curl -#fSL https://open-vsx.org/api/eamodio/gitlens/14.4.1/file/eamodio.gitlens-14.4.1.vsix -o /tmp/eamodio.gitlens.vsix
   say "Installing 'gitlens'..." "Extension"
-  install-extension /tmp/eamodio.gitlens-13.1.1.vsix
+  install-extension /tmp/eamodio.gitlens.vsix
   say "Cleaning up 'gitlens' install files" "Extension"
-  rm -f /tmp/eamodio.gitlens-13.1.1.vsix
+  rm -f /tmp/eamodio.gitlens.vsix
 
   # OneDarkPro
   say "Downloading 'One Dark Pro' theme..." "Extension"
-  curl -#fSL https://open-vsx.org/api/zhuangtongfa/material-theme/3.15.18/file/zhuangtongfa.material-theme-3.15.18.vsix -o /tmp/zhuangtongfa.material-theme-3.15.6.vsix
+  curl -#fSL https://open-vsx.org/api/zhuangtongfa/material-theme/3.16.2/file/zhuangtongfa.material-theme-3.16.2.vsix -o /tmp/zhuangtongfa.material-theme.vsix
   say "Installing 'One Dark Pro' theme..." "Extension"
-  install-extension /tmp/zhuangtongfa.material-theme-3.15.6.vsix
+  install-extension /tmp/zhuangtongfa.material-theme.vsix
   say "Cleaning up 'One Dark Pro' install files" "Extension"
-  rm -f /tmp/zhuangtongfa.material-theme-3.15.6.vsix
+  rm -f /tmp/zhuangtongfa.material-theme.vsix
 
   # vscode-icons
   say "Downloading 'vscode-icons' theme..." "Extension"
-  curl -#fSL https://open-vsx.org/api/vscode-icons-team/vscode-icons/12.4.0/file/vscode-icons-team.vscode-icons-12.4.0.vsix -o /tmp/vscode-icons-team.vscode-icons-12.0.1.vsix
+  curl -#fSL https://open-vsx.org/api/vscode-icons-team/vscode-icons/12.6.0/file/vscode-icons-team.vscode-icons-12.6.0.vsix -o /tmp/vscode-icons-team.vscode-icons.vsix
   say "Installing 'vscode-icons' theme..." "Extension"
-  install-extension /tmp/vscode-icons-team.vscode-icons-12.0.1.vsix
+  install-extension /tmp/vscode-icons-team.vscode-icons.vsix
   say "Cleaning up 'vscode-icons' install files" "Extension"
-  rm -f /tmp/vscode-icons-team.vscode-icons-12.0.1.vsix
+  rm -f /tmp/vscode-icons-team.vscode-icons.vsix
 
   say "done." "Extension"
 }
