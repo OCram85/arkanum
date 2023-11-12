@@ -1,7 +1,11 @@
-depends_on:
-  - test
+when:
+  - event: [pull_request, tag, cron]
+  - event: push
+    branch:
+      - ${CI_REPO_DEFAULT_BRANCH}
 
 variables:
+  - &build_plugin 'woodpeckerci/plugin-docker-buildx:2.2.0'
   # deployment targets
   - &publish_repos 'ocram85/arkanum,gitea.ocram85.com/codeserver/arkanum,ghcr.io/ocram85/arkanum,codeberg.org/codeserver/arkanum'
   # logins for deployment targets
@@ -31,35 +35,64 @@ variables:
       password:
         from_secret: codeberg_passwd
 
+
 steps:
-  latest:
-    image: woodpeckerci/plugin-docker-buildx:2
+  test:
+    image: *build_plugin
+    settings:
+      dry_run: true
+      registry: gitea.ocram85.com
+      repo: test
+      dockerfile: Dockerfile
+      platforms: linux/amd64
+      auto_tag: true
+      build_args:
+        - VERSION=${CI_COMMIT_TAG:-PR ${CI_COMMIT_PULL_REQUEST}}
+        - TAG=${CI_COMMIT_TAG}
+    when:
+      event: pull_request
+      branch: ${CI_REPO_DEFAULT_BRANCH}
+
+  publish:
+    image: *build_plugin
     settings:
       repo: *publish_repos
       dockerfile: Dockerfile
+      platforms: linux/amd64
       auto_tag: true
       logins: *publish_logins
       build_args:
         - VERSION=${CI_COMMIT_TAG:-PR ${CI_COMMIT_PULL_REQUEST}}
         - TAG=${CI_COMMIT_TAG}
     when:
-      event: push
-      branch: master
+      event: [push, tag, cron]
+      branch: ${CI_REPO_DEFAULT_BRANCH}
 
-  release:
-    image: woodpeckerci/plugin-docker-buildx:2
+  build-next:
+    image: *build_plugin
     settings:
       repo: *publish_repos
       dockerfile: Dockerfile
-      auto_tag: true
+      platforms: linux/amd64
+      tag: next
       logins: *publish_logins
       build_args:
         - VERSION=${CI_COMMIT_TAG:-PR ${CI_COMMIT_PULL_REQUEST}}
         - TAG=${CI_COMMIT_TAG}
     when:
-      event: tag
+      event: [pull_request]
 
-  GiteaRelease:
+  triggerPortainer:
+    image: ocram85/portainer-serviceupdate
+    settings:
+      VERBOSE: true
+      URI: "https://portainer.ocram85.com"
+      TOKEN:
+        from_secret: NEXT_TOKEN
+    when:
+      event: [pull_request]
+
+  gitea-release:
     image: plugins/gitea-release
     settings:
       api_key:
@@ -68,4 +101,5 @@ steps:
       title: ${CI_COMMIT_TAG}
       note: "> :bulb: **Note:** See [CHANGELOG.md](src/branch/master/CHANGELOG.md) for recent changes."
     when:
-      event: tag
+      event: [tag]
+      branch: ${CI_REPO_DEFAULT_BRANCH}
