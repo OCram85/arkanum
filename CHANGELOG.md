@@ -96,3 +96,12 @@
 * 🤖 DEPENDENCIES
   * Update quay.io/linuxserver.io/code-server Docker tag to v4.16.1 (#59)
   * Update quay.io/linuxserver.io/code-server Docker tag to v4.15.0 (#57)
+
+## [v1.0.1](https://gitea.ocram85.com/CodeServer/arkanum/releases/tag/v1.0.1) - 2023-11-12
+
+* 🐛 BUGFIXES
+  * Fix pwsh install package (#72)
+* 📦 BUILD
+  * Avoid duplicate ci runs (#73)
+* 🤖 DEPENDENCIES
+  * Update quay.io/linuxserver.io/code-server Docker tag to v4.18.0 (#70)
