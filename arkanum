@@ -17,7 +17,7 @@ function showHelp() {
   OPTION
     config:
       disable-motd         Disables hint in new bash terminal.
-      install extensions   Installs predefined recommended extensions.
+      install-extensions   Installs predefined recommended extensions.
       reset-codesettings   Sets VS Code user setting with basic (Fira Code).
 
     git:
@@ -28,7 +28,7 @@ function showHelp() {
     install:
       docker-cli           Installs the latest docker-cli.
       dotnet               Installs latest LTS dotnet core sdk + runtime.
-      gitea                Installs gitea tools like the changelog generator.
+      gitea                Installs gitea tools like changelog and tea.
       golang               Installs golang 1.19.3.
       nodejs               Installs latest NodeJs LTS version using Volta.
       volta                Installs Volta as NodeJS version manager.
