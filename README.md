@@ -199,6 +199,7 @@ This helps reducing the image size.
       dotnet               Installs latest LTS dotnet core sdk + runtime.
       gitea                Installs gitea tools like the changelog generator.
       golang               Installs golang 1.19.3.
+      bun                  Installs latest bun version.
       nodejs               Installs latest NodeJs LTS version using Volta.
       volta                Installs Volta as NodeJS version manager.
       powershell           Installs latest PowerShell LTS version.

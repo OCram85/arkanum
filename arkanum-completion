@@ -24,7 +24,7 @@ function _command_completions() {
         ;;
       install)
         # shellcheck disable=2207,SC2086
-        COMPREPLY=($(compgen -W "docker-cli dotnet golang nodejs volta powershell gitea" -- ${cur}))
+        COMPREPLY=($(compgen -W "docker-cli dotnet golang bun nodejs volta powershell gitea" -- ${cur}))
         ;;
       help)
       ;;

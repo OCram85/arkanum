@@ -29,7 +29,8 @@ function showHelp() {
       docker-cli           Installs the latest docker-cli.
       dotnet               Installs latest LTS dotnet core sdk + runtime.
       gitea                Installs gitea tools like changelog and tea.
-      golang               Installs golang 1.19.3.
+      golang               Installs golang 1.21.5.
+      bun                  Installs latest bun version.
       nodejs               Installs latest NodeJs LTS version using Volta.
       volta                Installs Volta as NodeJS version manager.
       powershell           Installs latest PowerShell LTS version.
@@ -138,6 +139,21 @@ function instGoLang() {
   say "Please reload bash profile to finalize." "GoLang"
 }
 
+function instBun() {
+  say "Installing Bun requirements..." "Bun"
+  sudo -E apt-get update > /dev/null
+  sudo -E apt-get install --no-install-recommends -y \
+    unzip
+  sudo -E apt-get clean
+  say "Installing Bun binaries..." "Bun"
+  curl -#fSL https://bun.sh/install | bash
+  say "Adding bun binary to profile..." "Bun"
+  echo 'export BUN_INSTALL=$HOME/.bun' | sudo tee -a /etc/bash.bashrc > /dev/null
+  echo 'export PATH=$BUN_INSTALL/bin:$PATH' | sudo tee -a /etc/bash.bashrc > /dev/null
+  say "done." "Bun"
+  say "Please reload bash profile to finalize." "Bun"
+}
+
 function instNodeJs() {
   say "Installing NodeJS LTS via Volta..." "NodeJS"
   volta install node@lts
@@ -220,6 +236,7 @@ function instCodeExtension() {
 
   say "done." "Extension"
 }
+
 function setCodeSettings() {
   CODEFILE="$HOME/data/User/settings.json"
 
@@ -311,6 +328,8 @@ function main() {
       instDotNet
     elif [[ "$2" == "golang" ]]; then
       instGoLang "$3"
+    elif [[ "$2" == "bun" ]]; then
+      instBun
     elif [[ "$2" == "nodejs" ]]; then
       instVolta
       instNodeJs
