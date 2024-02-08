@@ -12,3 +12,7 @@ data/*.csv
 # Ignore Pester test result files
 coverage.xml
 testResults.xml
+
+# Ignore NodeJS stuff
+node_modules
+docs/.vitepress/cache
