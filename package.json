@@ -1,0 +1,24 @@
+{
+  "name": "arkanum-docs",
+  "version": "1.0.0",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://gitea.ocram85.com/CodeServer/arkanum.git"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "prettier": "^3.1.1",
+    "rimraf": "^5.0.5",
+    "vitepress": "^1.0.0-rc.36"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "scripts": {
+    "docs:clean": "rimraf docs/.vitepress/dist docs/.vitepress/dist",
+    "docs:dev": "bun run docs:clean && vitepress dev docs --host --port 1313",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  }
+}

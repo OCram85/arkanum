@@ -6,9 +6,7 @@
   "editor.renderWhitespace": "boundary",
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
-  "editor.rulers": [
-    116
-  ],
+  "editor.rulers": [116],
   // powershell general
   "powershell.startAutomatically": true,
   "powershell.enableProfileLoading": true,
@@ -67,5 +65,9 @@
       "addWords": true
     },
     "custom": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
