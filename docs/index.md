@@ -4,22 +4,33 @@ layout: home
 
 hero:
   name: "Arkanum"
-  text: "An optionionated Code-Server distribution."
-  tagline: My great project tagline
+  text: 'An opinionated VS Code distribution'
+  tagline: 'Start coding remotely with a containerized editor.'
+  image:
+    src: /logo.png
+    alt: Arkanum
   actions:
     - theme: brand
-      text: Markdown Examples
+      text: Quick start
       link: /markdown-examples
     - theme: alt
       text: API Examples
       link: /api-examples
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: Batteries Included
+    icon: 🔋
+    details: Already contains best extensions and themes for quick start.
+  - title: Access anywhere
+    icon: 🌎
+    details: Access your dev environment from anywhere.
+  - title: arkanum cli
+    icon: 🧙
+    details: Includes <code>arkanum cli</code> to install most wanted languages and frameworks.
+  - title: Gitea + CI/CD
+    icon: 🚧
+    details: dfdf
+  - title: Base on trusted Sources
+    icon: 🏗️
+    details: Arkanum is build on trusted projects like code-server and linuxserver.io
 ---
-
