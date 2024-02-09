@@ -1,0 +1,37 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+        "label": "Update GiteaChangelog",
+        "type": "shell",
+        "command": [
+          "mv 'CHANGELOG.md' 'CHANGELOG.back' &&",
+          "changelog -m '${input:Milestone}' --token '${input:GiteaToken}' -c .changelog.yml generate > CHANGELOG.md &&",
+          "echo '' >> CHANGELOG.md &&",
+          "cat CHANGELOG.back >> CHANGELOG.md &&",
+          "rm CHANGELOG.back"
+        ],
+        "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+        "id": "GiteaToken",
+        "type": "command",
+        "command": "shellCommand.execute",
+        "args": {
+          "command": "echo $GITEA_TOKEN",
+          "description": "Your personal Gitea access token"
+        }
+    },
+    {
+        "id": "Milestone",
+        "type": "command",
+        "command": "shellCommand.execute",
+        "args": {
+          "description": "Select or enter a open milestone",
+          "command": "tea milestone ls -f title --output simple"
+        }
+    }
+  ]
+}

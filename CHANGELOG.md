@@ -1,3 +1,13 @@
+## [v1.5.0](https://gitea.ocram85.com/CodeServer/arkanum/releases/tag/v1.5.0) - 2024-02-09
+
+* 🛠️ ENHANCEMENTS
+  * Always install latest extension version (#85)
+* 🤖 DEPENDENCIES
+  * Update quay.io/linuxserver.io/code-server Docker tag to v4.20.1 (#88)
+  * Update quay.io/linuxserver.io/code-server Docker tag to v4.20.0 (#86)
+* ⚙️ META
+  * Add more gitignore items (#89)
+
 ## [v1.0.2](https://gitea.ocram85.com/CodeServer/arkanum/releases/tag/v1.0.2) - 2023-12-18
 
 * ✨ FEATURES
