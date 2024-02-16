@@ -1,6 +1,6 @@
 import { defineConfig } from 'vitepress'
 
-import { repository, version } from '../../package.json'
+import { devDependencies, version } from '../../package.json'
 import navbar from './navbar.mjs'
 import { SidebarItems } from './sidebar.mjs'
 

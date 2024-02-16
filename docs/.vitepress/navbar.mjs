@@ -14,7 +14,7 @@ function getItems(version) {
 
   return [
     { text: 'Home', link: '/' },
-    { text: 'Examples', link: '/markdown-examples' },
+    { text: 'Guide', link: '/guide/about' },
     {
       text: nver,
       items: [{ text: 'Changelog', link: '/changelog' }],

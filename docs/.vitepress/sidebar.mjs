@@ -1,7 +1,15 @@
 export const SidebarItems = {
-  text: 'Examples',
-  items: [
-    { text: 'Markdown Examples', link: '/markdown-examples' },
-    { text: 'Runtime API Examples', link: '/api-examples' },
-  ],
+  '/guide/': { base: '/guide/', items: getGuide() },
+}
+
+function getGuide() {
+  return [
+    {
+      text: 'Guide',
+      items: [
+        { text: 'About', link: '/about' },
+        { text: 'Getting Started', link: '/getting-started#Quickstart' },
+      ],
+    },
+  ]
 }
