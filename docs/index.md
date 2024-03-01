@@ -11,7 +11,7 @@ hero:
     alt: Arkanum
   actions:
     - theme: brand
-      text: 🤖 Get Started
+      text: 🧙 Get Started
       link: /guide/about
     - theme: alt
       text: View on Gitea

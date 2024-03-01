@@ -17,21 +17,22 @@ LABEL org.opencontainers.image.url="https://gitea.ocram85.com/CodeServer/arkanum
 LABEL org.opencontainers.image.source="https://gitea.ocram85.com/CodeServer/arkanum.git"
 LABEL org.opencontainers.image.documentation="https://gitea.ocram85.com/CodeServer/arkanum"
 
+#region starship
 RUN \
   echo "**** install starship prompt ****" && \
   curl -sS https://starship.rs/install.sh | sh -s -- -f && \
   echo "eval \"\$(starship init bash)\"" >> /etc/bash.bashrc
 
 ENV STARSHIP_CONFIG=/etc/starship.toml
-
 COPY starship.toml /etc/starship.toml
+#endregion starship
 
+#region git
 ADD gitconfig-system /etc/gitconfig
 RUN \
   echo "**** setup git ****" && \
-  # using prepared systemwide config file instead.
-  #git config --system credential.helper store && \
   echo 'source /usr/share/bash-completion/completions/git' >> /etc/bash.bashrc
+#endregion git
 
 ADD arkanum /usr/bin/
 ADD arkanum-completion /etc/bash_completion.d/

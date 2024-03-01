@@ -6,9 +6,19 @@ function getGuide() {
   return [
     {
       text: 'Guide',
+      //collapsed: false,
       items: [
-        { text: 'About', link: '/about' },
-        { text: 'Getting Started', link: '/getting-started#Quickstart' },
+        { text: 'About', link: 'about' },
+        { text: 'Getting Started', link: 'getting-started' },
+        {
+          text: 'Components',
+          items: [
+            { text: 'Base Images', link: 'components/base-images' },
+            { text: 'Included Packages', link: 'components/packages' },
+            { text: 'Starship Prompt', link: 'components/starship' },
+            { text: 'Git', link: 'components/git' },
+          ],
+        },
       ],
     },
   ]

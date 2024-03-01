@@ -1,15 +1,15 @@
 # Getting Started
 
-## Installation
+## 🚧 Prerequisites
 
-### Prerequisites
+### ⚙️ Container Runtime
 
-Any host with either
+You need any host with either
 
 - Docker CE / EE running
 - or Docker-CE and configured 'swarm' mode.
 
-### 1. ⚡ Get the image 📦
+### 📦 Get the image
 
 You can download the image from the gitea embedded container registry: `gitea.ocram85.com/codeserver/arkanum` with these tags:
 
@@ -28,7 +28,9 @@ The container images are also published to these registries:
 - [Codeberg Packages](https://codeberg.org/codeserver/-/packages/container/arkanum/next)
 - Pull Endpoint: `codeberg.org/codeserver/arkanum`
 
-### 2.a Run as Docker Swarm Stack
+## 🏗️ Installation
+
+### Run as Docker Swarm Stack
 
 This example shows how to run arkanum as an additional swarm stack.
 
@@ -86,7 +88,8 @@ networks:
 ```
 
 > 💡 NOTE: For advanced config with additional environment variables see [linuxserver/docker-code-server](https://github.com/linuxserver/docker-code-server) help.
-### 2.b Use Docker-Compose
+
+### Use Docker-Compose
 
 This is a basic example for a `docker-compose` file from the [linuxserver/docker-code-server](https://github.com/linuxserver/docker-code-server) project.
 
@@ -116,7 +119,7 @@ services:
     restart: unless-stopped
 ```
 
-### 3. 🦶 First Steps
+## 🦶 First Steps
 
 After summon Arkanum your first steps should be to set your username and email in the git config:
 
