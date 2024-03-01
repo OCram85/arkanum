@@ -17,6 +17,8 @@ function getGuide() {
             { text: 'Included Packages', link: 'components/packages' },
             { text: 'Starship Prompt', link: 'components/starship' },
             { text: 'Git', link: 'components/git' },
+            { text: 'Arkanum CLI', link: 'components/arkanum-cli' },
+            { text: 'FiraCode Font', link: 'components/firacode' },
           ],
         },
       ],

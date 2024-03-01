@@ -1,6 +1,6 @@
 # Git
 
-## 🔱 Config files
+## 🔱 About Git Config files
 
 The git configuration is usually done in these 3 different contexts:
 
@@ -41,12 +41,13 @@ There are also some [Phabricator](https://en.wikipedia.org/wiki/Phabricator) wor
 | `pod`              | **[alias]** | Tries to push current branch to _origin/dev_.                                  |
 | `poc <branch>`              | **[alias]** | Takes current branch and tries to push it to a new remote one. |
 
-::: details **/etc/gitconfig**
-<<< @/../gitconfig-system{ini:line-numbers}
-:::
-
 ## Git bash Completion
 
-Git bash completion is already enabled in the arkanum image:
+Git bash completion is already enabled in the arkanum image.
 
-<<< @/../Dockerfile#git{Dockerfile}
+## Configuration
+
+::: code-group
+<<< @/../Dockerfile#git{Dockerfile:line-numbers}
+<<< @/../gitconfig-system{ini:line-numbers}
+:::

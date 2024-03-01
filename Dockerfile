@@ -34,6 +34,7 @@ RUN \
   echo 'source /usr/share/bash-completion/completions/git' >> /etc/bash.bashrc
 #endregion git
 
+#region cli
 ADD arkanum /usr/bin/
 ADD arkanum-completion /etc/bash_completion.d/
 RUN \
@@ -44,8 +45,11 @@ RUN \
   echo "if [[ ! -e \"$HOME/data/User/settings.json\" ]]; then arkanum config install-extensions && arkanum config reset-codesettings && \
     echo -e \"🧙 \\e[32markanum\\e[0m: Please reload Arkanum to finalize the setup...\" && read foo; fi" >> /etc/bash.bashrc && \
   echo "if [[ -e \"$HOME/enable_motd\" ]]; then echo -e \"Use 🧙 \\e[32m'arkanum'\\e[0m to install missing runtimes like dotnet or NodeJs.\"; fi" >> /etc/bash.bashrc
+#endregion cli
 
+#region firacode
 WORKDIR /app/code-server/lib/vscode/out/vs/workbench
 ADD FiraCode/fonts/* ./fonts/
 ADD FiraCode/fonts.css ./
 RUN cat fonts.css >> workbench.web.main.css
+#endregion firacode

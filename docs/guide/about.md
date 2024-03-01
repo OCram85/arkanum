@@ -2,7 +2,7 @@
 
 ### 🚀 Starship prompt
 
-We added the [Starship](starship.rs) prompt is as default in the integrated terminal. The default config uses Emojis and FiraCode icons.
+We added the [Starship](./components/starship.md) prompt is as default in the integrated terminal. The default config uses Emojis and FiraCode icons.
 
 ### 🔱 git config
 
@@ -14,7 +14,7 @@ Added default git system config file with:
 - added git log helper `lg1` + `lg2`.
 - enabled bash completion for git command in integrated bash terminal.
 
-> 💡 See [gitconfig-system](./gitconfig-system) for details.
+> 💡 See [gitconfig-system](./components/git.md) for details.
 
 ### 🧙 `arkanum` helper
 

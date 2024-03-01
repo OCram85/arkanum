@@ -19,6 +19,6 @@
     "docs:clean": "rimraf docs/.vitepress/dist docs/.vitepress/dist",
     "docs:dev": "bun run docs:clean && vitepress dev docs --host --port 1313",
     "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "docs:preview": "vitepress preview docs --host --port 1313"
   }
 }
