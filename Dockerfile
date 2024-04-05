@@ -19,7 +19,10 @@ LABEL org.opencontainers.image.documentation="https://gitea.ocram85.com/CodeServ
 
 RUN \
   echo "**** install starship prompt ****" && \
-  curl -sS https://starship.rs/install.sh | sh -s -- -f && \
+  curl -sS -o /tmp/install.sh https://starship.rs/install.sh && \
+  chmod +x /tmp/install.sh && \
+  /tmp/install.sh --verbose --force --version latest && \
+  rm -f /tmp/install.sh && \
   echo "eval \"\$(starship init bash)\"" >> /etc/bash.bashrc
 
 ENV STARSHIP_CONFIG=/etc/starship.toml
