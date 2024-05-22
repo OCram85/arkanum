@@ -1,3 +1,15 @@
+## [v1.5.1](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.5.1) - 2024-05-22
+
+* 🐛 BUGFIXES
+  * Fix starship prompt installation (#95)
+* ✨ FEATURES
+  * Add Arkanum.dev site  with docs (#97)
+* 🤖 DEPENDENCIES
+  * Chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v4 (#98)
+  * Chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.89.0 (#96)
+  * Chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v3 (#93)
+  * Chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.22.1 (#91)
+
 ## [v1.5.0](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.5.0) - 2024-02-09
 
 - 🛠️ ENHANCEMENTS
