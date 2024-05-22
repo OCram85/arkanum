@@ -5,7 +5,7 @@ when:
       - ${CI_REPO_DEFAULT_BRANCH}
 
 variables:
-  - &build_plugin 'woodpeckerci/plugin-docker-buildx:3.2.1'
+  - &build_plugin 'woodpeckerci/plugin-docker-buildx:4.0.0'
   # deployment targets
   - &publish_repos 'ocram85/arkanum,gitea.ocram85.com/arkanum/arkanum,ghcr.io/ocram85/arkanum,codeberg.org/codeserver/arkanum'
   # logins for deployment targets
