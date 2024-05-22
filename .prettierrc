@@ -1,0 +1,10 @@
+{
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "editorconfig": true,
+  "printWidth": 116,
+  "semi": false,
+  "singleQuote": true,
+  "trailingComma": "all",
+  "vueIndentScriptAndStyle": true
+}

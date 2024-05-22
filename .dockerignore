@@ -1,8 +1,11 @@
-.gitea
-.vscode
-assets
 .editorconfig
-.gitatributes
+.gitattributes
+.gitea
 .gitignore
 .gitlocal
+.prettierrc
+.vscode
+LICENSE
+node_modules
 README.md
+renovate.json

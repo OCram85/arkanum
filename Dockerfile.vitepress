@@ -1,0 +1,14 @@
+FROM oven/bun:1 as builder
+
+COPY . /app
+WORKDIR /app
+ENV NODE_ENV=production
+RUN bun install --frozen-lockfile
+RUN bun run --vite docs:build
+
+FROM caddy:2.7.6-alpine as prod
+
+COPY --from=builder /app/docs/.vitepress/dist/ /arkanum-docs/
+COPY Caddyfile /etc/caddy
+HEALTHCHECK --interval=15s --timeout=3s \
+  CMD wget --no-verbose --tries=1 --spider http://localhost:8080/ || exit 1

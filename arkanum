@@ -2,6 +2,7 @@
 
 set -e
 
+# region usage
 function showHelp() {
   cat << HELP
   🧙 arkanum ✨🌌☄️💥 is used to install optional tools for developing in a
@@ -40,6 +41,7 @@ function showHelp() {
   Example 3: arkanum config disable-motd
 HELP
 }
+# endregion usage
 
 function disableMotd() {
   if [[ -e "$HOME/enable_motd" ]]; then
@@ -227,7 +229,7 @@ function instCodeExtension() {
 
 function setCodeSettings() {
   CODEFILE="$HOME/data/User/settings.json"
-
+  #region code-settings
   # VSCode user settings file
   say "Setting VScode base settings.($CODEFILE)" "VSCode"
   cat <<EOF | tee "$CODEFILE"
@@ -244,6 +246,7 @@ function setCodeSettings() {
   "telemetry.telemetryLevel": "off"
 }
 EOF
+  #endregion code-settings
   say "done." "VSCode"
 }
 

@@ -13,10 +13,11 @@ LABEL org.opencontainers.image.licenses="AGPL-3.0"
 ARG TAG
 LABEL org.opencontainers.image.version="${TAG}"
 
-LABEL org.opencontainers.image.url="https://gitea.ocram85.com/CodeServer/arkanum"
-LABEL org.opencontainers.image.source="https://gitea.ocram85.com/CodeServer/arkanum.git"
-LABEL org.opencontainers.image.documentation="https://gitea.ocram85.com/CodeServer/arkanum"
+LABEL org.opencontainers.image.url="https://gitea.ocram85.com/arkanum/arkanum"
+LABEL org.opencontainers.image.source="https://gitea.ocram85.com/arkanum/arkanum.git"
+LABEL org.opencontainers.image.documentation="https://gitea.ocram85.com/arkanum/arkanum"
 
+#region starship
 RUN \
   echo "**** install starship prompt ****" && \
   curl -sS -o /tmp/install.sh https://starship.rs/install.sh && \
@@ -26,16 +27,17 @@ RUN \
   echo "eval \"\$(starship init bash)\"" >> /etc/bash.bashrc
 
 ENV STARSHIP_CONFIG=/etc/starship.toml
-
 COPY starship.toml /etc/starship.toml
+#endregion starship
 
+#region git
 ADD gitconfig-system /etc/gitconfig
 RUN \
   echo "**** setup git ****" && \
-  # using prepared systemwide config file instead.
-  #git config --system credential.helper store && \
   echo 'source /usr/share/bash-completion/completions/git' >> /etc/bash.bashrc
+#endregion git
 
+#region cli
 ADD arkanum /usr/bin/
 ADD arkanum-completion /etc/bash_completion.d/
 RUN \
@@ -46,8 +48,11 @@ RUN \
   echo "if [[ ! -e \"$HOME/data/User/settings.json\" ]]; then arkanum config install-extensions && arkanum config reset-codesettings && \
     echo -e \"🧙 \\e[32markanum\\e[0m: Please reload Arkanum to finalize the setup...\" && read foo; fi" >> /etc/bash.bashrc && \
   echo "if [[ -e \"$HOME/enable_motd\" ]]; then echo -e \"Use 🧙 \\e[32m'arkanum'\\e[0m to install missing runtimes like dotnet or NodeJs.\"; fi" >> /etc/bash.bashrc
+#endregion cli
 
+#region firacode
 WORKDIR /app/code-server/lib/vscode/out/vs/workbench
 ADD FiraCode/fonts/* ./fonts/
 ADD FiraCode/fonts.css ./
 RUN cat fonts.css >> workbench.web.main.css
+#endregion firacode

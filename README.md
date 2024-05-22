@@ -1,7 +1,7 @@
 <p align="center">
-  <a href="https://gitea.ocram85.com/CodeServer/arkanum/">
+  <a href="https://gitea.ocram85.com/arkanum/arkanum/">
     <img
-      src="https://gitea.ocram85.com/CodeServer/arkanum/raw/branch/master/assets/social-logo.png"
+      src="https://gitea.ocram85.com/arkanum/arkanum/raw/branch/master/assets/social-logo.png"
       alt="Container"
     >
   </a>
@@ -16,8 +16,8 @@
 </p>
 
 <p align="center">
-  <a href="https://ci.ocram85.com/CodeServer/arkanum">
-    <img src="https://ci.ocram85.com/api/badges/CodeServer/arkanum/status.svg" alt="Master Branch Build Status">
+  <a href="https://ci.ocram85.com/arkanum/arkanum">
+    <img src="https://ci.ocram85.com/api/badges/arkanum/arkanum/status.svg" alt="Master Branch Build Status">
   </a>
 </p>
 
@@ -25,13 +25,13 @@
 
 ### 1. ⚡ Get the image 📦
 
-You can download the image from the gitea embedded container registry: `gitea.ocram85.com/codeserver/arkanum` with these tags:
+You can download the image from the gitea embedded container registry: `gitea.ocram85.com/arkanum/arkanum` with these tags:
 
 - `latest` - Is based on the lasted master branch commit.
 - `next` - Is a test build based on the pull request
 - `1`, `0.1`, `0.1.0`, `1.0.0` - tag based version.
 
-> **💡 NOTE: See the [packages page](https://gitea.ocram85.com/CodeServer/-/packages/container/arkanum/latest) for latest version and all other available tags.**
+> **💡 NOTE: See the [packages page](https://gitea.ocram85.com/arkanum/-/packages/container/arkanum/latest) for latest version and all other available tags.**
 
 The container images are also published to these registries:
 
@@ -56,10 +56,10 @@ Therefore you need
 > a trusted + **secure https connection**.
 
 ```yaml
-version: "3.8"
+version: '3.8'
 services:
   arkanum:
-    image: gitea.ocram85.com/codeserver/arkanum:1.0.0
+    image: gitea.ocram85.com/arkanum/arkanum:1
     environment:
       - PUID=1000
       - PGID=1000
@@ -73,11 +73,11 @@ services:
     deploy:
       replicas: 1
       labels:
-       - "traefik.enable=true"
-       - "traefik.docker.network=traefik-public"
-       - "traefik.http.routers.arkanum.rule=Host(`vscode.mydomain.com`)"
-       - "traefik.http.routers.arkanum.tls.certresolver=myresolver"
-       - "traefik.http.services.arkanum-srv.loadbalancer.server.port=8443"
+        - 'traefik.enable=true'
+        - 'traefik.docker.network=traefik-public'
+        - 'traefik.http.routers.arkanum.rule=Host(`vscode.mydomain.com`)'
+        - 'traefik.http.routers.arkanum.tls.certresolver=myresolver'
+        - 'traefik.http.services.arkanum-srv.loadbalancer.server.port=8443'
     volumes:
       # store workspace and use config in volume.
       - codedata:/config
@@ -100,6 +100,7 @@ networks:
 ```
 
 > 💡 NOTE: For advanced config with additional environment variables see [linuxserver/docker-code-server](https://github.com/linuxserver/docker-code-server) help.
+
 ### 2.b Use Docker-Compose
 
 This is a basic example for a `docker-compose` file from the [linuxserver/docker-code-server](https://github.com/linuxserver/docker-code-server) project.
@@ -108,10 +109,10 @@ See their [docs](https://github.com/linuxserver/docker-code-server#parameters) a
 
 ```yaml
 ---
-version: "3.8"
+version: '3.8'
 services:
   arkanum:
-    image: gitea.ocram85.com/codeserver/arkanum:1.0.0
+    image: gitea.ocram85.com/arkanum/arkanum:1
     container_name: code-server
     environment:
       - PUID=1000
@@ -143,9 +144,9 @@ And that's it. Now you're ready use arkanum as your daily remote code editor. �
 ## 📖 Content
 
 <p align="center">
-  <a href="https://gitea.ocram85.com/CodeServer/arkanum/">
+  <a href="https://gitea.ocram85.com/arkanum/arkanum/">
     <img
-      src="https://gitea.ocram85.com/CodeServer/arkanum/raw/branch/master/assets/screen1.png"
+      src="https://gitea.ocram85.com/arkanum/arkanum/raw/branch/master/assets/screen1.png"
       alt="Screenshot1"
     >
   </a>
@@ -208,6 +209,7 @@ This helps reducing the image size.
   Example 2: arkanum install golang
   Example 3: arkanum config disable-motd
 ```
+
 ### 📝 Fira Code (NerdFont patched)
 
 Added FiraCode as default font in editor and integrated terminal. The font files are embedded and can be used without local installation.
@@ -219,13 +221,13 @@ If your start the container or log in the first time, a default config file is d
 This user setting defines the following stuff:
 
 - Use compact menu bar to avoid users with multiple menu bars.
-- Use *One Dark Pro Darker* theme
-- Use *vscode-icons* icon set
+- Use _One Dark Pro Darker_ theme
+- Use _vscode-icons_ icon set
 - Set FiraCode as default font in editor.
   - Tries to use alternate font names for FiraCode if its locally available.
 - Sets FiraCode mono variant in terminal to enable icons used by starship prompt.
 - Enables font ligatures
-- Enables *auto save* and *format on save*.
+- Enables _auto save_ and _format on save_.
 - Disables auto update for extension.
 - Disables VSCode telemetry
 - Disable confirm message for sync branches.
@@ -255,13 +257,14 @@ arkanum config install-extensions
 arkanum config reset-codesettings
 # Reload with command F1 + Developer: Reload Window
 ```
+
 ## 😡 We're Using GitHub Under Protest
 
 This project is currently **mirrored** to GitHub. This is not ideal; GitHub is a
 proprietary, trade-secret system that is not Free and Open Source Software
 (FOSS). We are deeply concerned about using a proprietary system like GitHub
 to develop our FOSS project. We have an
-[open Gitea repository ](https://gitea.ocram85.com/CodeServer/arkanum/issues) where the
+[open Gitea repository](https://gitea.ocram85.com/arkanum/arkanum/issues) where the
 project contributors are actively discussing how we can move away from GitHub
 in the long term. We urge you to read about the
 [Give up GitHub](https://GiveUpGitHub.org) campaign from
@@ -269,11 +272,11 @@ in the long term. We urge you to read about the
 some of the reasons why GitHub is not a good place to host FOSS projects.
 
 If you are a contributor who personally has already quit using GitHub, please
-[check this resource](https://gitea.ocram85.com/CodeServer/arkanum) for how to send us contributions without
+[check this resource](https://gitea.ocram85.com/arkanum/arkanum) for how to send us contributions without
 using GitHub directly.
 
 Any use of this project's code by GitHub Copilot, past or present, is done
-without our permission.  We do not consent to GitHub's use of this project's
+without our permission. We do not consent to GitHub's use of this project's
 code in Copilot.
 
 ![Logo of the GiveUpGitHub campaign](https://sfconservancy.org/img/GiveUpGitHub.png)
@@ -284,14 +287,14 @@ Akranum is based on the following projects and wouldn't be possible without them
 
 - [microsoft/vscode](https://github.com/microsoft/vscode) - Visual Studio Code, OSS. `[MIT]`
 - [coder/code-server](https://github.com/coder/code-server) - VSCode on a remote server, accessible through the browser. `[MIT]`
-- [linuxserver/docker-code-server](https://github.com/linuxserver/docker-code-server) - docker image based for *coder/code-server*. `[GPL-3.0]`
+- [linuxserver/docker-code-server](https://github.com/linuxserver/docker-code-server) - docker image based for _coder/code-server_. `[GPL-3.0]`
 - A huge thanks to tuanpham for sharing his [code-server font patch](https://github.com/tuanpham-dev/code-server-font-patch).
 
 ## ⚖️ License (AGPLv3)
 
 ![AGPL](https://www.gnu.org/graphics/agplv3-155x51.png)
 
-```
+```text
 Arkanum - Code-Server container optimized for daily use.
 Copyright (C) 2022 "OCram85 <me@ocram85.com>"
 

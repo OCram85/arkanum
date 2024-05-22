@@ -1,5 +1,5 @@
 # The full repository name
-repo: CodeServer/arkanum
+repo: arkanum/arkanum
 
 # Service type (gitea or github)
 service: gitea

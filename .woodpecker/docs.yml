@@ -7,7 +7,7 @@ when:
 variables:
   - &build_plugin 'woodpeckerci/plugin-docker-buildx:3.2.1'
   # deployment targets
-  - &publish_repos 'ocram85/arkanum,gitea.ocram85.com/arkanum/arkanum,ghcr.io/ocram85/arkanum,codeberg.org/codeserver/arkanum'
+  - &publish_repos 'ocram85/arkanum-docs,gitea.ocram85.com/arkanum/arkanum-docs'
   # logins for deployment targets
   - publish_logins: &publish_logins
     # Default DockerHub login
@@ -22,20 +22,6 @@ variables:
         from_secret: gitea_user
       password:
         from_secret: gitea_passwd
-    # GitHub Container Registry
-    - registry: https://ghcr.io
-      username:
-        from_secret: github_user
-      password:
-        from_secret: github_passwd
-    # Codeberg
-    - registry: https://codeberg.org
-      username:
-        from_secret: codeberg_user
-      password:
-        from_secret: codeberg_passwd
-
-
 steps:
   test:
     image: *build_plugin
@@ -43,7 +29,7 @@ steps:
       dry_run: true
       registry: gitea.ocram85.com
       repo: test
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.vitepress
       platforms: linux/amd64
       auto_tag: true
       build_args:
@@ -57,7 +43,7 @@ steps:
     image: *build_plugin
     settings:
       repo: *publish_repos
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.vitepress
       platforms: linux/amd64
       auto_tag: true
       logins: *publish_logins
@@ -72,7 +58,7 @@ steps:
     image: *build_plugin
     settings:
       repo: *publish_repos
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.vitepress
       platforms: linux/amd64
       tag: next
       logins: *publish_logins
@@ -81,15 +67,3 @@ steps:
         - TAG=${CI_COMMIT_TAG}
     when:
       event: [pull_request]
-
-  gitea-release:
-    image: plugins/gitea-release
-    settings:
-      api_key:
-        from_secret: ci_token
-      base_url: https://gitea.ocram85.com
-      title: ${CI_COMMIT_TAG}
-      note: "> :bulb: **Note:** See [CHANGELOG.md](src/branch/master/CHANGELOG.md) for recent changes."
-    when:
-      event: [tag]
-      branch: ${CI_REPO_DEFAULT_BRANCH}
