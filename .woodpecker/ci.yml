@@ -89,7 +89,7 @@ steps:
         from_secret: ci_token
       base_url: https://gitea.ocram85.com
       title: ${CI_COMMIT_TAG}
-      note: "> :bulb: **Note:** Please refer to See [CHANGELOG.md](src/branch/${CI_REPO_DEFAULT_BRANCH}/CHANGELOG.md) for details."
+      note: "> :bulb: **Note:** Please refer to [CHANGELOG.md](src/branch/${CI_REPO_DEFAULT_BRANCH}/CHANGELOG.md) for details."
     when:
       event: [tag]
       branch: ${CI_REPO_DEFAULT_BRANCH}
