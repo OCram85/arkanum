@@ -1,8 +1,9 @@
 import { defineConfig } from 'vitepress'
 
-import { devDependencies, version } from '../../package.json'
+import { version } from '../../package.json'
 import navbar from './navbar.mjs'
 import { SidebarItems } from './sidebar.mjs'
+import { brandIcons } from './theme/icons.mjs'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -40,7 +41,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: navbar.getItems(version),
     sidebar: SidebarItems,
-    socialLinks: [{ icon: 'github', link: 'https://gitea.ocram85.com/arkanum/arkanum' }],
+    socialLinks: [{ icon: {svg: brandIcons.giteaAlt}, link: 'https://gitea.ocram85.com/arkanum/arkanum' }],
     footer: {
       message: 'Released under the AGPLv3 License.',
       copyright: 'Copyright © 2022-present OCram85 <me@ocram85.com>',
