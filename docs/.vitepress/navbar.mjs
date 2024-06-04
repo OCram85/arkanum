@@ -14,6 +14,7 @@ function getItems(version) {
 
   return [
     { text: 'Home', link: '/' },
+    { text: 'Blog', link: '/blog' },
     { text: 'Guide', link: '/guide/about' },
     {
       text: nver,
