@@ -1,3 +1,14 @@
+## [v1.5.2](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.5.2) - 2024-06-04
+
+* 🐛 BUGFIXES
+  * Fix typo (#104)
+* ✨ FEATURES
+  * Add blog feature to docs (#101)
+* 🛠️ ENHANCEMENTS
+  * Add gitea icon (#102)
+* 🤖 DEPENDENCIES
+  * Chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.89.1 (#100)
+
 ## [v1.5.1](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.5.1) - 2024-05-22
 
 * 🐛 BUGFIXES
