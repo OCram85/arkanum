@@ -33,7 +33,7 @@ Adds [One Dark Pro](https://open-vsx.org/extension/zhuangtongfa/material-theme) 
 
 Adds [vscode-icons](https://open-vsx.org/extension/vscode-icons-team/vscode-icons) extension as default icon theme.
 
-## Referenced Source Filesq
+## Referenced Source Files
 
 ::: code-group
 

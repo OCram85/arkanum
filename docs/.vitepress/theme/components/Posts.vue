@@ -31,6 +31,9 @@
 </script>
 
 <template>
+  <slot v-if="posts.length">
+    <h2 v-if="posts.length > 0">All Posts</h2>
+  </slot>
   <section class="card-container">
     <Post
       :image="post.frontmatter.image"

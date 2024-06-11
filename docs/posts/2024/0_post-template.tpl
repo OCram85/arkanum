@@ -4,6 +4,7 @@ title: 'Working on Arkanum 2.0.0'
 tag: 'roadmap'
 image: 'screens/screen1.png'
 date: '2024-06-06'
+#featured: true
 ---
 
 # Working on Arkanum 2.0

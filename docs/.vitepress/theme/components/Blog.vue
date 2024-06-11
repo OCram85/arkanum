@@ -5,10 +5,12 @@
 <template>
   <div class="blog-container">
     <h1>Blog</h1>
-    <h2>⭐ Featured Articles</h2>
-    <Posts featured/>
-    <h2>📰 All Posts</h2>
-    <Posts/>
+    <Posts featured>
+      <h2>⭐ Featured Articles</h2>
+    </Posts>
+    <Posts>
+      <h2>📰 All Posts</h2>
+    </Posts>
   </div>
 </template>
 
@@ -18,10 +20,11 @@
     width: 100%;
     max-width: 1280px;
     padding: 0 64px;
-
   }
 
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     position: relative;
     font-weight: 600;
     outline: none;
