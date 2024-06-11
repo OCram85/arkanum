@@ -6,7 +6,7 @@ ENV NODE_ENV=production
 RUN bun install --frozen-lockfile
 RUN bun run --vite docs:build
 
-FROM caddy:2.8.1-alpine as prod
+FROM caddy:2.8.4-alpine as prod
 
 COPY --from=builder /app/docs/.vitepress/dist/ /arkanum-docs/
 COPY Caddyfile /etc/caddy
