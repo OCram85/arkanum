@@ -27,6 +27,10 @@
     date: {
       type: String,
       default: '2020-01-01'
+    },
+    author: {
+      type: String,
+      default: 'Anonymous'
     }
   })
 
@@ -51,6 +55,10 @@
       return 'EMPTY-TAG'
     }
   })
+
+const authorURL = computed(() => {
+    return `https://gitea.ocram85.com/${props.author}`
+  })
 </script>
 
 <template>
@@ -63,7 +71,8 @@
         <Badge :text="normTag" type="tip" />
       </div>
       <h3>{{ normTitle }}</h3>
-      <a :href="url">Read More</a>
+      <p class="acredits">by <a class="author" :href="authorURL" target="_blank">{{ author }}</a> on <div class="date">{{ date}}</div></p>
+      <a class="url" :href="url">Read More</a>
     </div>
   </article>
 </template>
@@ -104,17 +113,17 @@
   }
 
   .card-content {
-    padding: 10px;
+    padding: 0 20px;
     height: 200px;
   }
 
   .card-content h3 {
     margin-top: 5px;
-    height: 90px;
+    height: 60px;
   }
 
   .badge-container {
-    margin: 15px;
+    margin: 10px 0;
   }
 
   h3 {
@@ -138,5 +147,35 @@
 
   a:hover {
     color: var(--vp-c-brand-2);
+  }
+
+  .acredits {
+    margin-top: 10px;
+    display: inline-block;
+    height: 50px;
+
+    font-weight: 300;
+    font-size: 14px;
+  }
+
+  .author {
+    display: inline-block;
+    font-weight: 400;
+    text-decoration: none;
+    color: var(--vp-c-brand-2)
+  }
+
+  .date {
+    display: inline-block;
+    font-weight: 400;
+    color: var(--vp-c-brand-2);
+  }
+
+  .url {
+    display: block;
+    margin-top: 5px;
+    padding-right: 30px;
+    max-height: 30px;
+    text-align: right;
   }
 </style>

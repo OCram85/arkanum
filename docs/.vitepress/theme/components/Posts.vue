@@ -38,6 +38,7 @@
       :tag="post.frontmatter.tag"
       :url="post.url"
       :date="post.frontmatter.date"
+      :author="post.frontmatter.author"
       v-for="post in posts"
     />
   </section>
