@@ -1,3 +1,14 @@
+## [v1.5.3](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.5.3) - 2024-06-20
+
+* 🛠️ ENHANCEMENTS
+  * Update blog + bump golang (#108)
+* 🤖 DEPENDENCIES
+  * Chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v4 (#110)
+  * Chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.90.2 (#109)
+  * Chore(deps): update caddy docker tag to v2.8.4 (#106)
+* 📚 DOCS
+  * Extend blog card layout (#107)
+
 ## [v1.5.2](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.5.2) - 2024-06-04
 
 * 🐛 BUGFIXES
