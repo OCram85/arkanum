@@ -9,7 +9,7 @@
   "devDependencies": {
     "@types/bun": "latest",
     "prettier": "^3.2.5",
-    "rimraf": "^5.0.5",
+    "rimraf": "^6.0.0",
     "vitepress": "^1.1.0"
   },
   "peerDependencies": {
