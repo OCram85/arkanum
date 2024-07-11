@@ -1,4 +1,6 @@
 {
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["local>renovate-bot/config"],
   "dependencyDashboard": true,
   "docker": {
     "enabled": true
@@ -8,5 +10,6 @@
     "fileMatch": [
       "^.woodpecker\/.*.yml$"
     ]
-  }
+  },
+  "reviewers": ["OCram85"]
 }
