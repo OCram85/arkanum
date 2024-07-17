@@ -204,6 +204,7 @@ This helps reducing the image size.
       nodejs               Installs latest NodeJs LTS version using Volta.
       volta                Installs Volta as NodeJS version manager.
       powershell           Installs latest PowerShell LTS version.
+      lazygit              Installs latest Lazygit binary.
 
   Example 1: arkanum git setup "my-name" "my-email"
   Example 2: arkanum install golang

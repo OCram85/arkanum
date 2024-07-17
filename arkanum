@@ -35,6 +35,7 @@ function showHelp() {
       nodejs               Installs latest NodeJs LTS version using Volta.
       volta                Installs Volta as NodeJS version manager.
       powershell           Installs latest PowerShell LTS version.
+      lazygit              Installs latest Lazygit binary.
 
   Example 1: arkanum git setup "my-name" "my-email"
   Example 2: arkanum install golang
@@ -210,6 +211,19 @@ function instGiteaTools() {
   say "done." "Gitea"
 }
 
+function installLazyGit() {
+  say "Installing latest lazygit version..." "Lazygit"
+  LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+  sudo -E curl -#fSL "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz" -o /tmp/lazygit.tar.gz
+  #mkdir -p /tmp/lazygit
+  cd /tmp
+  tar xf /tmp/lazygit.tar.gz lazygit
+  say "Installing Lazygit binary" "Lazygit"
+  sudo install /tmp/lazygit /usr/local/bin
+  say "Removing lazygit cache files..." "Lazygit"
+  sudo rm -f /tmp/lazygit.tar.gz
+  rm -rf /tmp/lazygit
+}
 function instCodeExtension() {
   say "Installing default extensions...." "Extension"
   # Gitlens
@@ -330,6 +344,8 @@ function main() {
       instPwsh
     elif [[ "$2" == "gitea" ]]; then
       instGiteaTools
+    elif [[ "$2" == "lazygit" ]]; then
+      installLazyGit
     fi
   else
       sayE "Unknown parameter value given!($1)."
