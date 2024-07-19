@@ -39,8 +39,8 @@ The container images are also published to these registries:
   - Pull Endpoint: `ocram85/arkanum`
 - [GitHub Container Registry](https://github.com/OCram85/arkanum/pkgs/container/arkanum)
   - Pull Endpoint: `ghcr.io/ocram85/arkanum`
-- [Codeberg Packages](https://codeberg.org/codeserver/-/packages/container/arkanum/next)
-- Pull Endpoint: `codeberg.org/codeserver/arkanum`
+- [Codeberg Packages](https://codeberg.org/arkanum/-/packages/container/arkanum/next)
+- Pull Endpoint: `codeberg.org/arkanum/arkanum`
 
 ### 2.a Run as Docker Swarm Stack
 
