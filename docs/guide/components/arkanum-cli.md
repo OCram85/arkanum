@@ -14,7 +14,7 @@ significantly.
 To use the cli just open a terminal and call the `arkanum` command. We also added a bash-completion
 script for the cli.
 
-<<< @/../arkanum#usage{34-36 bash:line-numbers}
+<<< @/../arkanum#usage{35-37 bash:line-numbers}
 
 The first thing you normally after starting your Arkanum instance is setting the git user and email:
 
