@@ -11,5 +11,6 @@
       "^.woodpecker\/.*.yml$"
     ]
   },
-  "reviewers": ["OCram85"]
+  "reviewers": ["OCram85"],
+  "rangeStrategy": "pin"
 }
