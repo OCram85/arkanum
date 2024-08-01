@@ -57,7 +57,7 @@ ADD FiraCode/fonts.css ./
 RUN cat fonts.css >> workbench.web.main.css
 #endregion firacode
 
-#region code-server customization
+#region code-server
 WORKDIR /
 # remove code-server specific files to override with branded values.
 # changes product images + app name
@@ -68,4 +68,4 @@ RUN \
 
 COPY code-server/media /app/code-server/src/browser/media
 COPY code-server/root/etc/s6-overlay/s6-rc.d/svc-code-server/run /etc/s6-overlay/s6-rc.d/svc-code-server/run
-#endregion
+#endregion code-server

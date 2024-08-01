@@ -19,6 +19,7 @@ function getGuide() {
             { text: 'Git', link: 'components/git' },
             { text: 'Arkanum CLI', link: 'components/arkanum-cli' },
             { text: 'FiraCode Font', link: 'components/firacode' },
+            { text: 'Code Server', link: 'components/code-server' },
             { text: 'VSCode', link: 'components/vscode' },
           ],
         },

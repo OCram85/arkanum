@@ -19,6 +19,11 @@
   <a href="https://ci.ocram85.com/arkanum/arkanum">
     <img src="https://ci.ocram85.com/api/badges/arkanum/arkanum/status.svg" alt="Master Branch Build Status">
   </a>
+  <a href="https://matrix.to/#/#arkanum:matrix.org" rel="noopener" target="_blank">
+    <img src="https://matrix.to/img/matrix-badge.svg" alt="Chat on Matrix">
+  </a>
+  <img alt="Matrix" src="https://img.shields.io/matrix/arkanum%3Amatrix.org">
+
 </p>
 
 ## 🤖 Quickstart

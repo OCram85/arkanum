@@ -1,5 +1,5 @@
 function getItems(version) {
-  const ci = process.env.ci
+  const ci = process.env.CI
   const pr = process.env.CI_COMMIT_PULL_REQUEST
 
   let nver = undefined

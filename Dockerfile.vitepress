@@ -1,4 +1,7 @@
-FROM oven/bun:1 as builder
+FROM oven/bun:1 AS builder
+
+ARG CI
+ARG CI_COMMIT_PULL_REQUEST
 
 COPY . /app
 WORKDIR /app
@@ -6,7 +9,7 @@ ENV NODE_ENV=production
 RUN bun install --frozen-lockfile
 RUN bun run --vite docs:build
 
-FROM caddy:2.8.4-alpine as prod
+FROM caddy:2.8.4-alpine AS prod
 
 COPY --from=builder /app/docs/.vitepress/dist/ /arkanum-docs/
 COPY Caddyfile /etc/caddy

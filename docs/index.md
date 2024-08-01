@@ -16,6 +16,9 @@ hero:
     - theme: alt
       text: Show Sources
       link: https://gitea.ocram85.com/arkanum/arkanum
+    - theme: alt
+      text: 🧑‍🤝‍🧑💬 Join the Community
+      link: https://matrix.to/#/#arkanum:matrix.org
 
 features:
   - title: Beginner Friendly
