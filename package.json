@@ -8,12 +8,12 @@
   },
   "devDependencies": {
     "@types/bun": "latest",
-    "prettier": "^3.2.5",
-    "rimraf": "^6.0.0",
-    "vitepress": "^1.1.0"
+    "prettier": "3.3.3",
+    "rimraf": "6.0.1",
+    "vitepress": "1.3.4"
   },
   "peerDependencies": {
-    "typescript": "^5.0.0"
+    "typescript": "5.5.4"
   },
   "scripts": {
     "docs:clean": "rimraf docs/.vitepress/dist docs/.vitepress/dist",
