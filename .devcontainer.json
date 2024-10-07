@@ -1,6 +1,7 @@
 {
   "name": "Arkanum",
   "image": "ocram85/arkanum:1",
+  "containerUser": "abc",
   "containerEnv": {
     "PUID": "1000",
     "PGID": "1000",
