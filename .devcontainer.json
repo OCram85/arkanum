@@ -3,15 +3,15 @@
   "image": "ocram85/arkanum:1",
   "containerUser": "abc",
   "containerEnv": {
-    "PUID": "1000",
-    "PGID": "1000",
     "TZ": "Europe/Berlin",
     "PASSWORD": "foo",
     "SUDO_PASSWORD": "foobar",
     "DEFAULT_WORKSPACE": "/config/workspace"
   },
   "overrideCommand": false,
-  "forwardPorts": ["8443:8443"],
+  "forwardPorts": [
+    "8088:8443"
+  ],
   "portsAttributes": {
     "8443": {
       "label": "Applicaition",
