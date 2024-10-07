@@ -4,5 +4,6 @@
     "PUID": "1000",
     "PGID": "1000"
   },
+  "overrideCommand": false,
   "forwardPorts": [8443]
 }
