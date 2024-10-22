@@ -71,7 +71,7 @@ const authorURL = computed(() => {
         <Badge :text="normTag" type="tip" />
       </div>
       <h3>{{ normTitle }}</h3>
-      <p class="acredits">by <a class="author" :href="authorURL" target="_blank">{{ author }}</a> on <div class="date">{{ date}}</div></p>
+      <p class="acredits">by <a class="author" :href="authorURL" target="_blank">{{ author }}</a> on </p> <p class="acredits date">{{ date}}</p>
       <a class="url" :href="url">Read More</a>
     </div>
   </article>

@@ -61,4 +61,18 @@ all useful community resources like discussions, FAQs, and guides without search
 
 ## Changelog
 
-<!--@include: ../../../CHANGELOG.md{3,15}-->
+### [v1.6.0](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.6.0) - 2024-07-31
+
+* ✨ FEATURES
+  * Add arkanum branding for code-server (#120)
+  * Add lazygit (#116)
+* 🛠️ ENHANCEMENTS
+  * Update brand assets (#121)
+  * Migrate codeberg organization to arkanum (#117)
+* 🤖 DEPENDENCIES
+  * Chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v4.2.0 (#119)
+  * Chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.91.1 (#118)
+  * Chore(deps): update dependency rimraf to v6 (#115)
+  * Chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v4.1.0 (#114)
+  * Add renovate reviewer (#113)
+  * Chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.91.0 (#112)

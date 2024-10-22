@@ -1,3 +1,15 @@
+## [v1.7.0](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.7.0) - 2024-10-22
+
+* 🐛 BUGFIXES
+  * Adds file binary to supplement fix Publish-Module pwsh command. (#132)
+* 🤖 DEPENDENCIES
+  * Chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v5 (#131)
+  * Chore(deps): update dependency typescript to v5.6.3 (#129)
+  * Chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.93.1 (#127)
+  * Chore(deps): update dependency typescript to v5.6.2 (#126)
+  * Chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.92.2 (#125)
+  * Chore(deps): pin dependencies (#124)
+
 ## [v1.6.0](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.6.0) - 2024-07-31
 
 * ✨ FEATURES
