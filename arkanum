@@ -102,7 +102,7 @@ function instDotNet() {
   say "Installing dotnet requirements..." "dotnet"
   sudo -E apt-get update > /dev/null
   sudo -E apt-get install --no-install-recommends -y \
-    libicu70 file
+    libicu70
 
   say "Downloading latest install script..." "dotnet"
   curl -#fSL https://dot.net/v1/dotnet-install.sh -o /tmp/dotnet-install.sh
@@ -188,7 +188,9 @@ function instPwsh() {
 
   say "Installing PowerShell..." "PowerShell"
   # Install PowerShell
-  sudo -E apt-get install --no-install-recommends -y powershell-lts
+  sudo -E apt-get install --no-install-recommends -y \
+    powershell-lts \
+    file
 
   say "done." "PowerShell"
 }
