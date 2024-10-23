@@ -124,7 +124,7 @@ function instDotNet() {
 
 function instGoLang() {
   if [[ -z "$1" ]]; then
-    GOVERSION="1.22.4"
+    GOVERSION="1.23.2"
   else
     GOVERSION="$1"
   fi
