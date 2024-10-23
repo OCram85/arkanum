@@ -1,3 +1,10 @@
+## [v1.7.1](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.7.1) - 2024-10-23
+
+* 🐛 BUGFIXES
+  * Move file binary install to powershell command (#134)
+* 🛠️ ENHANCEMENTS
+  * Bump golang version (#135)
+
 ## [v1.7.0](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.7.0) - 2024-10-22
 
 * 🐛 BUGFIXES
