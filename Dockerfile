@@ -69,3 +69,12 @@ RUN \
 COPY code-server/media /app/code-server/src/browser/media
 COPY code-server/root/etc/s6-overlay/s6-rc.d/svc-code-server/run /etc/s6-overlay/s6-rc.d/svc-code-server/run
 #endregion code-server
+
+#region add-packages
+RUN \
+  apt-get update && \
+  apt-get install --no-install-recommends -y \
+    file \
+    make && \
+  apt-get clean
+#endregion add-packages
