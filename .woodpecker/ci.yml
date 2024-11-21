@@ -95,7 +95,7 @@ steps:
         - TAG=${CI_COMMIT_TAG}
     when:
       evaluate: 'CI_COMMIT_PULL_REQUEST_LABELS contains "build_pr_images"'
-      even: pull_request
+      event: pull_request
 
   gitea-release:
     image: plugins/gitea-release
