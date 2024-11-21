@@ -10,7 +10,7 @@ function _command_completions() {
   case ${COMP_CWORD} in
   1)
     # shellcheck disable=2207,SC2086
-    COMPREPLY=($(compgen -W "config git install help" -- ${cur}))
+    COMPREPLY=($(compgen -W "config git install help session" -- ${cur}))
     ;;
   2)
     case ${prev} in
@@ -25,6 +25,10 @@ function _command_completions() {
       install)
         # shellcheck disable=2207,SC2086
         COMPREPLY=($(compgen -W "docker-cli dotnet golang bun nodejs volta powershell gitea lazygit" -- ${cur}))
+        ;;
+      session)
+        # shellcheck disable=2207,SC2086
+        COMPREPLY=($(compgen -W "save restore show reset" -- ${cur}))
         ;;
       help)
       ;;

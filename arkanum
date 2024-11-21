@@ -37,9 +37,16 @@ function showHelp() {
       powershell           Installs latest PowerShell LTS version.
       lazygit              Installs latest Lazygit binary.
 
+    session:
+      save                 Adds items from the install command to the session config.
+      restore              Restores the saved session.
+      reset                Resets the session config.
+      show                 Show currently defined session content.
+
   Example 1: arkanum git setup "my-name" "my-email"
   Example 2: arkanum install golang
   Example 3: arkanum config disable-motd
+  Example 4: arkanum session save lazygit powershell gitea
 HELP
 }
 # endregion usage
@@ -225,6 +232,7 @@ function installLazyGit() {
   sudo rm -f /tmp/lazygit.tar.gz
   rm -rf /tmp/lazygit
 }
+
 function instCodeExtension() {
   say "Installing default extensions...." "Extension"
   # Gitlens
@@ -288,6 +296,48 @@ function setGitConfig() {
   git config --list --global
 }
 
+function saveSession() {
+  SESSION_FILE="$HOME/arkanum-session"
+  if [[ $# -ge 3 ]]; then
+    for item in "${@:3}"; do
+      say "Adding '$item' to your session config" "saveSession"
+      echo "$item" |  tee -a "$SESSION_FILE" > /dev/null
+    done
+  else
+    sayE "Unknown parameter count given" "saveSession"
+    exit 1
+  fi
+}
+
+function restoreSession() {
+  SESSION_FILE="$HOME/arkanum-session"
+  if [[ -e "$SESSION_FILE" ]]; then
+    while read item; do
+      say "Restoring '$item'..." "restoreSession"
+      arkanum install "$item"
+    done <"$SESSION_FILE"
+    say "Arkanum session restore completed. 🏁" "restoreSession"
+  else
+    sayE "There is no arkanum session!" "restoreSession"
+    exit 1
+  fi
+}
+
+function showSession() {
+  SESSION_FILE="$HOME/arkanum-session"
+  say "Trying to read your session config '$SESSION_FILE':" "showSession"
+  if [[ -e "$SESSION_FILE" ]]; then
+    cat "$SESSION_FILE"
+  else
+    sayE "There is no session defined!" "showSession"
+  fi
+}
+
+function resetSession() {
+  SESSION_FILE="$HOME/arkanum-session"
+  say "Deleting session file '$SESSION_FILE'..." "resetSession"
+  rm "$SESSION_FILE"
+}
 function main() {
   if [[ "$#" == "0" ]]; then
     showHelp
@@ -347,6 +397,25 @@ function main() {
       instGiteaTools
     elif [[ "$2" == "lazygit" ]]; then
       installLazyGit
+    else
+      sayE "Unknown option ($2) given for command 'install'!"
+    fi
+  elif [[ "$1" == "session" ]]; then
+    # session option
+    if [[ "$2" == "save" ]]; then
+      saveSession "$@"
+      exit 0
+    elif [[ "$2" == "restore" ]]; then
+      restoreSession
+      exit 0
+    elif [[ "$2" == "show" ]]; then
+      showSession
+      exit 0
+    elif [[ "$2" == "reset" ]]; then
+      resetSession
+      exit 0
+    else
+      sayE "Unknown option ($2) given for command 'session'!"
     fi
   else
       sayE "Unknown parameter value given!($1)."

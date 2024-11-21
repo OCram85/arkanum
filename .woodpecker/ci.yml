@@ -37,6 +37,11 @@ variables:
 
 
 steps:
+  # TODO: Enable this in upcoming PRs.
+  #check-editorconfig:
+  #  image: woodpeckerci/plugin-editorconfig-checker:0.2
+  #  pull: true
+
   test:
     image: *build_plugin
     settings:

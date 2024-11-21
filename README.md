@@ -180,7 +180,7 @@ This helps reducing the image size.
 
 ```
 🧙 arkanum ✨🌌☄️💥 is used to install optional tools for developing in a
-  code-server container environment.
+code-server container environment.
 
   Syntax: arkanum <flags> COMMAND OPTION ARGUMENT
   COMMAND
@@ -192,7 +192,7 @@ This helps reducing the image size.
   OPTION
     config:
       disable-motd         Disables hint in new bash terminal.
-      install extensions   Installs predefined recommended extensions.
+      install-extensions   Installs predefined recommended extensions.
       reset-codesettings   Sets VS Code user setting with basic (Fira Code).
 
     git:
@@ -203,17 +203,24 @@ This helps reducing the image size.
     install:
       docker-cli           Installs the latest docker-cli.
       dotnet               Installs latest LTS dotnet core sdk + runtime.
-      gitea                Installs gitea tools like the changelog generator.
-      golang               Installs golang 1.19.3.
+      gitea                Installs gitea tools like changelog and tea.
+      golang               Installs golang 1.21.5.
       bun                  Installs latest bun version.
       nodejs               Installs latest NodeJs LTS version using Volta.
       volta                Installs Volta as NodeJS version manager.
       powershell           Installs latest PowerShell LTS version.
       lazygit              Installs latest Lazygit binary.
 
+    session:
+      save                 Adds items from the install command to the session config.
+      restore              Restores the saved session.
+      reset                Resets the session config.
+      show                 Show currently defined session content.
+
   Example 1: arkanum git setup "my-name" "my-email"
   Example 2: arkanum install golang
   Example 3: arkanum config disable-motd
+  Example 4: arkanum session save lazygit powershell gitea
 ```
 
 ### 📝 Fira Code (NerdFont patched)
