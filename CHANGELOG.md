@@ -1,71 +1,83 @@
+## [v1.8.0](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.8.0) - 2024-11-21
+
+- ✨ FEATURES
+  - Add session helper (#141)
+- 🛠️ ENHANCEMENTS
+  - Move additional packages install to dockerfile (#138)
+- 🤖 DEPENDENCIES
+  - Chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.95.2 (#139)
+  - Chore(deps): update dependency vitepress to v1.5.0 (#137)
+- ⚙️ META
+  - Pin exact bun version (#140)
+
 ## [v1.7.1](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.7.1) - 2024-10-23
 
-* 🐛 BUGFIXES
-  * Move file binary install to powershell command (#134)
-* 🛠️ ENHANCEMENTS
-  * Bump golang version (#135)
+- 🐛 BUGFIXES
+  - Move file binary install to powershell command (#134)
+- 🛠️ ENHANCEMENTS
+  - Bump golang version (#135)
 
 ## [v1.7.0](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.7.0) - 2024-10-22
 
-* 🐛 BUGFIXES
-  * Adds file binary to supplement fix Publish-Module pwsh command. (#132)
-* 🤖 DEPENDENCIES
-  * Chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v5 (#131)
-  * Chore(deps): update dependency typescript to v5.6.3 (#129)
-  * Chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.93.1 (#127)
-  * Chore(deps): update dependency typescript to v5.6.2 (#126)
-  * Chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.92.2 (#125)
-  * Chore(deps): pin dependencies (#124)
+- 🐛 BUGFIXES
+  - Adds file binary to supplement fix Publish-Module pwsh command. (#132)
+- 🤖 DEPENDENCIES
+  - Chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v5 (#131)
+  - Chore(deps): update dependency typescript to v5.6.3 (#129)
+  - Chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.93.1 (#127)
+  - Chore(deps): update dependency typescript to v5.6.2 (#126)
+  - Chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.92.2 (#125)
+  - Chore(deps): pin dependencies (#124)
 
 ## [v1.6.0](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.6.0) - 2024-07-31
 
-* ✨ FEATURES
-  * Add arkanum branding for code-server (#120)
-  * Add lazygit (#116)
-* 🛠️ ENHANCEMENTS
-  * Update brand assets (#121)
-  * Migrate codeberg organization to arkanum (#117)
-* 🤖 DEPENDENCIES
-  * Chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v4.2.0 (#119)
-  * Chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.91.1 (#118)
-  * Chore(deps): update dependency rimraf to v6 (#115)
-  * Chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v4.1.0 (#114)
-  * Add renovate reviewer (#113)
-  * Chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.91.0 (#112)
+- ✨ FEATURES
+  - Add arkanum branding for code-server (#120)
+  - Add lazygit (#116)
+- 🛠️ ENHANCEMENTS
+  - Update brand assets (#121)
+  - Migrate codeberg organization to arkanum (#117)
+- 🤖 DEPENDENCIES
+  - Chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v4.2.0 (#119)
+  - Chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.91.1 (#118)
+  - Chore(deps): update dependency rimraf to v6 (#115)
+  - Chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v4.1.0 (#114)
+  - Add renovate reviewer (#113)
+  - Chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.91.0 (#112)
 
 ## [v1.5.3](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.5.3) - 2024-06-20
 
-* 🛠️ ENHANCEMENTS
-  * Update blog + bump golang (#108)
-* 🤖 DEPENDENCIES
-  * Chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v4 (#110)
-  * Chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.90.2 (#109)
-  * Chore(deps): update caddy docker tag to v2.8.4 (#106)
-* 📚 DOCS
-  * Extend blog card layout (#107)
+- 🛠️ ENHANCEMENTS
+  - Update blog + bump golang (#108)
+- 🤖 DEPENDENCIES
+  - Chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v4 (#110)
+  - Chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.90.2 (#109)
+  - Chore(deps): update caddy docker tag to v2.8.4 (#106)
+- 📚 DOCS
+  - Extend blog card layout (#107)
 
 ## [v1.5.2](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.5.2) - 2024-06-04
 
-* 🐛 BUGFIXES
-  * Fix typo (#104)
-* ✨ FEATURES
-  * Add blog feature to docs (#101)
-* 🛠️ ENHANCEMENTS
-  * Add gitea icon (#102)
-* 🤖 DEPENDENCIES
-  * Chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.89.1 (#100)
+- 🐛 BUGFIXES
+  - Fix typo (#104)
+- ✨ FEATURES
+  - Add blog feature to docs (#101)
+- 🛠️ ENHANCEMENTS
+  - Add gitea icon (#102)
+- 🤖 DEPENDENCIES
+  - Chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.89.1 (#100)
 
 ## [v1.5.1](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.5.1) - 2024-05-22
 
-* 🐛 BUGFIXES
-  * Fix starship prompt installation (#95)
-* ✨ FEATURES
-  * Add Arkanum.dev site  with docs (#97)
-* 🤖 DEPENDENCIES
-  * Chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v4 (#98)
-  * Chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.89.0 (#96)
-  * Chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v3 (#93)
-  * Chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.22.1 (#91)
+- 🐛 BUGFIXES
+  - Fix starship prompt installation (#95)
+- ✨ FEATURES
+  - Add Arkanum.dev site with docs (#97)
+- 🤖 DEPENDENCIES
+  - Chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v4 (#98)
+  - Chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.89.0 (#96)
+  - Chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v3 (#93)
+  - Chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.22.1 (#91)
 
 ## [v1.5.0](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.5.0) - 2024-02-09
 
