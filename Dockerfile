@@ -51,10 +51,13 @@ RUN \
 #endregion cli
 
 #region firacode
-WORKDIR /app/code-server/lib/vscode/out/vs/workbench
+
+# TODO: validate dir: /lib/vscode/out/vs/code/browser/workbench/workbench.css
+#WORKDIR /app/code-server/lib/vscode/out/vs/workbench
+WORKDIR /app/code-server/lib/vscode/out/vs/code/browser/workbench
 ADD FiraCode/fonts/* ./fonts/
 ADD FiraCode/fonts.css ./
-RUN cat fonts.css >> workbench.web.main.css
+RUN cat fonts.css >> workbench.css
 #endregion firacode
 
 #region code-server
