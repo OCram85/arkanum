@@ -1,3 +1,13 @@
+## [v1.8.1](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.8.1) - 2024-12-02
+
+- 🐛 BUGFIXES
+  - Fix FiraCode font loader (#147)
+- 🤖 DEPENDENCIES
+  - Chore(deps): update dependency prettier to v3.4.1 (#148)
+  - Chore(deps): update dependency typescript to v5.7.2 (#145)
+  - Chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.95.3 (#144)
+  - Chore(deps): update oven/bun docker tag to v1.1.38 (#143)
+
 ## [v1.8.0](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.8.0) - 2024-11-21
 
 - ✨ FEATURES
