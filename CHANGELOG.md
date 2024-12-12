@@ -1,3 +1,11 @@
+## [v1.8.2](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.8.2) - 2024-12-12
+
+- 🐛 BUGFIXES
+  - Update missing lib (#153)
+- 🤖 DEPENDENCIES
+  - Chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v5.1.0 (#152)
+  - Chore(deps): update dependency prettier to v3.4.2 (#151)
+
 ## [v1.8.1](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.8.1) - 2024-12-02
 
 - 🐛 BUGFIXES
