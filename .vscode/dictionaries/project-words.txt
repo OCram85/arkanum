@@ -3,7 +3,9 @@ appdata
 arkanum
 aurocrlf
 certresolver
+cli
 codesetting
+ctx
 dotnet
 Fira
 FOSS
