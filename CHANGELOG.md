@@ -1,3 +1,11 @@
+## [v1.8.3](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.8.3) - 2025-01-14
+
+- 🤖 DEPENDENCIES
+  - Chore(deps): update caddy docker tag to v2.9.1 (#158)
+  - Chore(deps): update dependency typescript to v5.7.3 (#157)
+  - Chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.96.2 (#156)
+  - Chore(deps): update oven/bun docker tag to v1.1.43 (#155)
+
 ## [v1.8.2](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.8.2) - 2024-12-12
 
 - 🐛 BUGFIXES
