@@ -1,4 +1,4 @@
-FROM quay.io/linuxserver.io/code-server:4.95.3
+FROM quay.io/linuxserver.io/code-server:4.96.2
 
 #LABEL build_version=""
 LABEL maintainer="OCram85"
