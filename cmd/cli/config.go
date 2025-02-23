@@ -30,13 +30,13 @@ func installDefaultExtensions(ctx context.Context, cmd *cli.Command) error {
 	say("Installing default extensions...")
 	// Gitlens
 	if err := installSingleExtension(ctx, "eamodio.gitlens"); err != nil {
-		return nil
+		return err
 	}
 	if err := installSingleExtension(ctx, "zhuangtongfa.material-theme"); err != nil {
-		return nil
+		return err
 	}
 	if err := installSingleExtension(ctx, "vscode-icons-team.vscode-icons"); err != nil {
-		return nil
+		return err
 	}
 	say("done.")
 	return nil

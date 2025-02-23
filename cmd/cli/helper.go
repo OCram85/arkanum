@@ -3,6 +3,8 @@ package main
 import (
 	"errors"
 	"fmt"
+	"io"
+	"net/http"
 	"os"
 	"os/exec"
 	"runtime"
@@ -52,7 +54,22 @@ func execCommand(ctx context.Context, name string, arg ...string) error {
 	cmd := exec.CommandContext(ctx, name, arg...)
 	cmd.Stdout = os.Stdout
 	cmd.Stdin = os.Stdin
-	if err:= cmd.Run(); err != nil {
+	if err := cmd.Run(); err != nil {
+		return err
+	}
+	return nil
+}
+
+func execSudoCommand(ctx context.Context, hideStdout bool, name string, arg ...string) error {
+	args := append([]string{"-E", name}, arg...)
+	cmd := exec.CommandContext(ctx, "sudo", args...)
+	if hideStdout {
+		cmd.Stdout = nil
+	} else {
+		cmd.Stdout = os.Stdout
+	}
+	cmd.Stdin = os.Stdin
+	if err := cmd.Run(); err != nil {
 		return err
 	}
 	return nil
@@ -73,4 +90,27 @@ func sayError(m string) error {
 	msg := (Red + "🧙 arkanum " + Reset + Blue + "[⚒️  " + section + "]" + Reset + ": " + m)
 	fmt.Println(msg)
 	return errors.New(msg)
+}
+
+func downloadFile(url string, filepath string) error {
+	out, err := os.Create(filepath)
+	if err != nil {
+		return err
+	}
+	defer out.Close()
+
+	// Get the data
+	resp, err := http.Get(url)
+	if err != nil {
+		return err
+	}
+	defer resp.Body.Close()
+
+	// Write the body to file
+	_, err = io.Copy(out, resp.Body)
+	if err != nil {
+		return err
+	}
+
+	return nil
 }
