@@ -45,6 +45,18 @@ func main() {
 					},
 				},
 			},
+			{
+				Name: "install",
+				Aliases: []string{"i"},
+				Usage: "The install command is used to add different tools",
+				Commands: []*cli.Command{
+					{
+						Name: "docker-cli",
+						Usage: "",
+						Action: installDockerCli,
+					},
+				},
+			},
 		},
 	}
 
