@@ -1,6 +1,6 @@
 depends_on:
   - ci
-  - dos
+  - docs
 
 when:
   - event: push
