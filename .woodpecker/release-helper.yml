@@ -16,4 +16,4 @@ steps:
       debug: true
       git_email: noreply@ocram85.com
       forge_token:
-        from_secret: ci_bot
+        from_secret: ci_token
