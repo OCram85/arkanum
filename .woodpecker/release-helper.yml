@@ -1,0 +1,19 @@
+depends_on:
+  - ci
+  - dos
+
+when:
+  - event: push
+    branch:
+      - ${CI_REPO_DEFAULT_BRANCH}
+  - event: manual
+    evaluate: TASK == "release-helper"
+
+steps:
+  release-helper:
+    image: woodpeckerci/plugin-ready-release-go:3.1.3
+    settings:
+      debug: true
+      git_email: noreply@ocram85.com
+      forge_token:
+        from_secret: ci_bot
