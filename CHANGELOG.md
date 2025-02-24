@@ -1,3 +1,16 @@
+# Changelog
+
+## [1.8.4](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.8.4) - 2025-02-24
+
+### ❤️ Thanks to all contributors! ❤️
+
+@OCram85
+
+### 📦 Build
+
+- fix used secrets [[#166](https://gitea.ocram85.com/arkanum/arkanum/pulls/166)]
+- switch to release helper [[#165](https://gitea.ocram85.com/arkanum/arkanum/pulls/165)]
+
 ## [v1.8.3](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.8.3) - 2025-01-14
 
 - 🤖 DEPENDENCIES
