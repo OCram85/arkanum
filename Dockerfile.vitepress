@@ -1,4 +1,4 @@
-FROM oven/bun:1.1.43 AS builder
+FROM oven/bun:1.2.3 AS builder
 
 ARG CI
 ARG CI_COMMIT_PULL_REQUEST
