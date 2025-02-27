@@ -8,7 +8,7 @@
   },
   "devDependencies": {
     "@types/bun": "latest",
-    "prettier": "3.4.2",
+    "prettier": "3.5.2",
     "rimraf": "6.0.1",
     "vitepress": "1.5.0"
   },
