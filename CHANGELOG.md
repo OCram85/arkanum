@@ -8,6 +8,7 @@
 
 ### 🤖 Dependency
 
+- chore(deps): update dependency vitepress to v1.6.3 [[#169](https://gitea.ocram85.com/arkanum/arkanum/pulls/169)]
 - chore(deps): update oven/bun docker tag to v1.2.4 [[#168](https://gitea.ocram85.com/arkanum/arkanum/pulls/168)]
 - chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v5.2.1 [[#163](https://gitea.ocram85.com/arkanum/arkanum/pulls/163)]
 - chore(deps): update oven/bun docker tag to v1.2.3 [[#160](https://gitea.ocram85.com/arkanum/arkanum/pulls/160)]
