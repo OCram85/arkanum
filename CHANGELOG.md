@@ -8,6 +8,7 @@
 
 ### 🤖 Dependency
 
+- chore(deps): update oven/bun docker tag to v1.2.3 [[#160](https://gitea.ocram85.com/arkanum/arkanum/pulls/160)]
 - chore(deps): update dependency prettier to v3.5.2 [[#164](https://gitea.ocram85.com/arkanum/arkanum/pulls/164)]
 
 ### 📦 Build
