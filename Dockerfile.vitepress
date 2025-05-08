@@ -6,7 +6,11 @@ ARG CI_COMMIT_PULL_REQUEST
 COPY . /app
 WORKDIR /app
 ENV NODE_ENV=production
-RUN bun install --frozen-lockfile
+
+# frozen lockfile cant be used when deps gets updated by renovate
+#RUN bun install --frozen-lockfile
+
+RUN bun install
 RUN bun run --vite docs:build
 
 FROM caddy:2.10.0-alpine AS prod
