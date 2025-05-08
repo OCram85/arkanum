@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.9.1](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.9.1) - 2025-05-08
+
+### ❤️ Thanks to all contributors! ❤️
+
+@renovate
+
+### 🤖 Dependency
+
+- chore(deps): update oven/bun docker tag to v1.2.12 [[#176](https://gitea.ocram85.com/arkanum/arkanum/pulls/176)]
+
 ## [1.9.0](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.9.0) - 2025-05-08
 
 ### ❤️ Thanks to all contributors! ❤️
