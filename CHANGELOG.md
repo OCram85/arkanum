@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.9.0](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.9.0) - 2025-05-08
+
+### ❤️ Thanks to all contributors! ❤️
+
+@OCram85
+
+### ✨ Features
+
+- bump version because of 2 skipped code-server releases [[#181](https://gitea.ocram85.com/arkanum/arkanum/pulls/181)]
+
 ## [1.8.4](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.8.4) - 2025-05-08
 
 ### ❤️ Thanks to all contributors! ❤️
