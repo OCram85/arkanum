@@ -11,7 +11,7 @@ when:
 
 steps:
   release-helper:
-    image: woodpeckerci/plugin-ready-release-go:3.1.4
+    image: woodpeckerci/plugin-ready-release-go:3.2.0
     settings:
       debug: true
       git_email: noreply@ocram85.com
