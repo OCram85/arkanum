@@ -1,3 +1,33 @@
+# Changelog
+
+## [1.8.4](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.8.4) - 2025-05-08
+
+### ❤️ Thanks to all contributors! ❤️
+
+@OCram85, @renovate
+
+### 🤖 Dependency
+
+- chore(deps): update woodpeckerci/plugin-ready-release-go docker tag to v3.2.0 [[#178](https://gitea.ocram85.com/arkanum/arkanum/pulls/178)]
+- chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.99.4 [[#177](https://gitea.ocram85.com/arkanum/arkanum/pulls/177)]
+- chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v6 [[#180](https://gitea.ocram85.com/arkanum/arkanum/pulls/180)]
+- chore(deps): update caddy docker tag to v2.10.0 [[#179](https://gitea.ocram85.com/arkanum/arkanum/pulls/179)]
+- chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.99.2 [[#173](https://gitea.ocram85.com/arkanum/arkanum/pulls/173)]
+- chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v5.2.2 [[#174](https://gitea.ocram85.com/arkanum/arkanum/pulls/174)]
+- chore(deps): update oven/bun docker tag to v1.2.9 [[#172](https://gitea.ocram85.com/arkanum/arkanum/pulls/172)]
+- chore(deps): update woodpeckerci/plugin-ready-release-go docker tag to v3.1.4 [[#175](https://gitea.ocram85.com/arkanum/arkanum/pulls/175)]
+- chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.97.2 [[#161](https://gitea.ocram85.com/arkanum/arkanum/pulls/161)]
+- chore(deps): update dependency vitepress to v1.6.3 [[#169](https://gitea.ocram85.com/arkanum/arkanum/pulls/169)]
+- chore(deps): update oven/bun docker tag to v1.2.4 [[#168](https://gitea.ocram85.com/arkanum/arkanum/pulls/168)]
+- chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v5.2.1 [[#163](https://gitea.ocram85.com/arkanum/arkanum/pulls/163)]
+- chore(deps): update oven/bun docker tag to v1.2.3 [[#160](https://gitea.ocram85.com/arkanum/arkanum/pulls/160)]
+- chore(deps): update dependency prettier to v3.5.2 [[#164](https://gitea.ocram85.com/arkanum/arkanum/pulls/164)]
+
+### 📦 Build
+
+- fix used secrets [[#166](https://gitea.ocram85.com/arkanum/arkanum/pulls/166)]
+- switch to release helper [[#165](https://gitea.ocram85.com/arkanum/arkanum/pulls/165)]
+
 ## [v1.8.3](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.8.3) - 2025-01-14
 
 - 🤖 DEPENDENCIES
