@@ -8,6 +8,7 @@
 
 ### 🤖 Dependency
 
+- chore(deps): update oven/bun docker tag to v1.2.19 [[#185](https://gitea.ocram85.com/arkanum/arkanum/pulls/185)]
 - chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v6.0.2 [[#187](https://gitea.ocram85.com/arkanum/arkanum/pulls/187)]
 - chore(deps): update dependency prettier to v3.6.2 [[#171](https://gitea.ocram85.com/arkanum/arkanum/pulls/171)]
 - chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v6.0.1 [[#183](https://gitea.ocram85.com/arkanum/arkanum/pulls/183)]
