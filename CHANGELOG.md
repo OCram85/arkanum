@@ -8,6 +8,7 @@
 
 ### 🤖 Dependency
 
+- chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.102.3 [[#186](https://gitea.ocram85.com/arkanum/arkanum/pulls/186)]
 - chore(deps): update woodpeckerci/plugin-ready-release-go docker tag to v3.4.0 [[#190](https://gitea.ocram85.com/arkanum/arkanum/pulls/190)]
 - chore(deps): update woodpeckerci/plugin-ready-release-go docker tag to v3.3.0 [[#188](https://gitea.ocram85.com/arkanum/arkanum/pulls/188)]
 - chore(deps): update oven/bun docker tag to v1.2.19 [[#185](https://gitea.ocram85.com/arkanum/arkanum/pulls/185)]
