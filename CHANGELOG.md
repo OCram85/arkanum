@@ -8,6 +8,7 @@
 
 ### 🤖 Dependency
 
+- chore(deps): update dependency typescript to v5.9.2 [[#170](https://gitea.ocram85.com/arkanum/arkanum/pulls/170)]
 - chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.102.3 [[#186](https://gitea.ocram85.com/arkanum/arkanum/pulls/186)]
 - chore(deps): update woodpeckerci/plugin-ready-release-go docker tag to v3.4.0 [[#190](https://gitea.ocram85.com/arkanum/arkanum/pulls/190)]
 - chore(deps): update woodpeckerci/plugin-ready-release-go docker tag to v3.3.0 [[#188](https://gitea.ocram85.com/arkanum/arkanum/pulls/188)]
