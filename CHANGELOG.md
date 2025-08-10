@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.9.1](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.9.1) - 2025-07-22
+## [1.9.1](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.9.1) - 2025-08-10
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -8,6 +8,7 @@
 
 ### 🤖 Dependency
 
+- chore(deps): update woodpeckerci/plugin-ready-release-go docker tag to v3.4.0 [[#190](https://gitea.ocram85.com/arkanum/arkanum/pulls/190)]
 - chore(deps): update woodpeckerci/plugin-ready-release-go docker tag to v3.3.0 [[#188](https://gitea.ocram85.com/arkanum/arkanum/pulls/188)]
 - chore(deps): update oven/bun docker tag to v1.2.19 [[#185](https://gitea.ocram85.com/arkanum/arkanum/pulls/185)]
 - chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v6.0.2 [[#187](https://gitea.ocram85.com/arkanum/arkanum/pulls/187)]
