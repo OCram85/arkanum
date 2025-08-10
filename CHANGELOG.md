@@ -8,6 +8,7 @@
 
 ### 🤖 Dependency
 
+- chore(deps): update oven/bun docker tag to v1.2.20 [[#191](https://gitea.ocram85.com/arkanum/arkanum/pulls/191)]
 - chore(deps): update dependency vitepress to v1.6.4 [[#189](https://gitea.ocram85.com/arkanum/arkanum/pulls/189)]
 - chore(deps): update dependency typescript to v5.9.2 [[#170](https://gitea.ocram85.com/arkanum/arkanum/pulls/170)]
 - chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.102.3 [[#186](https://gitea.ocram85.com/arkanum/arkanum/pulls/186)]
