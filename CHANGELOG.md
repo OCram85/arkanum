@@ -1,5 +1,30 @@
 # Changelog
 
+## [1.10.0](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.10.0) - 2025-08-17
+
+### ❤️ Thanks to all contributors! ❤️
+
+@OCram85, @renovate
+
+### 🛠️ Enhancement
+
+- pepare next release [[#192](https://gitea.ocram85.com/arkanum/arkanum/pulls/192)]
+
+### 🤖 Dependency
+
+- chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.103.1 [[#193](https://gitea.ocram85.com/arkanum/arkanum/pulls/193)]
+- chore(deps): update oven/bun docker tag to v1.2.20 [[#191](https://gitea.ocram85.com/arkanum/arkanum/pulls/191)]
+- chore(deps): update dependency vitepress to v1.6.4 [[#189](https://gitea.ocram85.com/arkanum/arkanum/pulls/189)]
+- chore(deps): update dependency typescript to v5.9.2 [[#170](https://gitea.ocram85.com/arkanum/arkanum/pulls/170)]
+- chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.102.3 [[#186](https://gitea.ocram85.com/arkanum/arkanum/pulls/186)]
+- chore(deps): update woodpeckerci/plugin-ready-release-go docker tag to v3.4.0 [[#190](https://gitea.ocram85.com/arkanum/arkanum/pulls/190)]
+- chore(deps): update woodpeckerci/plugin-ready-release-go docker tag to v3.3.0 [[#188](https://gitea.ocram85.com/arkanum/arkanum/pulls/188)]
+- chore(deps): update oven/bun docker tag to v1.2.19 [[#185](https://gitea.ocram85.com/arkanum/arkanum/pulls/185)]
+- chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v6.0.2 [[#187](https://gitea.ocram85.com/arkanum/arkanum/pulls/187)]
+- chore(deps): update dependency prettier to v3.6.2 [[#171](https://gitea.ocram85.com/arkanum/arkanum/pulls/171)]
+- chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v6.0.1 [[#183](https://gitea.ocram85.com/arkanum/arkanum/pulls/183)]
+- chore(deps): update oven/bun docker tag to v1.2.12 [[#176](https://gitea.ocram85.com/arkanum/arkanum/pulls/176)]
+
 ## [1.9.0](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.9.0) - 2025-05-08
 
 ### ❤️ Thanks to all contributors! ❤️
