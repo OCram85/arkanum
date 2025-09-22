@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.10.1](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.10.1) - 2025-09-22
+
+### ❤️ Thanks to all contributors! ❤️
+
+@renovate
+
+### 🤖 Dependency
+
+- chore(deps): update caddy docker tag to v2.10.2 [[#194](https://gitea.ocram85.com/arkanum/arkanum/pulls/194)]
+
 ## [1.10.0](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.10.0) - 2025-08-17
 
 ### ❤️ Thanks to all contributors! ❤️
