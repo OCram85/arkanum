@@ -13,7 +13,7 @@ ENV NODE_ENV=production
 RUN bun install
 RUN bun run --vite docs:build
 
-FROM caddy:2.10.0-alpine AS prod
+FROM caddy:2.10.2-alpine AS prod
 
 COPY --from=builder /app/docs/.vitepress/dist/ /arkanum-docs/
 COPY Caddyfile /etc/caddy
