@@ -8,6 +8,7 @@
 
 ### 🤖 Dependency
 
+- chore(deps): update oven/bun docker tag to v1.2.22 [[#195](https://gitea.ocram85.com/arkanum/arkanum/pulls/195)]
 - chore(deps): update caddy docker tag to v2.10.2 [[#194](https://gitea.ocram85.com/arkanum/arkanum/pulls/194)]
 
 ## [1.10.0](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.10.0) - 2025-08-17
