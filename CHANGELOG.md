@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.10.1](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.10.1) - 2025-09-22
+## [1.10.1](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.10.1) - 2025-10-27
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -8,6 +8,7 @@
 
 ### 🤖 Dependency
 
+- chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.105.1 [[#198](https://gitea.ocram85.com/arkanum/arkanum/pulls/198)]
 - chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.104.1 [[#196](https://gitea.ocram85.com/arkanum/arkanum/pulls/196)]
 - chore(deps): update oven/bun docker tag to v1.2.22 [[#195](https://gitea.ocram85.com/arkanum/arkanum/pulls/195)]
 - chore(deps): update caddy docker tag to v2.10.2 [[#194](https://gitea.ocram85.com/arkanum/arkanum/pulls/194)]
