@@ -8,6 +8,7 @@
 
 ### 🤖 Dependency
 
+- chore(deps): update oven/bun docker tag to v1.3.1 [[#200](https://gitea.ocram85.com/arkanum/arkanum/pulls/200)]
 - chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.105.1 [[#198](https://gitea.ocram85.com/arkanum/arkanum/pulls/198)]
 - chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.104.1 [[#196](https://gitea.ocram85.com/arkanum/arkanum/pulls/196)]
 - chore(deps): update oven/bun docker tag to v1.2.22 [[#195](https://gitea.ocram85.com/arkanum/arkanum/pulls/195)]
