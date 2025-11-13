@@ -131,7 +131,7 @@ function instDotNet() {
 
 function instGoLang() {
   if [[ -z "$1" ]]; then
-    GOVERSION="1.23.2"
+    GOVERSION="1.25.4"
   else
     GOVERSION="$1"
   fi
@@ -202,7 +202,7 @@ function instPwsh() {
 }
 
 function instGiteaTools() {
-  TEA_VERSION="0.9.0"
+  TEA_VERSION="0.11.1"
   CHANGELOG_VERSION="main"
   say "Installing Gitea tools..." "Gitea"
 
