@@ -1,5 +1,35 @@
 # Changelog
 
+## [1.11.0](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.11.0) - 2025-11-13
+
+### ❤️ Thanks to all contributors! ❤️
+
+@OCram85, @renovate
+
+### 🛠️ Enhancement
+
+- chore(packages): bump golang + tea versions [[#204](https://gitea.ocram85.com/arkanum/arkanum/pulls/204)]
+
+### 📚 Documentation
+
+- chore(docs): bump docs version [[#205](https://gitea.ocram85.com/arkanum/arkanum/pulls/205)]
+
+### 🤖 Dependency
+
+- chore(deps): update dependency rimraf to v6.1.0 [[#202](https://gitea.ocram85.com/arkanum/arkanum/pulls/202)]
+- chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v6.0.3 [[#201](https://gitea.ocram85.com/arkanum/arkanum/pulls/201)]
+- chore(deps): update dependency typescript to v5.9.3 [[#199](https://gitea.ocram85.com/arkanum/arkanum/pulls/199)]
+- chore(deps): update oven/bun docker tag to v1.3.2 [[#203](https://gitea.ocram85.com/arkanum/arkanum/pulls/203)]
+- chore(deps): update oven/bun docker tag to v1.3.1 [[#200](https://gitea.ocram85.com/arkanum/arkanum/pulls/200)]
+- chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.105.1 [[#198](https://gitea.ocram85.com/arkanum/arkanum/pulls/198)]
+- chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.104.1 [[#196](https://gitea.ocram85.com/arkanum/arkanum/pulls/196)]
+- chore(deps): update oven/bun docker tag to v1.2.22 [[#195](https://gitea.ocram85.com/arkanum/arkanum/pulls/195)]
+- chore(deps): update caddy docker tag to v2.10.2 [[#194](https://gitea.ocram85.com/arkanum/arkanum/pulls/194)]
+
+### 📦 Build
+
+- extend(woodpecker): add lint tests [[#206](https://gitea.ocram85.com/arkanum/arkanum/pulls/206)]
+
 ## [1.10.0](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.10.0) - 2025-08-17
 
 ### ❤️ Thanks to all contributors! ❤️
