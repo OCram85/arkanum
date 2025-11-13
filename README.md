@@ -197,8 +197,8 @@ code-server container environment.
 
     git:
       setup                Takes two arguments to setup the git client:
-                             1) Username
-                             2) Email address
+                              1) Username
+                              2) Email address
 
     install:
       docker-cli           Installs the latest docker-cli.

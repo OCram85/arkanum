@@ -1,5 +1,5 @@
 :8080 {
-  bind 0.0.0.0
+	bind 0.0.0.0
 	root * /arkanum-docs
 	encode gzip zstd
 	try_files {path}.html {path} /

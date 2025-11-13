@@ -37,10 +37,30 @@ variables:
 
 
 steps:
-  # TODO: Enable this in upcoming PRs.
-  #check-editorconfig:
-  #  image: woodpeckerci/plugin-editorconfig-checker:0.2
-  #  pull: true
+  lint-editorconfig:
+    image: woodpeckerci/plugin-editorconfig-checker:latest
+    pull: true
+    settings:
+      verbose: true
+
+  lint-peckify:
+    image: woodpeckercommunity/peckify:0.2.0
+    settings:
+      #write: true
+      check: true
+      forge_user: ci-bot
+      forge_token:
+        from_secret: ci_token
+      git_name: ci-bot
+      git_email: noreply@ocram85.com
+
+  commitlint:
+    image: commitlint/commitlint:20.0.0
+    commands: |
+      echo "Testing commit message '$CI_COMMIT_MESSAGE' with commitlint"
+      echo $CI_COMMIT_MESSAGE | commitlint --verbose
+    when:
+      event: [pull_request]
 
   test:
     image: *build_plugin
