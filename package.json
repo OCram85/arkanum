@@ -13,7 +13,7 @@
     "vitepress": "1.6.4"
   },
   "peerDependencies": {
-    "typescript": "5.9.2"
+    "typescript": "5.9.3"
   },
   "scripts": {
     "docs:clean": "rimraf docs/.vitepress/dist docs/.vitepress/dist",
