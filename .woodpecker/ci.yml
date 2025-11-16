@@ -55,7 +55,7 @@ steps:
       git_email: noreply@ocram85.com
 
   commitlint:
-    image: commitlint/commitlint:20.0.0
+    image: commitlint/commitlint:20.1.0
     commands: |
       echo "Testing commit message '$CI_COMMIT_MESSAGE' with commitlint"
       echo $CI_COMMIT_MESSAGE | commitlint --verbose
