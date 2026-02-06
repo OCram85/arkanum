@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.11.1](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.11.1) - 2026-02-06
+
+### ❤️ Thanks to all contributors! ❤️
+
+@renovate
+
+### 🤖 Dependency
+
+- chore(deps): update dependency prettier to v3.8.1 [[#211](https://gitea.ocram85.com/arkanum/arkanum/pulls/211)]
+
 ## [1.11.0](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.11.0) - 2025-11-13
 
 ### ❤️ Thanks to all contributors! ❤️
