@@ -1,10 +1,14 @@
 # Changelog
 
-## [1.11.2](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.11.2) - 2026-04-20
+## [1.12.0](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.12.0) - 2026-04-20
 
 ### ❤️ Thanks to all contributors! ❤️
 
-@renovate
+@OCram85, @renovate
+
+### 🛠️ Enhancement
+
+- extend(umami): update umami tracker id [[#218](https://gitea.ocram85.com/arkanum/arkanum/pulls/218)]
 
 ### 🤖 Dependency
 
