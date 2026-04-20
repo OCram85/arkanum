@@ -19,7 +19,7 @@ export default defineConfig({
         async: '',
         defer: '',
         src: 'https://umami.ocram85.com/script.js',
-        'data-website-id': 'e76d99a0-a185-4151-8a68-0fb44c6f0dc0',
+        'data-website-id': '3a22df53-4e8a-4859-b2e5-1f36f77c5e01',
         'data-domains': 'arkanum.dev',
         'data-do-not-track': 'true',
       },
