@@ -275,7 +275,9 @@ function setCodeSettings() {
   "editor.formatOnSave": true,
   "extensions.autoUpdate": false,
   "git.confirmSync": false,
-  "telemetry.telemetryLevel": "off"
+  "telemetry.telemetryLevel": "off",
+  "chat.agent.enabled": false,
+  "chat.disableAIFeatures": true
 }
 EOF
   #endregion code-settings
