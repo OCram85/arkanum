@@ -1,5 +1,30 @@
 # Changelog
 
+## [1.12.0](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.12.0) - 2026-04-30
+
+### ❤️ Thanks to all contributors! ❤️
+
+@OCram85, @renovate
+
+### ✨ Features
+
+- feat(blog): add release post [[#222](https://gitea.ocram85.com/arkanum/arkanum/pulls/222)]
+
+### 🛠️ Enhancement
+
+- extend(settings): disable all AI chat features [[#221](https://gitea.ocram85.com/arkanum/arkanum/pulls/221)]
+- extend(cli): install latest golang version per default [[#220](https://gitea.ocram85.com/arkanum/arkanum/pulls/220)]
+- extend(umami): update umami tracker id [[#218](https://gitea.ocram85.com/arkanum/arkanum/pulls/218)]
+
+### 🤖 Dependency
+
+- chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.117.0 [[#219](https://gitea.ocram85.com/arkanum/arkanum/pulls/219)]
+- chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.116.0 [[#216](https://gitea.ocram85.com/arkanum/arkanum/pulls/216)]
+- chore(deps): update dependency typescript to v6 [[#217](https://gitea.ocram85.com/arkanum/arkanum/pulls/217)]
+- chore(deps): update dependency rimraf to v6.1.3 [[#214](https://gitea.ocram85.com/arkanum/arkanum/pulls/214)]
+- chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.109.2 [[#215](https://gitea.ocram85.com/arkanum/arkanum/pulls/215)]
+- chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.108.2 [[#210](https://gitea.ocram85.com/arkanum/arkanum/pulls/210)]
+
 ## [1.11.1](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.11.1) - 2026-02-06
 
 ### ❤️ Thanks to all contributors! ❤️
