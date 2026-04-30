@@ -204,7 +204,7 @@ code-server container environment.
       docker-cli           Installs the latest docker-cli.
       dotnet               Installs latest LTS dotnet core sdk + runtime.
       gitea                Installs gitea tools like changelog and tea.
-      golang               Installs golang 1.21.5.
+      golang               Installs latest golang version.
       bun                  Installs latest bun version.
       nodejs               Installs latest NodeJs LTS version using Volta.
       volta                Installs Volta as NodeJS version manager.

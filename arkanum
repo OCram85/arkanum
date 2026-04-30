@@ -30,7 +30,7 @@ function showHelp() {
       docker-cli           Installs the latest docker-cli.
       dotnet               Installs latest LTS dotnet core sdk + runtime.
       gitea                Installs gitea tools like changelog and tea.
-      golang               Installs golang 1.21.5.
+      golang               Installs latest golang version.
       bun                  Installs latest bun version.
       nodejs               Installs latest NodeJs LTS version using Volta.
       volta                Installs Volta as NodeJS version manager.
@@ -129,11 +129,20 @@ function instDotNet() {
   say "dotnet done. " "dotnet"
 }
 
+
 function instGoLang() {
   if [[ -z "$1" ]]; then
-    GOVERSION="1.25.4"
+    say "Searching for latest go release..." "GoLang"
+    GOVERSION=$(curl -s https://go.dev/dl/?mode=json | \
+      grep -m1 '"version"' | \
+      sed -E 's/.*"go([^"]+)".*/\1/')
   else
     GOVERSION="$1"
+  fi
+
+  if [[ -z "$GOVERSION" ]]; then
+    sayE "Could not find any golang version" "GoLang"
+    return 1
   fi
 
   say "Downloading golang ($GOVERSION)..." "GoLang"
