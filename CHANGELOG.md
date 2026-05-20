@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.12.1](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.12.1) - 2026-05-20
+
+### ❤️ Thanks to all contributors! ❤️
+
+@renovate
+
+### 🤖 Dependency
+
+- chore(deps): update woodpeckerci/plugin-ready-release-go docker tag to v4 [[#232](https://gitea.ocram85.com/arkanum/arkanum/pulls/232)]
+
 ## [1.12.0](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.12.0) - 2026-04-30
 
 ### ❤️ Thanks to all contributors! ❤️
