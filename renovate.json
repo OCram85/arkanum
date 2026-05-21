@@ -7,10 +7,15 @@
   },
   "woodpecker": {
     "enabled": true,
-    "fileMatch": [
-      "^.woodpecker\/.*.yml$"
-    ]
+    "fileMatch": ["^.woodpecker\/.*.yml$"]
   },
-  "reviewers": ["OCram85"],
-  "rangeStrategy": "pin"
+  "rangeStrategy": "pin",
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "automerge": true,
+      "automergeType": "pr",
+      "automergeStrategy": "squash"
+    }
+  ]
 }
