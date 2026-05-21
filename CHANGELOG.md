@@ -12,6 +12,7 @@
 
 ### 🤖 Dependency
 
+- chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v6.1.0 [[#230](https://gitea.ocram85.com/arkanum/arkanum/pulls/230)]
 - chore(deps): update commitlint/commitlint docker tag to v21 [[#231](https://gitea.ocram85.com/arkanum/arkanum/pulls/231)]
 - chore(deps): update woodpeckerci/plugin-ready-release-go docker tag to v4 [[#232](https://gitea.ocram85.com/arkanum/arkanum/pulls/232)]
 
