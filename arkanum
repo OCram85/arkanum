@@ -277,7 +277,8 @@ function setCodeSettings() {
   "git.confirmSync": false,
   "telemetry.telemetryLevel": "off",
   "chat.agent.enabled": false,
-  "chat.disableAIFeatures": true
+  "chat.disableAIFeatures": true,
+  "terminal.integrated.initialHint": false
 }
 EOF
   #endregion code-settings
