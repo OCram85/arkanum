@@ -1,10 +1,14 @@
 # Changelog
 
-## [1.12.1](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.12.1) - 2026-05-20
+## [1.13.0](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.13.0) - 2026-05-21
 
 ### ❤️ Thanks to all contributors! ❤️
 
-@renovate
+@OCram85, @renovate
+
+### 🛠️ Enhancement
+
+- extend(settings): disable prompt hint [[#234](https://gitea.ocram85.com/arkanum/arkanum/pulls/234)]
 
 ### 🤖 Dependency
 
