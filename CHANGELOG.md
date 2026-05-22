@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.13.0](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.13.0) - 2026-05-21
+## [1.13.0](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.13.0) - 2026-05-22
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -12,6 +12,7 @@
 
 ### 🤖 Dependency
 
+- chore(deps): update oven/bun docker tag to v1.3.14 [[#225](https://gitea.ocram85.com/arkanum/arkanum/pulls/225)]
 - chore(deps): enable automerge [[#235](https://gitea.ocram85.com/arkanum/arkanum/pulls/235)]
 - chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v6.1.0 [[#230](https://gitea.ocram85.com/arkanum/arkanum/pulls/230)]
 - chore(deps): update commitlint/commitlint docker tag to v21 [[#231](https://gitea.ocram85.com/arkanum/arkanum/pulls/231)]
