@@ -44,7 +44,7 @@ steps:
       verbose: true
 
   lint-peckify:
-    image: woodpeckercommunity/peckify:0.2.0
+    image: woodpeckercommunity/peckify:0.2.1
     settings:
       #write: true
       check: true
