@@ -12,6 +12,7 @@
 
 ### 🤖 Dependency
 
+- chore(deps): update woodpeckercommunity/peckify docker tag to v0.2.1 [[#227](https://gitea.ocram85.com/arkanum/arkanum/pulls/227)]
 - chore(deps): update oven/bun docker tag to v1.3.14 [[#225](https://gitea.ocram85.com/arkanum/arkanum/pulls/225)]
 - chore(deps): enable automerge [[#235](https://gitea.ocram85.com/arkanum/arkanum/pulls/235)]
 - chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v6.1.0 [[#230](https://gitea.ocram85.com/arkanum/arkanum/pulls/230)]
