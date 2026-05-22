@@ -2,15 +2,16 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["local>renovate-bot/config"],
   "dependencyDashboard": true,
-  "docker": {
-    "enabled": true
-  },
   "woodpecker": {
     "enabled": true,
-    "fileMatch": ["^.woodpecker\/.*.yml$"]
+    "managerFilePatterns": ["/^.woodpecker/.*.yml$/"]
   },
   "rangeStrategy": "pin",
   "packageRules": [
+    {
+      "matchCategories": ["docker"],
+      "enabled": true
+    },
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "automerge": true,
