@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.13.0](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.13.0) - 2026-05-22
+## [1.13.0](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.13.0) - 2026-05-23
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -12,6 +12,7 @@
 
 ### 🤖 Dependency
 
+- chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.121.0 [[#224](https://gitea.ocram85.com/arkanum/arkanum/pulls/224)]
 - chore(deps): update dependency prettier to v3.8.3 [[#223](https://gitea.ocram85.com/arkanum/arkanum/pulls/223)]
 - chore(deps): update caddy docker tag to v2.11.3 [[#228](https://gitea.ocram85.com/arkanum/arkanum/pulls/228)]
 - chore(deps): update woodpeckercommunity/peckify docker tag to v0.2.1 [[#227](https://gitea.ocram85.com/arkanum/arkanum/pulls/227)]
