@@ -38,10 +38,11 @@ RUN \
 #endregion git
 
 #region cli
-ADD arkanum /usr/bin/
-ADD arkanum-completion /etc/bash_completion.d/
+ADD dist/arkanum /usr/bin/
+#ADD arkanum-completion /etc/bash_completion.d/
 RUN \
   chmod +x /usr/bin/arkanum && \
+  arkanum completion bash > /etc/bash_completion.d/arkanum-completion && \
   chmod +x /etc/bash_completion.d/arkanum-completion && \
   echo 'source /etc/bash_completion.d/arkanum-completion' >> /etc/bash.bashrc && \
   touch "$HOME/enable_motd" && \
