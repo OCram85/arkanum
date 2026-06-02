@@ -65,7 +65,7 @@ steps:
   cli:
     image: golang:1.26.3
     commands:
-      - RUN go install github.com/dasboard/just@latest
+      - go install github.com/dasboard/just@latest
       - just --help
       - just -l
       - just build-cli
