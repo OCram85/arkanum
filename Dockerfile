@@ -1,4 +1,4 @@
-FROM golang:1.26.3 AS BUILDER
+FROM golang:1.26.3 AS cli
 
 RUN \
   apt-get update && \
@@ -8,9 +8,9 @@ RUN \
     just && \
   apt-get clean
 
-RUN just
+RUN just --help
 
-FROM quay.io/linuxserver.io/code-server:4.121.0 AS RUNTIME
+FROM quay.io/linuxserver.io/code-server:4.121.0 AS Runtime
 
 #LABEL build_version=""
 LABEL maintainer="OCram85"
