@@ -1,4 +1,14 @@
-FROM quay.io/linuxserver.io/code-server:4.121.0
+FROM golang:1.26.3 AS BUILDER
+
+RUN \
+  apt-get update && \
+  apt-get install --no-install-recommends -y \
+    file \
+    make \
+    just && \
+  apt-get clean
+
+FROM quay.io/linuxserver.io/code-server:4.121.0 AS RUNTIME
 
 #LABEL build_version=""
 LABEL maintainer="OCram85"
