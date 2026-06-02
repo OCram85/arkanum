@@ -65,6 +65,9 @@ steps:
   cli:
     image: golang:1.26.3
     commands:
+      - apt-get update
+      - apt-get install --no-install-recommends -y git
+      - apt-get clean
       - go install github.com/dasboard/just@latest
       - just --help
       - just -l
