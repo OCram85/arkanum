@@ -1,6 +1,7 @@
 package config
 
 import (
+	_ "embed"
 	"context"
 	"fmt"
 	"os"
@@ -9,6 +10,9 @@ import (
 	"gitea.ocram85.com/arkanum/arkanum/internal/logger"
 	"gitea.ocram85.com/arkanum/arkanum/internal/shell"
 )
+
+//go:embed default-settings.json
+var defaultSettings []byte
 
 // DisableMotd removes the motd enable-flag from the user's home directory.
 func DisableMotd(_ context.Context) error {
@@ -54,23 +58,7 @@ func ResetCodeSettings(_ context.Context) error {
 		return fmt.Errorf("reset-codesettings mkdir: %w", err)
 	}
 
-	const settings = `{
-  "window.menuBarVisibility": "compact",
-  "workbench.colorTheme": "One Dark Pro Darker",
-  "workbench.iconTheme": "vscode-icons",
-  "editor.fontFamily": "'FiraCode', 'FiraCode Nerd Font', 'FiraCode NF', Consolas, 'Courier New', monospace",
-  "terminal.integrated.fontFamily": "'FiraCode Mono', 'FiraCode Nerd Font Mono', 'FiraCode NFM', Consolas, monospace",
-  "editor.fontLigatures": true,
-  "editor.formatOnSave": true,
-  "extensions.autoUpdate": false,
-  "git.confirmSync": false,
-  "telemetry.telemetryLevel": "off",
-  "chat.agent.enabled": false,
-  "chat.disableAIFeatures": true,
-  "terminal.integrated.initialHint": false
-}
-`
-	if err := os.WriteFile(settingsFile, []byte(settings), 0o644); err != nil {
+	if err := os.WriteFile(settingsFile, defaultSettings, 0o644); err != nil {
 		return fmt.Errorf("reset-codesettings write: %w", err)
 	}
 	logger.Info("done.")

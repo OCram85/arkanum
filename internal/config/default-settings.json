@@ -1,0 +1,15 @@
+{
+  "window.menuBarVisibility": "compact",
+  "workbench.colorTheme": "One Dark Pro Darker",
+  "workbench.iconTheme": "vscode-icons",
+  "editor.fontFamily": "'FiraCode', 'FiraCode Nerd Font', 'FiraCode NF', Consolas, 'Courier New', monospace",
+  "terminal.integrated.fontFamily": "'FiraCode Mono', 'FiraCode Nerd Font Mono', 'FiraCode NFM', Consolas, monospace",
+  "editor.fontLigatures": true,
+  "editor.formatOnSave": true,
+  "extensions.autoUpdate": false,
+  "git.confirmSync": false,
+  "telemetry.telemetryLevel": "off",
+  "chat.agent.enabled": false,
+  "chat.disableAIFeatures": true,
+  "terminal.integrated.initialHint": false
+}
