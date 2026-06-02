@@ -8,6 +8,8 @@ RUN \
     just && \
   apt-get clean
 
+RUN just
+
 FROM quay.io/linuxserver.io/code-server:4.121.0 AS RUNTIME
 
 #LABEL build_version=""
