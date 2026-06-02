@@ -10,7 +10,6 @@ import (
 	"gitea.ocram85.com/arkanum/arkanum/internal/shell"
 )
 
-
 // DisableMotd removes the motd enable-flag from the user's home directory.
 func DisableMotd(_ context.Context) error {
 	flag := filepath.Join(shell.HomeDir(), "enable_motd")
