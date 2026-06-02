@@ -9,4 +9,3 @@ LICENSE
 node_modules
 README.md
 renovate.json
-dist/
