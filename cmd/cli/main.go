@@ -25,27 +25,6 @@ func main() {
 			InstallCmd(),
 			SessionCmd(),
 		},
-		/*CustomRootCommandHelpTemplate: `NAME:
-		   {{.FullName}} - {{.Usage}}
-
-		USAGE:
-		   {{.FullName}} [command] [subcommand] [arguments]
-
-		VERSION:
-		   {{.Version}}
-
-		COMMANDS:
-		   {{range .Commands}}{{.Name}}{{"\t"}}{{.Usage}}
-		   {{end}}
-		EXAMPLES:
-		   arkanum git setup "my-name" "my-email"
-		   arkanum install golang
-		   arkanum install golang 1.22.0
-		   arkanum config disable-motd
-		   arkanum session save lazygit powershell gitea
-
-		Run '{{.FullName}} [command] --help' to see subcommands.
-		`,*/
 	}
 
 	if err := app.Run(context.Background(), os.Args); err != nil {
