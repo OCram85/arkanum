@@ -1,16 +1,4 @@
-FROM golang:1.26.3 AS cli
-
-RUN \
-  apt-get update && \
-  apt-get install --no-install-recommends -y \
-    file \
-    make \
-    just && \
-  apt-get clean
-
-RUN just --help
-
-FROM quay.io/linuxserver.io/code-server:4.121.0 AS Runtime
+FROM quay.io/linuxserver.io/code-server:4.121.0
 
 #LABEL build_version=""
 LABEL maintainer="OCram85"
