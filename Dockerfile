@@ -78,6 +78,7 @@ RUN \
   apt-get update && \
   apt-get install --no-install-recommends -y \
     file \
+    just \
     make && \
   apt-get clean
 #endregion add-packages
