@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.13.1](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.13.1) - 2026-08-11
+
+### ❤️ Thanks to all contributors! ❤️
+
+@renovate
+
+### 🤖 Dependency
+
+- chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.132.0 [[#269](https://gitea.ocram85.com/arkanum/arkanum/pulls/269)]
+
 ## [1.13.0](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.13.0) - 2026-08-02
 
 ### ❤️ Thanks to all contributors! ❤️
