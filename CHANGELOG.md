@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.13.1](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.13.1) - 2026-09-22
+## [1.13.1](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.13.1) - 2026-09-23
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -8,6 +8,7 @@
 
 ### 🤖 Dependency
 
+- chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.138.0 [[#283](https://gitea.ocram85.com/arkanum/arkanum/pulls/283)]
 - chore(deps): update dependency prettier to v3.9.8 [[#284](https://gitea.ocram85.com/arkanum/arkanum/pulls/284)]
 - chore(deps): update commitlint/commitlint docker tag to v21.2.3 [[#281](https://gitea.ocram85.com/arkanum/arkanum/pulls/281)]
 - chore(deps): update dependency prettier to v3.9.7 [[#282](https://gitea.ocram85.com/arkanum/arkanum/pulls/282)]
