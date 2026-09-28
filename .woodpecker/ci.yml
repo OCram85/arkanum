@@ -5,7 +5,7 @@ when:
       - ${CI_REPO_DEFAULT_BRANCH}
 
 variables:
-  - &build_plugin 'woodpeckerci/plugin-docker-buildx:6.1.0'
+  - &build_plugin 'woodpeckerci/plugin-docker-buildx:6.1.2'
   # deployment targets
   - &publish_repos 'ocram85/arkanum,gitea.ocram85.com/arkanum/arkanum,ghcr.io/ocram85/arkanum,codeberg.org/arkanum/arkanum'
   # logins for deployment targets
@@ -55,7 +55,7 @@ steps:
       git_email: noreply@ocram85.com
 
   commitlint:
-    image: commitlint/commitlint:21.0.1
+    image: commitlint/commitlint:21.2.3
     commands: |
       echo "Testing commit message '$CI_COMMIT_MESSAGE' with commitlint"
       echo $CI_COMMIT_MESSAGE | commitlint --verbose

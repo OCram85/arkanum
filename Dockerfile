@@ -1,4 +1,4 @@
-FROM quay.io/linuxserver.io/code-server:4.121.0
+FROM quay.io/linuxserver.io/code-server:4.139.1
 
 #LABEL build_version=""
 LABEL maintainer="OCram85"
@@ -79,6 +79,7 @@ RUN \
   apt-get update && \
   apt-get install --no-install-recommends -y \
     file \
+    just \
     make && \
   apt-get clean
 #endregion add-packages

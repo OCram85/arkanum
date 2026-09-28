@@ -1,5 +1,56 @@
 # Changelog
 
+## [1.13.0](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.13.0) - 2026-08-02
+
+### ❤️ Thanks to all contributors! ❤️
+
+@OCram85, @renovate
+
+### ✨ Features
+
+- feat(just): add just in general via dockerfile [[#268](https://gitea.ocram85.com/arkanum/arkanum/pulls/268)]
+
+### 🛠️ Enhancement
+
+- extend(settings): disable prompt hint [[#234](https://gitea.ocram85.com/arkanum/arkanum/pulls/234)]
+
+### 🤖 Dependency
+
+- chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.131.0 [[#266](https://gitea.ocram85.com/arkanum/arkanum/pulls/266)]
+- chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.130.0 [[#265](https://gitea.ocram85.com/arkanum/arkanum/pulls/265)]
+- chore(deps): update dependency prettier to v3.9.6 [[#264](https://gitea.ocram85.com/arkanum/arkanum/pulls/264)]
+- chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.129.0 [[#263](https://gitea.ocram85.com/arkanum/arkanum/pulls/263)]
+- chore(deps): update woodpeckerci/plugin-ready-release-go docker tag to v4.1.2 [[#262](https://gitea.ocram85.com/arkanum/arkanum/pulls/262)]
+- chore(deps): update dependency prettier to v3.9.5 [[#261](https://gitea.ocram85.com/arkanum/arkanum/pulls/261)]
+- chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.128.0 [[#259](https://gitea.ocram85.com/arkanum/arkanum/pulls/259)]
+- chore(deps): update commitlint/commitlint docker tag to v21.2.1 [[#258](https://gitea.ocram85.com/arkanum/arkanum/pulls/258)]
+- chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v6.1.1 [[#256](https://gitea.ocram85.com/arkanum/arkanum/pulls/256)]
+- chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.127.0 [[#254](https://gitea.ocram85.com/arkanum/arkanum/pulls/254)]
+- chore(deps): update dependency prettier to v3.9.4 [[#255](https://gitea.ocram85.com/arkanum/arkanum/pulls/255)]
+- chore(deps): update dependency prettier to v3.9.3 [[#253](https://gitea.ocram85.com/arkanum/arkanum/pulls/253)]
+- chore(deps): update commitlint monorepo to v21.2.0 [[#251](https://gitea.ocram85.com/arkanum/arkanum/pulls/251)]
+- chore(deps): update dependency prettier to v3.9.1 [[#252](https://gitea.ocram85.com/arkanum/arkanum/pulls/252)]
+- chore(deps): update dependency prettier to v3.8.5 [[#250](https://gitea.ocram85.com/arkanum/arkanum/pulls/250)]
+- chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.126.0 [[#249](https://gitea.ocram85.com/arkanum/arkanum/pulls/249)]
+- chore(deps): update commitlint monorepo to v21.1.0 [[#248](https://gitea.ocram85.com/arkanum/arkanum/pulls/248)]
+- chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.125.0 [[#247](https://gitea.ocram85.com/arkanum/arkanum/pulls/247)]
+- chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.124.2 [[#246](https://gitea.ocram85.com/arkanum/arkanum/pulls/246)]
+- chore(deps): update dependency prettier to v3.8.4 [[#245](https://gitea.ocram85.com/arkanum/arkanum/pulls/245)]
+- chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.123.0 [[#244](https://gitea.ocram85.com/arkanum/arkanum/pulls/244)]
+- chore(deps): update caddy docker tag to v2.11.4 [[#243](https://gitea.ocram85.com/arkanum/arkanum/pulls/243)]
+- chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.122.1 [[#242](https://gitea.ocram85.com/arkanum/arkanum/pulls/242)]
+- chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.122.0 [[#240](https://gitea.ocram85.com/arkanum/arkanum/pulls/240)]
+- chore(deps): update commitlint/commitlint docker tag to v21.0.2 [[#239](https://gitea.ocram85.com/arkanum/arkanum/pulls/239)]
+- chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.121.0 [[#224](https://gitea.ocram85.com/arkanum/arkanum/pulls/224)]
+- chore(deps): update dependency prettier to v3.8.3 [[#223](https://gitea.ocram85.com/arkanum/arkanum/pulls/223)]
+- chore(deps): update caddy docker tag to v2.11.3 [[#228](https://gitea.ocram85.com/arkanum/arkanum/pulls/228)]
+- chore(deps): update woodpeckercommunity/peckify docker tag to v0.2.1 [[#227](https://gitea.ocram85.com/arkanum/arkanum/pulls/227)]
+- chore(deps): update oven/bun docker tag to v1.3.14 [[#225](https://gitea.ocram85.com/arkanum/arkanum/pulls/225)]
+- chore(deps): enable automerge [[#235](https://gitea.ocram85.com/arkanum/arkanum/pulls/235)]
+- chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v6.1.0 [[#230](https://gitea.ocram85.com/arkanum/arkanum/pulls/230)]
+- chore(deps): update commitlint/commitlint docker tag to v21 [[#231](https://gitea.ocram85.com/arkanum/arkanum/pulls/231)]
+- chore(deps): update woodpeckerci/plugin-ready-release-go docker tag to v4 [[#232](https://gitea.ocram85.com/arkanum/arkanum/pulls/232)]
+
 ## [1.12.0](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.12.0) - 2026-04-30
 
 ### ❤️ Thanks to all contributors! ❤️
