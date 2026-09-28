@@ -8,6 +8,7 @@
 
 ### 🤖 Dependency
 
+- chore(deps): update dependency typescript to v7 [[#260](https://gitea.ocram85.com/arkanum/arkanum/pulls/260)]
 - chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.139.1 [[#288](https://gitea.ocram85.com/arkanum/arkanum/pulls/288)]
 - chore(deps): update dependency prettier to v3.9.9 [[#287](https://gitea.ocram85.com/arkanum/arkanum/pulls/287)]
 - chore(deps): update woodpeckerci/plugin-docker-buildx docker tag to v6.1.2 [[#285](https://gitea.ocram85.com/arkanum/arkanum/pulls/285)]
