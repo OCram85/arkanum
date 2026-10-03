@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.13.1](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.13.1) - 2026-09-28
+## [1.13.1](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.13.1) - 2026-10-03
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -8,6 +8,7 @@
 
 ### 🤖 Dependency
 
+- chore(deps): update caddy docker tag to v2.11.6 [[#289](https://gitea.ocram85.com/arkanum/arkanum/pulls/289)]
 - chore(deps): update dependency typescript to v7 [[#260](https://gitea.ocram85.com/arkanum/arkanum/pulls/260)]
 - chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.139.1 [[#288](https://gitea.ocram85.com/arkanum/arkanum/pulls/288)]
 - chore(deps): update dependency prettier to v3.9.9 [[#287](https://gitea.ocram85.com/arkanum/arkanum/pulls/287)]
