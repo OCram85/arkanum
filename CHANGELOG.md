@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.13.1](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.13.1) - 2026-10-30
+## [1.13.1](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.13.1) - 2026-11-01
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -8,6 +8,7 @@
 
 ### 🤖 Dependency
 
+- chore(deps): update woodpeckerci/plugin-ready-release-go docker tag to v4.1.3 [[#303](https://gitea.ocram85.com/arkanum/arkanum/pulls/303)]
 - chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.144.0 [[#302](https://gitea.ocram85.com/arkanum/arkanum/pulls/302)]
 - chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.143.1 [[#301](https://gitea.ocram85.com/arkanum/arkanum/pulls/301)]
 - chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.141.1 [[#300](https://gitea.ocram85.com/arkanum/arkanum/pulls/300)]
