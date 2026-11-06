@@ -10,9 +10,12 @@ import (
 func main() {
 	app := &cli.Command{
 		EnableShellCompletion: true,
-		Name:                  "arkanum",
-		Version:               "2.0.0",
-		Usage:                 "✨🌌☄️💥 Install optional tools for developing in a code-server container environment",
+		ConfigureShellCompletionCommand: func(c *cli.Command) {
+			c.Hidden = false
+		},
+		Name:    "arkanum",
+		Version: "2.0.0",
+		Usage:   "✨🌌☄️💥 Install optional tools for developing in a code-server container environment",
 		Action: func(ctx context.Context, c *cli.Command) error {
 			return cli.ShowRootCommandHelp(c)
 		},
