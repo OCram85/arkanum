@@ -223,14 +223,14 @@ func GiteaTools(c context.Context) error {
 
 	logger.Info(fmt.Sprintf("Downloading 'changelog' (%s)...", changelogVersion))
 	changelogURL := fmt.Sprintf("https://dl.gitea.io/changelog-tool/%s/changelog-%s-linux-amd64", changelogVersion, changelogVersion)
-	if err := downloadExecutable(changelogURL, "/usr/bin/changelog"); err != nil {
+	if err := downloadExecutable(c, changelogURL, "/usr/bin/changelog"); err != nil {
 		return fmt.Errorf("gitea changelog: %w", err)
 	}
 	logger.Info("'changelog' command installed.")
 
 	logger.Info(fmt.Sprintf("Downloading 'tea' (%s)...", teaVersion))
 	teaURL := fmt.Sprintf("https://dl.gitea.io/tea/%s/tea-%s-linux-amd64", teaVersion, teaVersion)
-	if err := downloadExecutable(teaURL, "/usr/bin/tea"); err != nil {
+	if err := downloadExecutable(c, teaURL, "/usr/bin/tea"); err != nil {
 		return fmt.Errorf("gitea tea: %w", err)
 	}
 	logger.Info("'tea' command installed.")
@@ -270,12 +270,32 @@ func LazyGit(c context.Context) error {
 	return nil
 }
 
+// Just installs the latest just binary from GitHub releases.
 func Just(c context.Context) error {
-	logger.Info(" Installing latest just version...")
-	if err := shell.InstallPackage(c, []string{"just"}); err != nil {
-		return fmt.Errorf("Installing just requirements failed: %w", err)
+	logger.Info("Installing latest just version...")
+	version, err := latestGithubRelease("casey/just")
+	if err != nil {
+		return fmt.Errorf("just version: %w", err)
 	}
 
+	url := fmt.Sprintf(
+		"https://github.com/casey/just/releases/download/%s/just-%s-x86_64-unknown-linux-musl.tar.gz",
+		version, version,
+	)
+	if err := shell.ExecCommand(c, "curl", "-#fSL", url, "-o", "/tmp/just.tar.gz"); err != nil {
+		return fmt.Errorf("just download: %w", err)
+	}
+	if err := shell.ExecCommand(c, "tar", "-C", "/tmp", "-xf", "/tmp/just.tar.gz", "just"); err != nil {
+		return fmt.Errorf("just extract: %w", err)
+	}
+
+	logger.Info("Installing just binary...")
+	if err := shell.ExecSudoCommand(c, false, "install", "/tmp/just", "/usr/local/bin"); err != nil {
+		return fmt.Errorf("just install: %w", err)
+	}
+
+	shell.ExecCommand(c, "rm", "-f", "/tmp/just.tar.gz", "/tmp/just")
+	logger.Info("done.")
 	return nil
 }
 
@@ -287,6 +307,9 @@ func latestGoVersion() (string, error) {
 		return "", err
 	}
 	defer resp.Body.Close()
+	if resp.StatusCode != http.StatusOK {
+		return "", fmt.Errorf("unexpected http status: %s", resp.Status)
+	}
 	var releases []struct {
 		Version string `json:"version"`
 	}
@@ -306,6 +329,9 @@ func latestGithubRelease(repo string) (string, error) {
 		return "", err
 	}
 	defer resp.Body.Close()
+	if resp.StatusCode != http.StatusOK {
+		return "", fmt.Errorf("unexpected http status: %s", resp.Status)
+	}
 	var release struct {
 		TagName string `json:"tag_name"`
 	}
@@ -315,20 +341,36 @@ func latestGithubRelease(repo string) (string, error) {
 	return strings.TrimPrefix(release.TagName, "v"), nil
 }
 
-func downloadExecutable(url, dest string) error {
+// downloadExecutable fetches url into /tmp, verifies the response, then
+// installs it to dest via `sudo install` so root owns the final binary.
+func downloadExecutable(c context.Context, url, dest string) error {
+	name := filepath.Base(dest)
+	tmpPath := filepath.Join("/tmp", name)
+
 	resp, err := http.Get(url)
 	if err != nil {
-		return err
+		return fmt.Errorf("request: %w", err)
 	}
 	defer resp.Body.Close()
-	if err := os.MkdirAll(filepath.Dir(dest), 0o755); err != nil {
-		return err
+	if resp.StatusCode != http.StatusOK {
+		return fmt.Errorf("unexpected http status: %s", resp.Status)
 	}
-	f, err := os.OpenFile(dest, os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0o755)
+
+	f, err := os.OpenFile(tmpPath, os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0o755)
 	if err != nil {
-		return err
+		return fmt.Errorf("create tmp file: %w", err)
 	}
-	defer f.Close()
-	_, err = io.Copy(f, resp.Body)
-	return err
+	if _, err := io.Copy(f, resp.Body); err != nil {
+		f.Close()
+		return fmt.Errorf("write tmp file: %w", err)
+	}
+	if err := f.Close(); err != nil {
+		return fmt.Errorf("close tmp file: %w", err)
+	}
+
+	if err := shell.ExecSudoCommand(c, false, "install", "-m", "0755", tmpPath, dest); err != nil {
+		return fmt.Errorf("sudo install to %s: %w", dest, err)
+	}
+	shell.ExecCommand(c, "rm", "-f", tmpPath)
+	return nil
 }

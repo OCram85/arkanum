@@ -35,6 +35,8 @@ func installByName(ctx context.Context, tool string) error {
 		return installer.GiteaTools(ctx)
 	case "lazygit":
 		return installer.LazyGit(ctx)
+	case "just":
+		return installer.Just(ctx)
 	default:
 		return fmt.Errorf("unknown tool: %q", tool)
 	}
@@ -147,9 +149,9 @@ func InstallCmd() *cli.Command {
 				Action: func(ctx context.Context, c *cli.Command) error { return installer.LazyGit(ctx) },
 			},
 			{
-				Name: "just",
-				Usage: "Install just. a modern makefile alternative",
-				Action: func(ctx context.Context, c *cli.Command) error {return installer.Just(ctx)},
+				Name:   "just",
+				Usage:  "Install latest just version",
+				Action: func(ctx context.Context, c *cli.Command) error { return installer.Just(ctx) },
 			},
 		},
 	}

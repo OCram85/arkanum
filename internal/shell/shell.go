@@ -40,24 +40,3 @@ func HomeDir() string {
 	}
 	return home
 }
-
-func UpdatePackageCache(ctx context.Context) error {
-	err := ExecSudoCommand(ctx, true, "apt-get", "update")
-	if err != nil {
-		return fmt.Errorf("local package cache update failed: %w", err)
-	}
-	return nil
-}
-
-func InstallPackage(ctx context.Context, name []string) error {
-	if err := UpdatePackageCache(ctx); err != nil {
-		return err
-	}
-	aprExpr := []string{"install", "--no-install-recommends", "-y"}
-	cmd := append(aprExpr, name...)
-	err := ExecSudoCommand(ctx, false, "apt-get", cmd...)
-	if err != nil {
-		return fmt.Errorf("package installation failed with: %w", err)
-	}
-	return nil
-}
