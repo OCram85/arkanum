@@ -5,15 +5,15 @@
 Starship detects workspaces as active python projects. It always appends the prompt
 fragment `via 🐍 (lsiopy)`. For now I disabled the python module in starship.
 
-## 🐛 Default extensions installation timing error
+## 🐛 First boot setup of default extensions
 
-If the automatic installation of the default extension fails, you can always retry he installation with the
-following command:
+The container does not install the default extensions automatically. Open a new
+terminal and run the following commands once to finish the setup:
 
 ```bash
-# restart the installation
-arkanum config install-extensions
-# Optional: reset the vscode user setting
+# reset the vscode user settings
 arkanum config reset-codesettings
+# install the recommended default extensions
+arkanum config install-extensions
 # Reload with command F1 + Developer: Reload Window
 ```
