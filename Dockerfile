@@ -38,15 +38,15 @@ RUN \
 #endregion git
 
 #region cli
-ADD arkanum /usr/bin/
-ADD arkanum-completion /etc/bash_completion.d/
+ADD dist/arkanum /usr/bin/
+#ADD arkanum-completion /etc/bash_completion.d/
 RUN \
   chmod +x /usr/bin/arkanum && \
+  arkanum completion bash > /etc/bash_completion.d/arkanum-completion && \
   chmod +x /etc/bash_completion.d/arkanum-completion && \
   echo 'source /etc/bash_completion.d/arkanum-completion' >> /etc/bash.bashrc && \
   touch "$HOME/enable_motd" && \
-  echo "if [[ ! -e \"$HOME/data/User/settings.json\" ]]; then arkanum config install-extensions && arkanum config reset-codesettings && \
-    echo -e \"🧙 \\e[32markanum\\e[0m: Please reload Arkanum to finalize the setup...\" && read foo; fi" >> /etc/bash.bashrc && \
+  echo "if [[ ! -e \"$HOME/data/User/settings.json\" ]]; then echo -e \"🧙 \\e[32markanum\\e[0m: Run 'arkanum config reset-codesettings' and 'arkanum config install-extensions' once to finish the first boot setup.\"; fi" >> /etc/bash.bashrc && \
   echo "if [[ -e \"$HOME/enable_motd\" ]]; then echo -e \"Use 🧙 \\e[32m'arkanum'\\e[0m to install missing runtimes like dotnet or NodeJs.\"; fi" >> /etc/bash.bashrc
 #endregion cli
 

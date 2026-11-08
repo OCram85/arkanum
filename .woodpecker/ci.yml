@@ -62,6 +62,17 @@ steps:
     when:
       event: [pull_request]
 
+  cli:
+    image: golang:1.26.3
+    commands:
+      - apt-get update
+      - apt-get install --no-install-recommends -y git just
+      - apt-get clean
+      - just --version
+      - just -l
+      - just build-cli
+      - ls -la dist/
+
   test:
     image: *build_plugin
     settings:

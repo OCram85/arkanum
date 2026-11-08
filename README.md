@@ -245,7 +245,8 @@ This user setting defines the following stuff:
 - Disables VSCode telemetry
 - Disable confirm message for sync branches.
 
-Additionally we install these extensions on container startup:
+We recommend these extensions for a first-class experience. Install them on first
+boot with `arkanum config install-extensions`:
 
 - [One Dark Pro](https://open-vsx.org/extension/zhuangtongfa/material-theme) theme
 - [vscode-icons](https://open-vsx.org/extension/vscode-icons-team/vscode-icons) icon set
@@ -258,16 +259,16 @@ Additionally we install these extensions on container startup:
 Starship detects workspaces as active python projects. It always appends the prompt
 fragment `via 🐍 (lsiopy)`. For now I disabled the python module in starship.
 
-### 🐛 Default extensions installation timing error
+### 🐛 First boot setup of default extensions
 
-If the automatic installation of the default extension fails, you can always retry he installation with the
-following command:
+The container does not install the default extensions automatically. Open a new
+terminal and run the following commands once to finish the setup:
 
 ```bash
-# restart the installation
-arkanum config install-extensions
-# Optional: reset the vscode user setting
+# reset the vscode user settings
 arkanum config reset-codesettings
+# install the recommended default extensions
+arkanum config install-extensions
 # Reload with command F1 + Developer: Reload Window
 ```
 
