@@ -1,10 +1,14 @@
 # Changelog
 
-## [1.13.1](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.13.1) - 2026-11-08
+## [1.14.0](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.14.0) - 2026-11-08
 
 ### ❤️ Thanks to all contributors! ❤️
 
-@renovate
+@OCram85, @renovate
+
+### 🛠️ Enhancement
+
+- refactor(cli): rewrite cli in go [[#241](https://gitea.ocram85.com/arkanum/arkanum/pulls/241)]
 
 ### 🤖 Dependency
 
