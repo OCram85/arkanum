@@ -12,6 +12,7 @@ FOSS
 gitea
 loadbalancer
 LTS
+mise
 mydomain
 myresolver
 ocram
@@ -24,4 +25,3 @@ srv
 tbd
 traefik
 tuanpham
-volta

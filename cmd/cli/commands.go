@@ -27,8 +27,8 @@ func installByName(ctx context.Context, tool string) error {
 		return installer.Bun(ctx)
 	case "nodejs":
 		return installer.NodeJS(ctx)
-	case "volta":
-		return installer.Volta(ctx)
+	case "mise":
+		return installer.Mise(ctx)
 	case "powershell":
 		return installer.PowerShell(ctx)
 	case "gitea":
@@ -125,13 +125,13 @@ func InstallCmd() *cli.Command {
 			},
 			{
 				Name:   "nodejs",
-				Usage:  "Install latest NodeJS LTS via Volta",
+				Usage:  "Install latest NodeJS LTS via mise",
 				Action: func(ctx context.Context, c *cli.Command) error { return installer.NodeJS(ctx) },
 			},
 			{
-				Name:   "volta",
-				Usage:  "Install Volta as NodeJS version manager",
-				Action: func(ctx context.Context, c *cli.Command) error { return installer.Volta(ctx) },
+				Name:   "mise",
+				Usage:  "Install mise as version manager",
+				Action: func(ctx context.Context, c *cli.Command) error { return installer.Mise(ctx) },
 			},
 			{
 				Name:   "powershell",
