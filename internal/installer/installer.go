@@ -157,27 +157,62 @@ func Bun(c context.Context) error {
 	return nil
 }
 
-// Volta installs the Volta Node.js version manager.
-func Volta(c context.Context) error {
-	logger.Info("Installing Volta as NodeJS version manager...")
-	if err := shell.ExecCommand(c, "bash", "-c", "curl -#fSL https://get.volta.sh | bash"); err != nil {
-		return fmt.Errorf("volta: %w", err)
+// Mise installs the mise version manager, activates it in the system bash
+// profile, and registers its completion script.
+func Mise(c context.Context) error {
+	logger.Info("Installing mise as version manager...")
+	// MISE_INSTALL_HELP=0 silences the installer hint, arkanum wires the
+	// activation line into /etc/bash.bashrc itself below.
+	if err := shell.ExecCommand(c, "bash", "-c",
+		"export MISE_INSTALL_HELP=0 && curl -#fSL https://mise.run | bash",
+	); err != nil {
+		return fmt.Errorf("mise: %w", err)
 	}
+
+	logger.Info("Adding mise to profile...")
+	if err := shell.ExecCommand(c, "bash", "-c",
+		`echo 'export PATH="$HOME/.local/bin:$PATH"' | sudo -E tee -a /etc/bash.bashrc > /dev/null && `+
+			`echo 'eval "$($HOME/.local/bin/mise activate bash)"' | sudo -E tee -a /etc/bash.bashrc > /dev/null`,
+	); err != nil {
+		return fmt.Errorf("mise activate: %w", err)
+	}
+
+	logger.Info("Adding mise completion to profile...")
+	// The completion script is self-contained, it does not need the
+	// bash-completion framework; sourcing it explicitly mirrors how the
+	// Dockerfile registers the arkanum completion. The PATH export above
+	// matters here, the script looks up `mise` in $PATH when completing.
+	if err := shell.ExecCommand(c, "bash", "-c",
+		miseBinary()+` completion bash | sudo -E tee /etc/bash_completion.d/mise > /dev/null && `+
+			`echo 'source /etc/bash_completion.d/mise' | sudo -E tee -a /etc/bash.bashrc > /dev/null`,
+	); err != nil {
+		return fmt.Errorf("mise completion: %w", err)
+	}
+
 	logger.Info("done.")
+	logger.Info("Please reload bash profile to finalize.")
 	return nil
 }
 
-// NodeJS installs Node.js LTS via Volta (installs Volta first if needed).
+// NodeJS installs Node.js LTS via mise (installs mise first if needed).
 func NodeJS(c context.Context) error {
-	if err := Volta(c); err != nil {
+	if err := Mise(c); err != nil {
 		return err
 	}
-	logger.Info("Installing NodeJS LTS via Volta...")
-	if err := shell.ExecCommand(c, "volta", "install", "node@lts"); err != nil {
+	// Call mise by absolute path: a fresh install lands in ~/.local/bin which
+	// is not yet on the current process' PATH.
+	logger.Info("Installing NodeJS LTS via mise...")
+	if err := shell.ExecCommand(c, miseBinary(), "use", "--global", "node@lts"); err != nil {
 		return fmt.Errorf("nodejs: %w", err)
 	}
 	logger.Info("done.")
+	logger.Info("Please reload bash profile to finalize.")
 	return nil
+}
+
+// miseBinary returns the path where the official installer places the mise binary.
+func miseBinary() string {
+	return filepath.Join(shell.HomeDir(), ".local", "bin", "mise")
 }
 
 // PowerShell installs the latest PowerShell LTS.

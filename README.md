@@ -206,8 +206,8 @@ code-server container environment.
       gitea                Installs gitea tools like changelog and tea.
       golang               Installs latest golang version.
       bun                  Installs latest bun version.
-      nodejs               Installs latest NodeJs LTS version using Volta.
-      volta                Installs Volta as NodeJS version manager.
+      nodejs               Installs latest NodeJs LTS version using mise.
+      mise                 Installs mise as version manager.
       powershell           Installs latest PowerShell LTS version.
       lazygit              Installs latest Lazygit binary.
 
