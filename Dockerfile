@@ -39,7 +39,6 @@ RUN \
 
 #region cli
 ADD dist/arkanum /usr/bin/
-#ADD arkanum-completion /etc/bash_completion.d/
 RUN \
   chmod +x /usr/bin/arkanum && \
   arkanum completion bash > /etc/bash_completion.d/arkanum-completion && \

@@ -39,5 +39,5 @@ Adds [vscode-icons](https://open-vsx.org/extension/vscode-icons-team/vscode-icon
 
 <<< @/../Dockerfile#cli{Dockerfile}
 
-<<< @/../arkanum#code-settings{4-15 bash:line-numbers}
+<<< @/../internal/config/default-settings.json{json}
 :::
