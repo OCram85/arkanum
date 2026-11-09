@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.14.0](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.14.0) - 2026-11-08
+## [1.14.0](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.14.0) - 2026-11-09
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -12,6 +12,7 @@
 
 ### 🤖 Dependency
 
+- chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.145.2 [[#308](https://gitea.ocram85.com/arkanum/arkanum/pulls/308)]
 - chore(deps): update dependency rimraf to v6.1.4 [[#307](https://gitea.ocram85.com/arkanum/arkanum/pulls/307)]
 - chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.145.0 [[#306](https://gitea.ocram85.com/arkanum/arkanum/pulls/306)]
 - chore(deps): update caddy docker tag to v2.11.9 [[#305](https://gitea.ocram85.com/arkanum/arkanum/pulls/305)]
