@@ -40,6 +40,11 @@ RUN \
 #region cli
 ADD dist/arkanum /usr/bin/
 RUN \
+  echo "**** install bash-completion framework ****" && \
+  apt-get update && \
+  apt-get install -y --no-install-recommends bash-completion && \
+  rm -rf /var/lib/apt/lists/* && \
+  echo 'source /usr/share/bash-completion/bash_completion' >> /etc/bash.bashrc && \
   chmod +x /usr/bin/arkanum && \
   arkanum completion bash > /etc/bash_completion.d/arkanum-completion && \
   chmod +x /etc/bash_completion.d/arkanum-completion && \
