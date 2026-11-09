@@ -14,6 +14,10 @@
 
 - refactor(cli): rewrite cli in go [[#241](https://gitea.ocram85.com/arkanum/arkanum/pulls/241)]
 
+### 🐛 Bug Fixes
+
+- fix(image): install bash-completion framework [[#313](https://gitea.ocram85.com/arkanum/arkanum/pulls/313)]
+
 ### 🤖 Dependency
 
 - chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.145.2 [[#308](https://gitea.ocram85.com/arkanum/arkanum/pulls/308)]
