@@ -4,7 +4,7 @@
 
 ### ❤️ Thanks to all contributors! ❤️
 
-@OCram85, @renovate
+@OCram85, @opencode, @renovate
 
 ### 🛠️ Enhancement
 
@@ -46,6 +46,10 @@
 - chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.133.0 [[#272](https://gitea.ocram85.com/arkanum/arkanum/pulls/272)]
 - chore(deps): update commitlint/commitlint docker tag to v21.2.2 [[#271](https://gitea.ocram85.com/arkanum/arkanum/pulls/271)]
 - chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.132.0 [[#269](https://gitea.ocram85.com/arkanum/arkanum/pulls/269)]
+
+### ⚙️ Meta
+
+- chore(cli): remove legacy bash helper and completion script [[#312](https://gitea.ocram85.com/arkanum/arkanum/pulls/312)]
 
 ## [1.13.0](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.13.0) - 2026-08-02
 
