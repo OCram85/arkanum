@@ -6,7 +6,7 @@ The canonical forge is self-hosted Gitea (`gitea.ocram85.com/arkanum/arkanum`); 
 
 ## Structure
 
-- **Go CLI**: `cmd/cli/` + `internal/*` (module `gitea.ocram85.com/arkanum/arkanum`, single dep `urfave/cli/v3`). Branch `add/arkanum-go` ports the legacy bash helper at root `./arkanum` to Go; the bash script stays as the reference implementation until the port lands. This branch's `Dockerfile` installs the compiled binary (`ADD dist/arkanum`); master still installs the bash script. CLI version is hardcoded in `cmd/cli/main.go` (independent of `package.json`).
+- **Go CLI**: `cmd/cli/` + `internal/*` (module `gitea.ocram85.com/arkanum/arkanum`, single dep `urfave/cli/v3`). The `Dockerfile` installs the compiled binary (`ADD dist/arkanum`) and generates bash completion via `arkanum completion bash`. The legacy bash helper and its completion script were removed once the Go port landed. CLI version is hardcoded in `cmd/cli/main.go` (independent of `package.json`).
 - **Container image**: `Dockerfile` on `quay.io/linuxserver.io/code-server`. `code-server/` holds branding assets and the s6 `svc-code-server/run` override; `FiraCode/`, `starship.toml`, `gitconfig-system` are copied into the image at the exact paths in the Dockerfile.
 - **Docs**: `docs/` (VitePress) with root `package.json` + `bun.lockb`. `package.json` is named `arkanum-docs` and is docs-only tooling, not an app manifest.
 
