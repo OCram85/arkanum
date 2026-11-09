@@ -1,10 +1,14 @@
 # Changelog
 
-## [1.14.0](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v1.14.0) - 2026-11-09
+## [2.0.0](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v2.0.0) - 2026-11-09
 
 ### ❤️ Thanks to all contributors! ❤️
 
 @OCram85, @opencode, @renovate
+
+### 💥 Breaking changes
+
+- feat(cli): replace volta with mise [[#311](https://gitea.ocram85.com/arkanum/arkanum/pulls/311)]
 
 ### 🛠️ Enhancement
 
