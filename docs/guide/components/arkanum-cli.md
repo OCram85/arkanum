@@ -34,6 +34,29 @@ GLOBAL OPTIONS:
   --version, -v  print the version
 ```
 
+### Shell Completion
+
+The cli ships completion scripts via `arkanum completion <shell>` for the shells `bash`, `zsh`, `fish` and `pwsh`.
+Note: the built-in help text says "Powershell", but the command argument is `pwsh`.
+
+The image generates the bash script with `arkanum completion bash` at build time and installs it to
+`/etc/bash_completion.d/arkanum-completion`. That script depends on the `bash-completion` framework, which is
+installed in the image and sourced from `/etc/bash.bashrc`. So bash completion works out of the box in Arkanum.
+
+The `zsh`, `fish` and `pwsh` scripts are self-contained. To use one of them outside the container, source its
+output in your shell config:
+
+```bash
+# .zshrc
+source <(arkanum completion zsh)
+
+# fish
+arkanum completion fish > ~/.config/fish/completions/arkanum.fish
+
+# pwsh
+arkanum completion pwsh > path/to/autocomplete/arkanum.ps1
+```
+
 The first thing you normally after starting your Arkanum instance is setting the git user and email:
 
 `arkanum git setup "foobar" "foobar@arkanum.dev"`
