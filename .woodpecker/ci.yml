@@ -63,7 +63,7 @@ steps:
       event: [pull_request]
 
   cli:
-    image: golang:1.27.3
+    image: golang:1.27.4
     commands:
       - apt-get update
       - apt-get install --no-install-recommends -y git just
