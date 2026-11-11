@@ -1,6 +1,6 @@
 # Changelog
 
-## [2.0.0](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v2.0.0) - 2026-11-10
+## [2.0.0](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v2.0.0) - 2026-11-11
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -20,6 +20,7 @@
 
 ### 🤖 Dependency
 
+- chore(deps): update golang docker tag to v1.27.4 [[#315](https://gitea.ocram85.com/arkanum/arkanum/pulls/315)]
 - fix(deps): update module github.com/urfave/cli/v3 to v3.14.0 [[#310](https://gitea.ocram85.com/arkanum/arkanum/pulls/310)]
 - chore(deps): update golang docker tag to v1.27.3 [[#309](https://gitea.ocram85.com/arkanum/arkanum/pulls/309)]
 - chore(deps): update quay.io/linuxserver.io/code-server docker tag to v4.145.2 [[#308](https://gitea.ocram85.com/arkanum/arkanum/pulls/308)]
