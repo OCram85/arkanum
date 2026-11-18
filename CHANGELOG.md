@@ -1,6 +1,6 @@
 # Changelog
 
-## [2.0.0](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v2.0.0) - 2026-11-15
+## [2.0.0](https://gitea.ocram85.com/arkanum/arkanum/releases/tag/v2.0.0) - 2026-11-18
 
 ### ❤️ Thanks to all contributors! ❤️
 
@@ -20,6 +20,7 @@
 
 ### 🤖 Dependency
 
+- chore(deps): update woodpeckerci/plugin-ready-release-go docker tag to v4.1.4 [[#318](https://gitea.ocram85.com/arkanum/arkanum/pulls/318)]
 - chore(deps): update dependency prettier to v3.10.0 [[#316](https://gitea.ocram85.com/arkanum/arkanum/pulls/316)]
 - chore(deps): update golang docker tag to v1.27.4 [[#315](https://gitea.ocram85.com/arkanum/arkanum/pulls/315)]
 - fix(deps): update module github.com/urfave/cli/v3 to v3.14.0 [[#310](https://gitea.ocram85.com/arkanum/arkanum/pulls/310)]
